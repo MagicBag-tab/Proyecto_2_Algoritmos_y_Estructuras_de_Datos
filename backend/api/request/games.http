@@ -1,0 +1,131 @@
+###Creación de Videojuegos
+
+### 1. Halo Infinite
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Halo Infinite",
+  "multiplayer": true,
+  "genres": ["Shooter", "Sci-Fi"],
+  "platforms": ["Xbox", "PC"],
+  "score": 8.7,
+  "company": "343 Industries"
+}
+
+### 2. Call of Duty: Modern Warfare II
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Call of Duty: Modern Warfare II",
+  "multiplayer": true,
+  "genres": ["Shooter", "Action"],
+  "platforms": ["PC", "Xbox", "PS5"],
+  "score": 8.0,
+  "company": "Activision"
+}
+
+### 3. Apex Legends
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Apex Legends",
+  "multiplayer": true,
+  "genres": ["Shooter", "Battle Royale"],
+  "platforms": ["PC", "Xbox", "PS5"],
+  "score": 8.2,
+  "company": "Respawn Entertainment"
+}
+
+### 4. FIFA 23
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "FIFA 23",
+  "multiplayer": true,
+  "genres": ["Sports"],
+  "platforms": ["PC", "Xbox", "PS5"],
+  "score": 7.5,
+  "company": "EA Sports"
+}
+
+### 5. The Witcher 3
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "The Witcher 3",
+  "multiplayer": false,
+  "genres": ["RPG", "Fantasy"],
+  "platforms": ["PC", "Xbox", "PS5"],
+  "score": 9.5,
+  "company": "CD Projekt"
+}
+
+### 6. Cyberpunk 2077
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Cyberpunk 2077",
+  "multiplayer": false,
+  "genres": ["RPG", "Sci-Fi"],
+  "platforms": ["PC", "Xbox", "PS5"],
+  "score": 8.0,
+  "company": "CD Projekt"
+}
+
+### 7. Rocket League
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Rocket League",
+  "multiplayer": true,
+  "genres": ["Sports", "Racing"],
+  "platforms": ["PC", "Xbox", "PS5"],
+  "score": 8.1,
+  "company": "Psyonix"
+}
+
+### 8. Gran Turismo 7
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Gran Turismo 7",
+  "multiplayer": true,
+  "genres": ["Racing", "Simulation"],
+  "platforms": ["PS5"],
+  "score": 8.3,
+  "company": "Polyphony Digital"
+}
+
+### 9. Minecraft
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Minecraft",
+  "multiplayer": true,
+  "genres": ["Sandbox", "Survival"],
+  "platforms": ["PC", "Xbox", "PS5"],
+  "score": 9.2,
+  "company": "Mojang"
+}
+
+### 10. Skyrim
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Skyrim",
+  "multiplayer": false,
+  "genres": ["RPG", "Fantasy"],
+  "platforms": ["PC", "Xbox", "PS5"],
+  "score": 9.0,
+  "company": "Bethesda"
+}

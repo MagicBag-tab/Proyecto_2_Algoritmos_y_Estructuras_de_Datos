@@ -1,0 +1,120 @@
+### Usuario 1
+POST http://localhost:5050/api/v1/users
+Content-Type: application/json
+
+{
+  "nombre": "Luis",
+  "apellido": "Ramírez",
+  "correo": "luis@example.com",
+  "contraseña": "luis123",
+  "juegos_favoritos": ["Halo Infinite", "FIFA 23"]
+}
+
+### Usuario 2
+POST http://localhost:5050/api/v1/users
+Content-Type: application/json
+
+{
+  "nombre": "Ana",
+  "apellido": "Gómez",
+  "correo": "ana@example.com",
+  "contraseña": "ana456",
+  "juegos_favoritos": ["Minecraft", "Skyrim"]
+}
+
+### Usuario 3
+POST http://localhost:5050/api/v1/users
+Content-Type: application/json
+
+{
+  "nombre": "Pedro",
+  "apellido": "López",
+  "correo": "pedro@example.com",
+  "contraseña": "pedro789",
+  "juegos_favoritos": ["The Witcher 3", "Cyberpunk 2077"]
+}
+
+### Usuario 4
+POST http://localhost:5050/api/v1/users
+Content-Type: application/json
+
+{
+  "nombre": "Camila",
+  "apellido": "Torres",
+  "correo": "camila@example.com",
+  "contraseña": "camila321",
+  "juegos_favoritos": ["Apex Legends", "Rocket League"]
+}
+
+### Usuario 5
+POST http://localhost:5050/api/v1/users
+Content-Type: application/json
+
+{
+  "nombre": "Marco",
+  "apellido": "Méndez",
+  "correo": "marco@example.com",
+  "contraseña": "marco777",
+  "juegos_favoritos": ["FIFA 23", "Rocket League"]
+}
+
+### Usuario 6
+POST http://localhost:5050/api/v1/users
+Content-Type: application/json
+
+{
+  "nombre": "Lucía",
+  "apellido": "Fernández",
+  "correo": "lucia@example.com",
+  "contraseña": "lucia987",
+  "juegos_favoritos": ["Cyberpunk 2077", "Call of Duty: Modern Warfare II"]
+}
+
+### Usuario 7
+POST http://localhost:5050/api/v1/users
+Content-Type: application/json
+
+{
+  "nombre": "Carlos",
+  "apellido": "Pérez",
+  "correo": "carlos@example.com",
+  "contraseña": "carlos159",
+  "juegos_favoritos": ["Gran Turismo 7", "Rocket League"]
+}
+
+### Usuario 8
+POST http://localhost:5050/api/v1/users
+Content-Type: application/json
+
+{
+  "nombre": "Daniela",
+  "apellido": "Morales",
+  "correo": "daniela@example.com",
+  "contraseña": "dani321",
+  "juegos_favoritos": ["Skyrim", "The Witcher 3"]
+}
+
+### Usuario 9
+POST http://localhost:5050/api/v1/users
+Content-Type: application/json
+
+{
+  "nombre": "Iván",
+  "apellido": "Castillo",
+  "correo": "ivan@example.com",
+  "contraseña": "ivan654",
+  "juegos_favoritos": ["Apex Legends", "Call of Duty: Modern Warfare II"]
+}
+
+### Usuario 10
+POST http://localhost:5050/api/v1/users
+Content-Type: application/json
+
+{
+  "nombre": "Andrea",
+  "apellido": "Cruz",
+  "correo": "andrea@example.com",
+  "contraseña": "andrea147",
+  "juegos_favoritos": ["Minecraft", "Halo Infinite"]
+}
+
