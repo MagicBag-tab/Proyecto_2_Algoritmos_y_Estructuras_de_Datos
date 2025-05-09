@@ -1,0 +1,29 @@
+# Backend (Python)
+__pycache__/
+*.py[cod]
+*.log
+.env
+venv/
+env/
+*.sqlite3
+
+# Frontend (React)
+node_modules/
+dist/
+build/
+.DS_Store
+.env.local
+.env.development
+.env.production
+
+# Neo4j
+data/neo4j/import/*  
+*.dump  
+
+# IDE/Editor
+.vscode/
+.idea/
+
+# Sistema
+Thumbs.db
+*.swp
