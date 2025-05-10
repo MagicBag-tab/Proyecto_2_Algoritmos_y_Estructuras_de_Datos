@@ -97,6 +97,13 @@ def create_user():
             ON CREATE SET r.weight = 2
             """, {"correo": data["correo"], "juego": juego})
 
+        for amigo in data["amigos"]:
+            session.run("""
+            MATCH (u1:User {correo: $correo}), (u2:User {correo: $amigo})
+            MERGE (u1)-[r:FRIEND]->(u2)
+            ON CREATE SET r.weight = 1
+            """, {"correo": data["correo"], "amigo": amigo})
+
     return jsonify({"message": "Usuario creado y conectado a sus juegos favoritos"}), 201
 
 @videogames_bp.route('/recommendations/<correo>', methods=['GET'])
