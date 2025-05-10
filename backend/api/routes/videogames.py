@@ -87,14 +87,14 @@ def create_user():
             session.run("""
             MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
             MERGE (u)-[r:FAVORITE]->(g)
-            ON CREATE SET r.weight = 1
+            ON CREATE SET r.weight = 2
             """, {"correo": data["correo"], "juego": juego})
 
         for juego in data["juegos_interesados"]:
             session.run("""
             MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
             MERGE (u)-[r:INTERESTED]->(g)
-            ON CREATE SET r.weight = 2
+            ON CREATE SET r.weight = 1
             """, {"correo": data["correo"], "juego": juego})
 
         for amigo in data["amigos"]:

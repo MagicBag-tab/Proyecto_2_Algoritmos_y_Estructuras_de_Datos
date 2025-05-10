@@ -8,7 +8,8 @@ Content-Type: application/json
   "correo": "luis@example.com",
   "contraseña": "luis123",
   "juegos_favoritos": ["Halo Infinite", "FIFA 23"],
-  "juegos_interesados": ["Minecraft", "Cyberpunk 2077"]
+  "juegos_interesados": ["Minecraft", "Cyberpunk 2077"],
+  "amigos": ["ana@example.com", "pedro@example.com"]
 }
 
 ### Usuario 2
@@ -21,7 +22,8 @@ Content-Type: application/json
   "correo": "ana@example.com",
   "contraseña": "ana456",
   "juegos_favoritos": ["Minecraft", "Skyrim"],
-  "juegos_interesados": ["Halo Infinite", "The Witcher 3"]
+  "juegos_interesados": ["Halo Infinite", "The Witcher 3"],
+  "amigos": ["luis@example.com", "camila@example.com"]
 }
 
 ### Usuario 3
@@ -34,7 +36,8 @@ Content-Type: application/json
   "correo": "pedro@example.com",
   "contraseña": "pedro789",
   "juegos_favoritos": ["The Witcher 3", "Cyberpunk 2077"],
-  "juegos_interesados": ["FIFA 23", "Rocket League"]
+  "juegos_interesados": ["FIFA 23", "Rocket League"],
+  "amigos": ["luis@example.com", "marco@example.com"]
 }
 
 ### Usuario 4
@@ -47,7 +50,8 @@ Content-Type: application/json
   "correo": "camila@example.com",
   "contraseña": "camila321",
   "juegos_favoritos": ["Apex Legends", "Rocket League"],
-  "juegos_interesados": ["Gran Turismo 7", "Call of Duty: Modern Warfare II"]
+  "juegos_interesados": ["Gran Turismo 7", "Call of Duty: Modern Warfare II"],
+  "amigos": ["ana@example.com", "lucia@example.com"]
 }
 
 ### Usuario 5
@@ -60,7 +64,8 @@ Content-Type: application/json
   "correo": "marco@example.com",
   "contraseña": "marco777",
   "juegos_favoritos": ["FIFA 23", "Rocket League"],
-  "juegos_interesados": ["Apex Legends", "Skyrim"]
+  "juegos_interesados": ["Apex Legends", "Skyrim"],
+  "amigos": ["pedro@example.com", "carlos@example.com"]
 }
 
 ### Usuario 6
@@ -73,7 +78,8 @@ Content-Type: application/json
   "correo": "lucia@example.com",
   "contraseña": "lucia987",
   "juegos_favoritos": ["Cyberpunk 2077", "Call of Duty: Modern Warfare II"],
-  "juegos_interesados": ["The Witcher 3", "Minecraft"]
+  "juegos_interesados": ["The Witcher 3", "Minecraft"],
+  "amigos": ["camila@example.com", "daniela@example.com"]
 }
 
 ### Usuario 7
@@ -86,7 +92,8 @@ Content-Type: application/json
   "correo": "carlos@example.com",
   "contraseña": "carlos159",
   "juegos_favoritos": ["Gran Turismo 7", "Rocket League"],
-  "juegos_interesados": ["FIFA 23", "Halo Infinite"]
+  "juegos_interesados": ["FIFA 23", "Halo Infinite"],
+  "amigos": ["marco@example.com", "ivan@example.com"]
 }
 
 ### Usuario 8
@@ -99,7 +106,8 @@ Content-Type: application/json
   "correo": "daniela@example.com",
   "contraseña": "dani321",
   "juegos_favoritos": ["Skyrim", "The Witcher 3"],
-  "juegos_interesados": ["Cyberpunk 2077", "Apex Legends"]
+  "juegos_interesados": ["Cyberpunk 2077", "Apex Legends"],
+  "amigos": ["lucia@example.com", "andrea@example.com"]
 }
 
 ### Usuario 9
@@ -112,7 +120,8 @@ Content-Type: application/json
   "correo": "ivan@example.com",
   "contraseña": "ivan654",
   "juegos_favoritos": ["Apex Legends", "Call of Duty: Modern Warfare II"],
-  "juegos_interesados": ["Rocket League", "Gran Turismo 7"]
+  "juegos_interesados": ["Rocket League", "Gran Turismo 7"],
+  "amigos": ["carlos@example.com", "andrea@example.com"]
 }
 
 ### Usuario 10
@@ -126,6 +135,7 @@ Content-Type: application/json
   "contraseña": "andrea147",
   "juegos_favoritos": ["Minecraft", "Halo Infinite"],
   "juegos_interesados": ["Skyrim", "FIFA 23"],
-  "generos_favoritos": ["Acción", "Aventura"]
+  "generos_favoritos": ["Acción", "Aventura"],
+  "amigos": ["daniela@example.com", "ivan@example.com"]
 }
 
