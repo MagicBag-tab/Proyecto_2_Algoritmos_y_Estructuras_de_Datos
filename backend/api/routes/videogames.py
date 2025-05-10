@@ -14,6 +14,7 @@ def create_videogame():
         platforms: $platforms,
         score: $score,
         company: $company
+        hours_duration: $hours_duration,
     })
     """
     with get_driver().session() as session:
@@ -26,17 +27,32 @@ def create_videogame():
 
         FOREACH (_ IN CASE WHEN any(x IN new.genres WHERE x IN other.genres) THEN [1] ELSE [] END |
             MERGE (new)-[:SIMILAR_GENRE]->(other)
+            MERGE (other)-[:SIMILAR_GENRE]->(new)
         )
         FOREACH (_ IN CASE WHEN any(x IN new.platforms WHERE x IN other.platforms) THEN [1] ELSE [] END |
             MERGE (new)-[:SIMILAR_PLATFORM]->(other)
+            MERGE (other)-[:SIMILAR_PLATFORM]->(new)
         )
         FOREACH (_ IN CASE WHEN new.company = other.company THEN [1] ELSE [] END |
             MERGE (new)-[:SAME_COMPANY]->(other)
+            MERGE (other)-[:SAME_COMPANY]->(new)
+        )
+        FOREACH (_ IN CASE WHEN new.multiplayer = other.multiplayer THEN [1] ELSE [] END |
+            MERGE (new)-[:SAME_MULTIPLAYER]->(other)
+            MERGE (other)-[:SAME_MULTIPLAYER]->(new)
+        )
+        FOREACH (_ IN CASE WHEN new.hours_duration = other.hours_duration THEN [1] ELSE [] END |
+            MERGE (new)-[:SAME_DURATION]->(other)
+            MERGE (other)-[:SAME_DURATION]->(new)
+        )
+        FOREACH (_ IN CASE WHEN new.score = other.score THEN [1] ELSE [] END |
+            MERGE (new)-[:SAME_SCORE]->(other)
+            MERGE (other)-[:SAME_SCORE]->(new)
         )
         """
         session.run(relation_query, {"name": data["name"]})
 
-    return jsonify({"message": "Videogame creado y relacionado con otros"}), 201
+    return jsonify({"message": "Videojuego creado y relacionado con otros"}), 201
 
 @videogames_bp.route('/videogames', methods=['GET'])
 def get_all_videogames():
