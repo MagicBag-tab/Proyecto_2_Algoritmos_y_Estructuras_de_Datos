@@ -13,8 +13,8 @@ def create_videogame():
         genres: $genres,
         platforms: $platforms,
         score: $score,
-        company: $company
-        hours_duration: $hours_duration,
+        company: $company,
+        hours_duration: $hours_duration
     })
     """
     with get_driver().session() as session:
