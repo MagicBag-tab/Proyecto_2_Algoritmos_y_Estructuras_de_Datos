@@ -26,28 +26,40 @@ def create_videogame():
         WHERE new.name <> other.name
 
         FOREACH (_ IN CASE WHEN any(x IN new.genres WHERE x IN other.genres) THEN [1] ELSE [] END |
-            MERGE (new)-[:SIMILAR_GENRE]->(other)
-            MERGE (other)-[:SIMILAR_GENRE]->(new)
+            MERGE (new)-[r:SIMILAR_GENRE]->(other)
+            ON CREATE SET r.weight = 1
+            MERGE (other)-[r2:SIMILAR_GENRE]->(new)
+            ON CREATE SET r2.weight = 1
         )
         FOREACH (_ IN CASE WHEN any(x IN new.platforms WHERE x IN other.platforms) THEN [1] ELSE [] END |
-            MERGE (new)-[:SIMILAR_PLATFORM]->(other)
-            MERGE (other)-[:SIMILAR_PLATFORM]->(new)
+            MERGE (new)-[r:SIMILAR_PLATFORM]->(other)
+            ON CREATE SET r.weight = 1
+            MERGE (other)-[r2:SIMILAR_PLATFORM]->(new)
+            ON CREATE SET r2.weight = 1
         )
         FOREACH (_ IN CASE WHEN new.company = other.company THEN [1] ELSE [] END |
-            MERGE (new)-[:SAME_COMPANY]->(other)
-            MERGE (other)-[:SAME_COMPANY]->(new)
+            MERGE (new)-[r:SAME_COMPANY]->(other)
+            ON CREATE SET r.weight = 1
+            MERGE (other)-[r2:SAME_COMPANY]->(new)
+            ON CREATE SET r2.weight = 1
         )
         FOREACH (_ IN CASE WHEN new.multiplayer = other.multiplayer THEN [1] ELSE [] END |
-            MERGE (new)-[:SAME_MULTIPLAYER]->(other)
-            MERGE (other)-[:SAME_MULTIPLAYER]->(new)
+            MERGE (new)-[r:SAME_MULTIPLAYER]->(other)
+            ON CREATE SET r.weight = 1
+            MERGE (other)-[r2:SAME_MULTIPLAYER]->(new)
+            ON CREATE SET r2.weight = 1
         )
         FOREACH (_ IN CASE WHEN new.hours_duration = other.hours_duration THEN [1] ELSE [] END |
-            MERGE (new)-[:SAME_DURATION]->(other)
-            MERGE (other)-[:SAME_DURATION]->(new)
+            MERGE (new)-[r:SAME_DURATION]->(other)
+            ON CREATE SET r.weight = 1
+            MERGE (other)-[r2:SAME_DURATION]->(new)
+            ON CREATE SET r2.weight = 1
         )
         FOREACH (_ IN CASE WHEN new.score = other.score THEN [1] ELSE [] END |
-            MERGE (new)-[:SAME_SCORE]->(other)
-            MERGE (other)-[:SAME_SCORE]->(new)
+            MERGE (new)-[r:SAME_SCORE]->(other)
+            ON CREATE SET r.weight = 1
+            MERGE (other)-[r2:SAME_SCORE]->(new)
+            ON CREATE SET r2.weight = 1
         )
         """
         session.run(relation_query, {"name": data["name"]})
