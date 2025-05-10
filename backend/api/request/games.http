@@ -115,7 +115,8 @@ Content-Type: application/json
   "genres": ["Sandbox", "Survival"],
   "platforms": ["PC", "Xbox", "PS5"],
   "score": 9.2,
-  "company": "Mojang"
+  "company": "Mojang",
+  "hours_duration": 0
 }
 
 ### 10. Skyrim

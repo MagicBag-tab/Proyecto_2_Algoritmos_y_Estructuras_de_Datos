@@ -115,6 +115,7 @@ Content-Type: application/json
   "apellido": "Cruz",
   "correo": "andrea@example.com",
   "contraseña": "andrea147",
-  "juegos_favoritos": ["Minecraft", "Halo Infinite"]
+  "juegos_favoritos": ["Minecraft", "Halo Infinite"],
+  "generos_favoritos": ["Acción", "Aventura"]
 }
 
