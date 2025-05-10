@@ -102,6 +102,8 @@ def create_user():
             MATCH (u1:User {correo: $correo}), (u2:User {correo: $amigo})
             MERGE (u1)-[r:FRIEND]->(u2)
             ON CREATE SET r.weight = 1
+            MERGE (u2)-[r2:FRIEND]->(u1)
+            ON CREATE SET r2.weight = 1
             """, {"correo": data["correo"], "amigo": amigo})
 
     return jsonify({"message": "Usuario creado y conectado a sus juegos favoritos"}), 201
