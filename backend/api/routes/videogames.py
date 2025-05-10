@@ -132,3 +132,26 @@ def recommend_games(correo):
         result = session.run(query, {"correo": correo})
         games = [record["rec"]._properties for record in result]
     return jsonify(games), 200
+
+@videogames_bp.route('/recommendations/top3/<correo>', methods=['GET'])
+def get_top3_recommendations(correo):
+    query = """
+    MATCH (u:User {correo: $correo})-[:FAVORITE]->(f:Game)
+    MATCH (f)-[rel]->(rec:Game)
+    WHERE NOT (u)-[:FAVORITE]->(rec)
+    WITH rec, SUM(rel.weight) AS total_weight
+    MATCH (u)-[:FRIEND]->(friend:User)-[:FAVORITE]->(friend_fav:Game)
+    MATCH (friend_fav)-[friend_rel]->(rec)
+    WHERE NOT (u)-[:FAVORITE]->(rec)
+    WITH rec, total_weight + SUM(friend_rel.weight) AS final_weight
+    RETURN rec, final_weight
+    ORDER BY final_weight DESC
+    LIMIT 3
+    """
+    with get_driver().session() as session:
+        result = session.run(query, {"correo": correo})
+        recommendations = [
+            {"game": record["rec"]._properties, "weight": record["final_weight"]}
+            for record in result
+        ]
+    return jsonify(recommendations), 200
