@@ -87,7 +87,6 @@ def create_user():
             session.run("""
             MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
             MERGE (u)-[:FAVORITE]->(g)
-            ON CREATE SET weight = 10
             """, {"correo": data["correo"], "juego": juego})
 
     return jsonify({"message": "Usuario creado y conectado a sus juegos favoritos"}), 201
