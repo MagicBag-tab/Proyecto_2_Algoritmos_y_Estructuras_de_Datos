@@ -143,7 +143,8 @@ def get_top3_recommendations(correo):
     MATCH (u)-[:FRIEND]->(friend:User)-[:FAVORITE]->(friend_fav:Game)
     MATCH (friend_fav)-[friend_rel]->(rec)
     WHERE NOT (u)-[:FAVORITE]->(rec)
-    WITH rec, total_weight + SUM(friend_rel.weight) AS final_weight
+    WITH rec, total_weight, SUM(friend_rel.weight) AS friend_weight
+    WITH rec, (total_weight + friend_weight) AS final_weight
     RETURN rec, final_weight
     ORDER BY final_weight DESC
     LIMIT 3
