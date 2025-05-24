@@ -108,6 +108,47 @@ def get_all_videogames():
             results.append(g._properties)
     return jsonify(results), 200
 
+@videogames_bp.route('/videogames/<name>', methods=['GET'])
+def get_videogame(name):
+    query = "MATCH (g:Game {name: $name}) RETURN g"
+    with get_driver().session() as session:
+        result = session.run(query, {"name": name})
+        record = result.single()
+        if record:
+            g = record["g"]
+            return jsonify(g._properties), 200
+        else:
+            return jsonify({"error": "Videojuego no encontrado"}), 404
+        
+@videogames_bp.route('/videogames/<name>', methods=['DELETE'])
+def delete_videogame(name):
+    query = "MATCH (g:Game {name: $name}) DETACH DELETE g"
+    with get_driver().session() as session:
+        result = session.run(query, {"name": name})
+        if result.summary().counters.nodes_deleted > 0:
+            return jsonify({"message": "Videojuego eliminado"}), 200
+        else:
+            return jsonify({"error": "Videojuego no encontrado"}), 404
+        
+@videogames_bp.route('/videogames/<name>', methods=['PUT'])
+def update_videogame(name):
+    data = request.get_json()
+    query = """
+    MATCH (g:Game {name: $name})
+    SET g.multiplayer = $multiplayer,
+        g.genres = $genres,
+        g.platforms = $platforms,
+        g.score = $score,
+        g.company = $company,
+        g.hours_duration = $hours_duration
+    """
+    with get_driver().session() as session:
+        result = session.run(query, {"name": name, **data})
+        if result.summary().counters.properties_set > 0:
+            return jsonify({"message": "Videojuego actualizado"}), 200
+        else:
+            return jsonify({"error": "Videojuego no encontrado"}), 404
+
 @videogames_bp.route('/users', methods=['POST'])
 def create_user():
     data = request.get_json()
@@ -141,6 +182,20 @@ def create_user():
             ON CREATE SET r.weight = 1
             """, {"correo": data["correo"], "juego": juego})
 
+        for juego in data["juegos_no_gustados"]:
+            session.run("""
+            MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
+            MERGE (u)-[r:NO_GUSTADOS]->(g)
+            ON CREATE SET r.weight = -1
+            """, {"correo": data["correo"], "juego": juego})
+
+        for juego in data["juegos_jugados"]:
+            session.run("""
+            MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
+            MERGE (u)-[r:PLAYED]->(g)
+            ON CREATE SET r.weight = 0
+            """, {"correo": data["correo"], "juego": juego})
+
         for amigo in data["amigos"]:
             session.run("""
             MATCH (u1:User {correo: $correo}), (u2:User {correo: $amigo})
@@ -150,41 +205,52 @@ def create_user():
             ON CREATE SET r2.weight = 1
             """, {"correo": data["correo"], "amigo": amigo})
 
-    return jsonify({"message": "Usuario creado y conectado a sus juegos favoritos"}), 201
+    return jsonify({"message": "Usuario creado"}), 201
 
-@videogames_bp.route('/recommendations/<correo>', methods=['GET'])
-def recommend_games(correo):
-    query = """
-    MATCH (u:User {correo: $correo})-[:FAVORITE]->(f:Game)
-    MATCH (f)-[:SIMILAR_GENRE|SIMILAR_PLATFORM|SAME_COMPANY]->(rec:Game)
-    WHERE NOT (u)-[:FAVORITE]->(rec)
-    RETURN DISTINCT rec LIMIT 10
-    """
+@videogames_bp.route('/users', methods=['GET'])
+def get_all_users():
+    query = "MATCH (u:User) RETURN u"
+    results = []
+    with get_driver().session() as session:
+        for record in session.run(query):
+            u = record["u"]
+            results.append(u._properties)
+    return jsonify(results), 200
+
+@videogames_bp.route('/users/<correo>', methods=['GET'])
+def get_user(correo):
+    query = "MATCH (u:User {correo: $correo}) RETURN u"
     with get_driver().session() as session:
         result = session.run(query, {"correo": correo})
-        games = [record["rec"]._properties for record in result]
-    return jsonify(games), 200
-
-@videogames_bp.route('/recommendations/top3/<correo>', methods=['GET'])
-def get_top3_recommendations(correo):
-    query = """
-    MATCH (u:User {correo: $correo})-[:FAVORITE]->(f:Game)
-    MATCH (f)-[rel]->(rec:Game)
-    WHERE NOT (u)-[:FAVORITE]->(rec)
-    WITH rec, SUM(rel.weight) AS total_weight
-    MATCH (u)-[:FRIEND]->(friend:User)-[:FAVORITE]->(friend_fav:Game)
-    MATCH (friend_fav)-[friend_rel]->(rec)
-    WHERE NOT (u)-[:FAVORITE]->(rec)
-    WITH rec, total_weight, SUM(friend_rel.weight) AS friend_weight
-    WITH rec, (total_weight + friend_weight) AS final_weight
-    RETURN rec, final_weight
-    ORDER BY final_weight DESC
-    LIMIT 3
-    """
+        record = result.single()
+        if record:
+            u = record["u"]
+            return jsonify(u._properties), 200
+        else:
+            return jsonify({"error": "Usuario no encontrado"}), 404
+        
+@videogames_bp.route('/users/<correo>', methods=['DELETE'])
+def delete_user(correo):
+    query = "MATCH (u:User {correo: $correo}) DETACH DELETE u"
     with get_driver().session() as session:
         result = session.run(query, {"correo": correo})
-        recommendations = [
-            {"game": record["rec"]._properties, "weight": record["final_weight"]}
-            for record in result
-        ]
-    return jsonify(recommendations), 200
+        if result.summary().counters.nodes_deleted > 0:
+            return jsonify({"message": "Usuario eliminado"}), 200
+        else:
+            return jsonify({"error": "Usuario no encontrado"}), 404
+        
+@videogames_bp.route('/users/<correo>', methods=['PUT'])
+def update_user(correo):
+    data = request.get_json()
+    query = """
+    MATCH (u:User {correo: $correo})
+    SET u.nombre = $nombre,
+        u.apellido = $apellido,
+        u.contraseña = $contraseña
+    """
+    with get_driver().session() as session:
+        result = session.run(query, {"correo": correo, **data})
+        if result.summary().counters.properties_set > 0:
+            return jsonify({"message": "Usuario actualizado"}), 200
+        else:
+            return jsonify({"error": "Usuario no encontrado"}), 404
