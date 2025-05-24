@@ -10,7 +10,8 @@ Content-Type: application/json
   "genres": ["Shooter", "Sci-Fi"],
   "platforms": ["Xbox", "PC"],
   "score": 8.7,
-  "company": "343 Industries"
+  "company": "343 Industries",
+  "hours_duration": 0
 }
 
 ### 2. Call of Duty: Modern Warfare II
@@ -23,7 +24,8 @@ Content-Type: application/json
   "genres": ["Shooter", "Action"],
   "platforms": ["PC", "Xbox", "PS5"],
   "score": 8.0,
-  "company": "Activision"
+  "company": "Activision",
+  "hours_duration": 0
 }
 
 ### 3. Apex Legends
@@ -36,7 +38,8 @@ Content-Type: application/json
   "genres": ["Shooter", "Battle Royale"],
   "platforms": ["PC", "Xbox", "PS5"],
   "score": 8.2,
-  "company": "Respawn Entertainment"
+  "company": "Respawn Entertainment",
+  "hours_duration": 0
 }
 
 ### 4. FIFA 23
@@ -49,7 +52,8 @@ Content-Type: application/json
   "genres": ["Sports"],
   "platforms": ["PC", "Xbox", "PS5"],
   "score": 7.5,
-  "company": "EA Sports"
+  "company": "EA Sports",
+  "hours_duration": 0
 }
 
 ### 5. The Witcher 3
@@ -62,7 +66,8 @@ Content-Type: application/json
   "genres": ["RPG", "Fantasy"],
   "platforms": ["PC", "Xbox", "PS5"],
   "score": 9.5,
-  "company": "CD Projekt"
+  "company": "CD Projekt",
+  "hours_duration": 0
 }
 
 ### 6. Cyberpunk 2077
@@ -75,7 +80,8 @@ Content-Type: application/json
   "genres": ["RPG", "Sci-Fi"],
   "platforms": ["PC", "Xbox", "PS5"],
   "score": 8.0,
-  "company": "CD Projekt"
+  "company": "CD Projekt",
+  "hours_duration": 0
 }
 
 ### 7. Rocket League
@@ -88,7 +94,8 @@ Content-Type: application/json
   "genres": ["Sports", "Racing"],
   "platforms": ["PC", "Xbox", "PS5"],
   "score": 8.1,
-  "company": "Psyonix"
+  "company": "Psyonix",
+  "hours_duration": 0
 }
 
 ### 8. Gran Turismo 7
@@ -101,7 +108,8 @@ Content-Type: application/json
   "genres": ["Racing", "Simulation"],
   "platforms": ["PS5"],
   "score": 8.3,
-  "company": "Polyphony Digital"
+  "company": "Polyphony Digital",
+  "hours_duration": 30
 }
 
 ### 9. Minecraft
@@ -114,7 +122,8 @@ Content-Type: application/json
   "genres": ["Sandbox", "Survival"],
   "platforms": ["PC", "Xbox", "PS5"],
   "score": 9.2,
-  "company": "Mojang"
+  "company": "Mojang",
+  "hours_duration": 0
 }
 
 ### 10. Skyrim
@@ -127,5 +136,6 @@ Content-Type: application/json
   "genres": ["RPG", "Fantasy"],
   "platforms": ["PC", "Xbox", "PS5"],
   "score": 9.0,
-  "company": "Bethesda"
+  "company": "Bethesda",
+  "hours_duration": 0
 }
