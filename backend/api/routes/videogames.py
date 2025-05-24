@@ -51,15 +51,47 @@ def create_videogame():
         )
         FOREACH (_ IN CASE WHEN new.hours_duration = other.hours_duration THEN [1] ELSE [] END |
             MERGE (new)-[r:SAME_DURATION]->(other)
-            ON CREATE SET r.weight = 1
+            ON CREATE SET r.weight =
+                CASE
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 10 THEN 5
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 20 THEN 4
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 30 THEN 3
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 40 THEN 2
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 50 THEN 1
+                    ELSE 0
+                END
             MERGE (other)-[r2:SAME_DURATION]->(new)
-            ON CREATE SET r2.weight = 1
+            ON CREATE SET r2.weight =
+                CASE
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 10 THEN 5
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 20 THEN 4
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 30 THEN 3
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 40 THEN 2
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 50 THEN 1
+                    ELSE 0
+                END
         )
         FOREACH (_ IN CASE WHEN new.score = other.score THEN [1] ELSE [] END |
             MERGE (new)-[r:SAME_SCORE]->(other)
-            ON CREATE SET r.weight = 1
+            ON CREATE SET r.weight =
+                CASE
+                    WHEN abs(new.score - other.score) <= 0.1 THEN 5
+                    WHEN abs(new.score - other.score) <= 0.2 THEN 4
+                    WHEN abs(new.score - other.score) <= 0.3 THEN 3
+                    WHEN abs(new.score - other.score) <= 0.4 THEN 2
+                    WHEN abs(new.score - other.score) <= 0.5 THEN 1
+                    ELSE 0
+                END
             MERGE (other)-[r2:SAME_SCORE]->(new)
-            ON CREATE SET r2.weight = 1
+            ON CREATE SET r2.weight =
+                CASE
+                    WHEN abs(new.score - other.score) <= 0.1 THEN 5
+                    WHEN abs(new.score - other.score) <= 0.2 THEN 4
+                    WHEN abs(new.score - other.score) <= 0.3 THEN 3
+                    WHEN abs(new.score - other.score) <= 0.4 THEN 2
+                    WHEN abs(new.score - other.score) <= 0.5 THEN 1
+                    ELSE 0
+                END
         )
         """
         session.run(relation_query, {"name": data["name"]})
