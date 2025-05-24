@@ -27,27 +27,27 @@ def create_videogame():
 
         FOREACH (_ IN CASE WHEN any(x IN new.genres WHERE x IN other.genres) THEN [1] ELSE [] END |
             MERGE (new)-[r:SIMILAR_GENRE]->(other)
-            ON CREATE SET r.weight = 1
+            ON CREATE SET r.weight = 5
             MERGE (other)-[r2:SIMILAR_GENRE]->(new)
-            ON CREATE SET r2.weight = 1
+            ON CREATE SET r2.weight = 5
         )
         FOREACH (_ IN CASE WHEN any(x IN new.platforms WHERE x IN other.platforms) THEN [1] ELSE [] END |
             MERGE (new)-[r:SIMILAR_PLATFORM]->(other)
-            ON CREATE SET r.weight = 1
+            ON CREATE SET r.weight = 5
             MERGE (other)-[r2:SIMILAR_PLATFORM]->(new)
-            ON CREATE SET r2.weight = 1
+            ON CREATE SET r2.weight = 5
         )
         FOREACH (_ IN CASE WHEN new.company = other.company THEN [1] ELSE [] END |
             MERGE (new)-[r:SAME_COMPANY]->(other)
-            ON CREATE SET r.weight = 1
+            ON CREATE SET r.weight = 5
             MERGE (other)-[r2:SAME_COMPANY]->(new)
-            ON CREATE SET r2.weight = 1
+            ON CREATE SET r2.weight = 5
         )
         FOREACH (_ IN CASE WHEN new.multiplayer = other.multiplayer THEN [1] ELSE [] END |
             MERGE (new)-[r:SAME_MULTIPLAYER]->(other)
-            ON CREATE SET r.weight = 1
+            ON CREATE SET r.weight = 5
             MERGE (other)-[r2:SAME_MULTIPLAYER]->(new)
-            ON CREATE SET r2.weight = 1
+            ON CREATE SET r2.weight = 5
         )
         FOREACH (_ IN CASE WHEN new.hours_duration = other.hours_duration THEN [1] ELSE [] END |
             MERGE (new)-[r:SAME_DURATION]->(other)
@@ -172,21 +172,21 @@ def create_user():
             session.run("""
             MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
             MERGE (u)-[r:FAVORITE]->(g)
-            ON CREATE SET r.weight = 2
+            ON CREATE SET r.weight = 5
             """, {"correo": data["correo"], "juego": juego})
 
         for juego in data["juegos_interesados"]:
             session.run("""
             MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
             MERGE (u)-[r:INTERESTED]->(g)
-            ON CREATE SET r.weight = 1
+            ON CREATE SET r.weight = 2
             """, {"correo": data["correo"], "juego": juego})
 
         for juego in data["juegos_no_gustados"]:
             session.run("""
             MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
             MERGE (u)-[r:NO_GUSTADOS]->(g)
-            ON CREATE SET r.weight = -1
+            ON CREATE SET r.weight = -5
             """, {"correo": data["correo"], "juego": juego})
 
         for juego in data["juegos_jugados"]:
@@ -200,9 +200,9 @@ def create_user():
             session.run("""
             MATCH (u1:User {correo: $correo}), (u2:User {correo: $amigo})
             MERGE (u1)-[r:FRIEND]->(u2)
-            ON CREATE SET r.weight = 1
+            ON CREATE SET r.weight = 5
             MERGE (u2)-[r2:FRIEND]->(u1)
-            ON CREATE SET r2.weight = 1
+            ON CREATE SET r2.weight = 5
             """, {"correo": data["correo"], "amigo": amigo})
 
     return jsonify({"message": "Usuario creado"}), 201
