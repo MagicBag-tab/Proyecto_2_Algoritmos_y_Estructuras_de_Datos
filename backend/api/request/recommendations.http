@@ -1,39 +1,29 @@
-### Recomendaciones para Usuario 1 (Luis)
-GET http://localhost:5050/api/v1/recommendations/top3/luis@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/carlos.ramirez1@example.com
 Content-Type: application/json
 
-### Recomendaciones para Usuario 2 (Ana)
-GET http://localhost:5050/api/v1/recommendations/top3/ana@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/lucia.gomez2@example.com
 Content-Type: application/json
 
-### Recomendaciones para Usuario 3 (Pedro)
-GET http://localhost:5050/api/v1/recommendations/top3/pedro@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/mariana.lopez3@example.com
 Content-Type: application/json
 
-### Recomendaciones para Usuario 4 (Camila)
-GET http://localhost:5050/api/v1/recommendations/top3/camila@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/andres.martinez4@example.com
 Content-Type: application/json
 
-### Recomendaciones para Usuario 5 (Marco)
-GET http://localhost:5050/api/v1/recommendations/top3/marco@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/valeria.mendoza5@example.com
 Content-Type: application/json
 
-### Recomendaciones para Usuario 6 (Lucía)
-GET http://localhost:5050/api/v1/recommendations/top3/lucia@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/pedro.reyes6@example.com
 Content-Type: application/json
 
-### Recomendaciones para Usuario 7 (Carlos)
-GET http://localhost:5050/api/v1/recommendations/top3/carlos@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/sofia.cruz7@example.com
 Content-Type: application/json
 
-### Recomendaciones para Usuario 8 (Daniela)
-GET http://localhost:5050/api/v1/recommendations/top3/daniela@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/david.castillo8@example.com
 Content-Type: application/json
 
-### Recomendaciones para Usuario 9 (Iván)
-GET http://localhost:5050/api/v1/recommendations/top3/ivan@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/ana.morales9@example.com
 Content-Type: application/json
 
-### Recomendaciones para Usuario 10 (Andrea)
-GET http://localhost:5050/api/v1/recommendations/top3/andrea@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/luis.navarro10@example.com
 Content-Type: application/json
