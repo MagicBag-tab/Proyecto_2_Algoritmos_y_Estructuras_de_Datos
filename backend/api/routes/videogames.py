@@ -53,21 +53,21 @@ def create_videogame():
             MERGE (new)-[r:SAME_DURATION]->(other)
             ON CREATE SET r.weight =
                 CASE
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 10 THEN 5
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 20 THEN 4
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 30 THEN 3
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 40 THEN 2
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 50 THEN 1
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 5 THEN 5
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 10 THEN 4
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 15 THEN 3
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 20 THEN 2
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 25 THEN 1
                     ELSE 0
                 END
             MERGE (other)-[r2:SAME_DURATION]->(new)
             ON CREATE SET r2.weight =
                 CASE
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 10 THEN 5
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 20 THEN 4
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 30 THEN 3
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 40 THEN 2
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 50 THEN 1
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 5 THEN 5
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 10 THEN 4
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 15 THEN 3
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 20 THEN 2
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 25 THEN 1
                     ELSE 0
                 END
         )
