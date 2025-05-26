@@ -56,7 +56,7 @@ Content-Type: application/json
   "correo": "camila@example.com",
   "contraseña": "cami456",
   "juegos_favoritos": ["The Sims 4", "Cities: Skylines"],
-  "juegos_interesados": ["Planet Zoo"],
+  "juegos_interesados": ["Stardew Valley"],
   "juegos_no_gustados": ["FIFA 23"],
   "juegos_jugados": ["The Sims 4"],
   "amigos": ["ana@example.com"]
@@ -104,7 +104,7 @@ Content-Type: application/json
   "correo": "valentina@example.com",
   "contraseña": "vale321",
   "juegos_favoritos": ["Animal Crossing", "Stardew Valley"],
-  "juegos_interesados": ["Spiritfarer"],
+  "juegos_interesados": ["Ori and the Will of the Wisps"],
   "juegos_no_gustados": ["Call of Duty: Modern Warfare II"],
   "juegos_jugados": ["Stardew Valley"],
   "amigos": ["camila@example.com"]
@@ -119,8 +119,8 @@ Content-Type: application/json
   "apellido": "Martínez",
   "correo": "carlos@example.com",
   "contraseña": "zxcvb",
-  "juegos_favoritos": ["Red Dead Redemption 2", "Horizon Zero Dawn"],
-  "juegos_interesados": ["Horizon Forbidden West"],
+  "juegos_favoritos": ["Red Dead Redemption 2", "The Legend of Zelda: Breath of the Wild"],
+  "juegos_interesados": ["Elden Ring"],
   "juegos_no_gustados": ["League of Legends"],
   "juegos_jugados": ["Red Dead Redemption 2"],
   "amigos": []
@@ -136,7 +136,7 @@ Content-Type: application/json
   "correo": "sofia@example.com",
   "contraseña": "sofia123",
   "juegos_favoritos": ["Overcooked 2", "It Takes Two"],
-  "juegos_interesados": ["Unravel Two"],
+  "juegos_interesados": ["It Takes Two"],
   "juegos_no_gustados": ["CS:GO"],
   "juegos_jugados": ["Overcooked 2"],
   "amigos": ["valentina@example.com"]
@@ -153,7 +153,7 @@ Content-Type: application/json
   "contraseña": "juan321",
   "juegos_favoritos": ["Halo Infinite", "Cyberpunk 2077"],
   "juegos_interesados": ["The Witcher 3"],
-  "juegos_no_gustados": ["FIFA 22"],
+  "juegos_no_gustados": ["FIFA 23"],
   "juegos_jugados": ["Halo Infinite", "Call of Duty: Modern Warfare II"],
   "amigos": ["camila@example.com", "pedro@example.com"]
 }
