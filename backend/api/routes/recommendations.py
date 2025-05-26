@@ -1,9 +1,9 @@
 from flask import Blueprint, request, jsonify
 from neo4j_driver import get_driver
 
-videogames_bp = Blueprint('recommendations', __name__)
+recommendations_bp = Blueprint('recommendations', __name__)
 
-@videogames_bp.route('/recommendations', methods=['GET'])
+@recommendations_bp.route('/recommendations', methods=['GET'])
 def get_recommendations():
     correo = request.args.get('correo')
     if not correo:
