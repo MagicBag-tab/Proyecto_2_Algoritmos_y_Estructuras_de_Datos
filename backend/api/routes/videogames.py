@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from neo4j_driver import get_driver
 
-videogames_bp = Blueprint('videogames', __name__)
+videogames_bp = Blueprint('videogames', _name_)
 
 @videogames_bp.route('/videogames', methods=['POST'])
 def create_videogame():
@@ -254,3 +254,165 @@ def update_user(correo):
             return jsonify({"message": "Usuario actualizado"}), 200
         else:
             return jsonify({"error": "Usuario no encontrado"}), 404
+
+@videogames_bp.route('/users/<correo>/actualizar_juegos', methods=['PUT'])
+def update_user_games(correo):
+    data = request.get_json()
+    mensajes = []
+
+    with get_driver().session() as session:
+        # Actualizar juegos favoritos
+        for juego in data.get("juegos_favoritos", []):
+            result = session.run("""
+                MATCH (u:User {correo: $correo})-[r:FAVORITE]->(g:Game {name: $juego})
+                RETURN r
+            """, {"correo": correo, "juego": juego})
+            if result.single():
+                mensajes.append(f"{juego} ya es favorito.")
+            else:
+                session.run("""
+                    MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
+                    MERGE (u)-[r:FAVORITE]->(g)
+                    ON CREATE SET r.weight = 5
+                """, {"correo": correo, "juego": juego})
+                mensajes.append(f"{juego} agregado como favorito.")
+
+        # Actualizar juegos interesados
+        for juego in data.get("juegos_interesados", []):
+            result = session.run("""
+                MATCH (u:User {correo: $correo})-[r:INTERESTED]->(g:Game {name: $juego})
+                RETURN r
+            """, {"correo": correo, "juego": juego})
+            if result.single():
+                mensajes.append(f"{juego} ya está como interesado.")
+            else:
+                session.run("""
+                    MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
+                    MERGE (u)-[r:INTERESTED]->(g)
+                    ON CREATE SET r.weight = 2
+                """, {"correo": correo, "juego": juego})
+                mensajes.append(f"{juego} agregado como interesado.")
+
+        # Actualizar juegos no gustados
+        for juego in data.get("juegos_no_gustados", []):
+            result = session.run("""
+                MATCH (u:User {correo: $correo})-[r:NO_GUSTADOS]->(g:Game {name: $juego})
+                RETURN r
+            """, {"correo": correo, "juego": juego})
+            if result.single():
+                mensajes.append(f"{juego} ya está como no gustado.")
+            else:
+                session.run("""
+                    MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
+                    MERGE (u)-[r:NO_GUSTADOS]->(g)
+                    ON CREATE SET r.weight = -5
+                """, {"correo": correo, "juego": juego})
+                mensajes.append(f"{juego} agregado como no gustado.")
+
+        # Actualizar juegos jugados
+        for juego in data.get("juegos_jugados", []):
+            result = session.run("""
+                MATCH (u:User {correo: $correo})-[r:PLAYED]->(g:Game {name: $juego})
+                RETURN r
+            """, {"correo": correo, "juego": juego})
+            if result.single():
+                mensajes.append(f"{juego} ya está como jugado.")
+            else:
+                session.run("""
+                    MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
+                    MERGE (u)-[r:PLAYED]->(g)
+                    ON CREATE SET r.weight = 0
+                """, {"correo": correo, "juego": juego})
+                mensajes.append(f"{juego} agregado como jugado.")
+
+    return jsonify({"mensajes": mensajes}), 200
+
+@videogames_bp.route('users/<correo>/actualizar_contraseña', methods=['PUT'])
+def update_user_password(correo):
+    data = request.get_json()
+    new_password = data.get("contraseña")
+    if not new_password:
+        return jsonify({"error": "Nueva contraseña requerida"}), 400
+
+    query = """
+    MATCH (u:User {correo: $correo})
+    SET u.contraseña = $contraseña
+    """
+    with get_driver().session() as session:
+        result = session.run(query, {"correo": correo, "contraseña": new_password})
+        if result.summary().counters.properties_set > 0:
+            return jsonify({"message": "Contraseña actualizada"}), 200
+        else:
+            return jsonify({"error": "Usuario no encontrado"}), 404
+        
+@videogames_bp.route('/users/<correo>/actualizar_amigos', methods=['PUT'])
+def update_user_friends(correo):
+    data = request.get_json()
+    amigos = data.get("amigos", [])
+
+    with get_driver().session() as session:
+        mensajes = []
+        for amigo in amigos:
+            # Verifica si la relación ya existe
+            result = session.run("""
+                MATCH (u1:User {correo: $correo})-[r:FRIEND]->(u2:User {correo: $amigo})
+                RETURN r
+            """, {"correo": correo, "amigo": amigo})
+            if result.single():
+                mensajes.append(f"{amigo} ya es amigo.")
+            else:
+                # Crea la relación en ambos sentidos
+                session.run("""
+                    MATCH (u1:User {correo: $correo}), (u2:User {correo: $amigo})
+                    MERGE (u1)-[r:FRIEND]->(u2)
+                    ON CREATE SET r.weight = 5
+                    MERGE (u2)-[r2:FRIEND]->(u1)
+                    ON CREATE SET r2.weight = 5
+                """, {"correo": correo, "amigo": amigo})
+                mensajes.append(f"{amigo} agregado como amigo.")
+
+    return jsonify({"mensajes": mensajes}), 200
+
+@videogames_bp.route('/users/<correo>/actualizar_correo', methods=['PUT'])
+def update_user_email(correo):
+    data = request.get_json()
+    new_email = data.get("correo")
+    if not new_email:
+        return jsonify({"error": "Nuevo correo requerido"}), 400
+
+    query = """
+    MATCH (u:User {correo: $correo})
+    SET u.correo = $nuevo_correo
+    """
+    with get_driver().session() as session:
+        result = session.run(query, {"correo": correo, "nuevo_correo": new_email})
+        if result.summary().counters.properties_set > 0:
+            return jsonify({"message": "Correo actualizado"}), 200
+        else:
+            return jsonify({"error": "Usuario no encontrado"}), 404
+        
+@videogames_bp.route('/users/<correo>/eliminar_amigo/<amigo>', methods=['DELETE'])
+def delete_user_friend(correo, amigo):
+    query = """
+    MATCH (u1:User {correo: $correo})-[r:FRIEND]->(u2:User {correo: $amigo})
+    DELETE r
+    """
+    with get_driver().session() as session:
+        result = session.run(query, {"correo": correo, "amigo": amigo})
+        if result.summary().counters.relationships_deleted > 0:
+            return jsonify({"message": "Amigo eliminado"}), 200
+        else:
+            return jsonify({"error": "Amigo no encontrado"}), 404
+        
+@videogames_bp.route('/users/<correo>/eliminar_juego/<juego>', methods=['DELETE'])
+def delete_user_game(correo, juego):
+    query = """
+    MATCH (u:User {correo: $correo})-[r:FAVORITE|INTERESTED|NO_GUSTADOS|PLAYED]->(g:Game {name: $juego})
+    DELETE r
+    """
+    with get_driver().session() as session:
+        result = session.run(query, {"correo": correo, "juego": juego})
+        if result.summary().counters.relationships_deleted > 0:
+            return jsonify({"message": "Juego eliminado de las relaciones del usuario"}), 200
+        else:
+            return jsonify({"error": "Juego no encontrado en las relaciones del usuario"}), 404
