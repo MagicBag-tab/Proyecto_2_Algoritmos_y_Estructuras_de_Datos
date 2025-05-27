@@ -1,5 +1,3 @@
-###Creación de Videojuegos
-
 ### 1. Halo Infinite
 POST http://localhost:5050/api/v1/videogames
 Content-Type: application/json
@@ -28,7 +26,77 @@ Content-Type: application/json
   "hours_duration": 0
 }
 
-### 3. Apex Legends
+### 3. The Witcher 3: Wild Hunt
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "The Witcher 3: Wild Hunt",
+  "multiplayer": false,
+  "genres": ["RPG", "Adventure", "Fantasy"],
+  "platforms": ["PC", "PS5", "Xbox"],
+  "score": 9.5,
+  "company": "CD Projekt Red",
+  "hours_duration": 100
+}
+
+### 4. Stardew Valley
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Stardew Valley",
+  "multiplayer": true,
+  "genres": ["Simulation", "Indie", "Farming"],
+  "platforms": ["PC", "Switch", "PS4", "Xbox", "Mobile"],
+  "score": 9.0,
+  "company": "ConcernedApe",
+  "hours_duration": 60
+}
+
+### 5. Celeste
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Celeste",
+  "multiplayer": false,
+  "genres": ["Platformer", "Indie"],
+  "platforms": ["PC", "Switch", "PS4", "Xbox"],
+  "score": 9.2,
+  "company": "Matt Makes Games",
+  "hours_duration": 10
+}
+
+### 6. Hades
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Hades",
+  "multiplayer": false,
+  "genres": ["Roguelike", "Action", "Indie"],
+  "platforms": ["PC", "Switch", "PS5", "Xbox"],
+  "score": 9.4,
+  "company": "Supergiant Games",
+  "hours_duration": 25
+}
+
+### 7. Minecraft
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Minecraft",
+  "multiplayer": true,
+  "genres": ["Sandbox", "Survival", "Creative"],
+  "platforms": ["PC", "Mobile", "Switch", "PS4", "Xbox"],
+  "score": 9.3,
+  "company": "Mojang Studios",
+  "hours_duration": 0
+}
+
+### 8. Apex Legends
 POST http://localhost:5050/api/v1/videogames
 Content-Type: application/json
 
@@ -36,106 +104,316 @@ Content-Type: application/json
   "name": "Apex Legends",
   "multiplayer": true,
   "genres": ["Shooter", "Battle Royale"],
-  "platforms": ["PC", "Xbox", "PS5"],
+  "platforms": ["PC", "Xbox", "PS4", "PS5"],
   "score": 8.2,
   "company": "Respawn Entertainment",
   "hours_duration": 0
 }
 
-### 4. FIFA 23
+### 9. Fortnite
 POST http://localhost:5050/api/v1/videogames
 Content-Type: application/json
 
 {
-  "name": "FIFA 23",
+  "name": "Fortnite",
   "multiplayer": true,
-  "genres": ["Sports"],
-  "platforms": ["PC", "Xbox", "PS5"],
-  "score": 7.5,
-  "company": "EA Sports",
+  "genres": ["Shooter", "Battle Royale", "Building"],
+  "platforms": ["PC", "Switch", "Mobile", "PS4", "Xbox"],
+  "score": 7.8,
+  "company": "Epic Games",
   "hours_duration": 0
 }
 
-### 5. The Witcher 3
+### 10. Undertale
 POST http://localhost:5050/api/v1/videogames
 Content-Type: application/json
 
 {
-  "name": "The Witcher 3",
+  "name": "Undertale",
   "multiplayer": false,
-  "genres": ["RPG", "Fantasy"],
-  "platforms": ["PC", "Xbox", "PS5"],
-  "score": 9.5,
-  "company": "CD Projekt",
+  "genres": ["RPG", "Indie", "Narrative"],
+  "platforms": ["PC", "Switch", "PS4"],
+  "score": 9.1,
+  "company": "Toby Fox",
+  "hours_duration": 7
+}
+
+### 11. League of Legends
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "League of Legends",
+  "multiplayer": true,
+  "genres": ["MOBA", "Competitive"],
+  "platforms": ["PC"],
+  "score": 8.6,
+  "company": "Riot Games",
   "hours_duration": 0
 }
 
-### 6. Cyberpunk 2077
+### 12. Valorant
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Valorant",
+  "multiplayer": true,
+  "genres": ["Shooter", "Competitive"],
+  "platforms": ["PC"],
+  "score": 8.4,
+  "company": "Riot Games",
+  "hours_duration": 0
+}
+
+### 13. Dead Cells
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Dead Cells",
+  "multiplayer": false,
+  "genres": ["Roguelike", "Action"],
+  "platforms": ["PC", "Switch", "PS4", "Xbox"],
+  "score": 8.9,
+  "company": "Motion Twin",
+  "hours_duration": 15
+}
+
+### 14. Hollow Knight
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Hollow Knight",
+  "multiplayer": false,
+  "genres": ["Metroidvania", "Indie"],
+  "platforms": ["PC", "Switch", "PS4", "Xbox"],
+  "score": 9.4,
+  "company": "Team Cherry",
+  "hours_duration": 40
+}
+
+### 15. Portal 2
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Portal 2",
+  "multiplayer": true,
+  "genres": ["Puzzle", "Sci-Fi"],
+  "platforms": ["PC", "Xbox", "PS3"],
+  "score": 9.6,
+  "company": "Valve",
+  "hours_duration": 10
+}
+
+### 16. The Legend of Zelda: Breath of the Wild
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "The Legend of Zelda: Breath of the Wild",
+  "multiplayer": false,
+  "genres": ["Adventure", "Open World", "Fantasy"],
+  "platforms": ["Switch"],
+  "score": 10.0,
+  "company": "Nintendo",
+  "hours_duration": 80
+}
+
+### 17. Red Dead Redemption 2
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Red Dead Redemption 2",
+  "multiplayer": true,
+  "genres": ["Action", "Adventure", "Open World"],
+  "platforms": ["PC", "Xbox", "PS4"],
+  "score": 9.7,
+  "company": "Rockstar Games",
+  "hours_duration": 60
+}
+
+### 18. Doom Eternal
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Doom Eternal",
+  "multiplayer": true,
+  "genres": ["Shooter", "Action"],
+  "platforms": ["PC", "Xbox", "PS4", "Switch"],
+  "score": 8.8,
+  "company": "id Software",
+  "hours_duration": 20
+}
+
+### 19. Cyberpunk 2077
 POST http://localhost:5050/api/v1/videogames
 Content-Type: application/json
 
 {
   "name": "Cyberpunk 2077",
   "multiplayer": false,
-  "genres": ["RPG", "Sci-Fi"],
-  "platforms": ["PC", "Xbox", "PS5"],
-  "score": 8.0,
-  "company": "CD Projekt",
+  "genres": ["RPG", "Sci-Fi", "Open World"],
+  "platforms": ["PC", "PS5", "Xbox"],
+  "score": 8.5,
+  "company": "CD Projekt Red",
+  "hours_duration": 50
+}
+
+### 20. Terraria
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Terraria",
+  "multiplayer": true,
+  "genres": ["Survival", "Adventure", "Indie"],
+  "platforms": ["PC", "Mobile", "Console"],
+  "score": 9.1,
+  "company": "Re-Logic",
   "hours_duration": 0
 }
 
-### 7. Rocket League
+### 21. Elden Ring
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Elden Ring",
+  "multiplayer": true,
+  "genres": ["RPG", "Open World", "Fantasy"],
+  "platforms": ["PC", "PS5", "Xbox"],
+  "score": 9.8,
+  "company": "FromSoftware",
+  "hours_duration": 100
+}
+
+### 22. Rocket League
 POST http://localhost:5050/api/v1/videogames
 Content-Type: application/json
 
 {
   "name": "Rocket League",
   "multiplayer": true,
-  "genres": ["Sports", "Racing"],
-  "platforms": ["PC", "Xbox", "PS5"],
-  "score": 8.1,
+  "genres": ["Sports", "Racing", "Competitive"],
+  "platforms": ["PC", "Switch", "PS4", "Xbox"],
+  "score": 8.6,
   "company": "Psyonix",
   "hours_duration": 0
 }
 
-### 8. Gran Turismo 7
+### 23. Ori and the Will of the Wisps
 POST http://localhost:5050/api/v1/videogames
 Content-Type: application/json
 
 {
-  "name": "Gran Turismo 7",
-  "multiplayer": true,
-  "genres": ["Racing", "Simulation"],
-  "platforms": ["PS5"],
-  "score": 8.3,
-  "company": "Polyphony Digital",
-  "hours_duration": 30
+  "name": "Ori and the Will of the Wisps",
+  "multiplayer": false,
+  "genres": ["Platformer", "Adventure", "Fantasy"],
+  "platforms": ["PC", "Xbox", "Switch"],
+  "score": 9.3,
+  "company": "Moon Studios",
+  "hours_duration": 12
 }
 
-### 9. Minecraft
+### 24. Slay the Spire
 POST http://localhost:5050/api/v1/videogames
 Content-Type: application/json
 
 {
-  "name": "Minecraft",
-  "multiplayer": true,
-  "genres": ["Sandbox", "Survival"],
-  "platforms": ["PC", "Xbox", "PS5"],
-  "score": 9.2,
-  "company": "Mojang",
+  "name": "Slay the Spire",
+  "multiplayer": false,
+  "genres": ["Card", "Roguelike", "Indie"],
+  "platforms": ["PC", "Switch", "Mobile", "Console"],
+  "score": 8.7,
+  "company": "MegaCrit",
   "hours_duration": 0
 }
 
-### 10. Skyrim
+### 25. It Takes Two
 POST http://localhost:5050/api/v1/videogames
 Content-Type: application/json
 
 {
-  "name": "Skyrim",
-  "multiplayer": false,
-  "genres": ["RPG", "Fantasy"],
-  "platforms": ["PC", "Xbox", "PS5"],
+  "name": "It Takes Two",
+  "multiplayer": true,
+  "genres": ["Co-op", "Puzzle", "Adventure"],
+  "platforms": ["PC", "Xbox", "PS4", "PS5"],
   "score": 9.0,
-  "company": "Bethesda",
+  "company": "Hazelight Studios",
+  "hours_duration": 12
+}
+
+### 26. Genshin Impact
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Genshin Impact",
+  "multiplayer": true,
+  "genres": ["RPG", "Adventure", "Fantasy"],
+  "platforms": ["PC", "Mobile", "PS4", "PS5"],
+  "score": 8.3,
+  "company": "HoYoverse",
+  "hours_duration": 0
+}
+
+### 27. Dota 2
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Dota 2",
+  "multiplayer": true,
+  "genres": ["MOBA", "Strategy"],
+  "platforms": ["PC"],
+  "score": 8.5,
+  "company": "Valve",
+  "hours_duration": 0
+}
+
+### 28. Factorio
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Factorio",
+  "multiplayer": true,
+  "genres": ["Simulation", "Strategy", "Automation"],
+  "platforms": ["PC"],
+  "score": 9.2,
+  "company": "Wube Software",
+  "hours_duration": 0
+}
+
+### 29. Civilization VI
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "Civilization VI",
+  "multiplayer": true,
+  "genres": ["Strategy", "Turn-Based", "Historical"],
+  "platforms": ["PC", "Switch", "PS4", "Mobile"],
+  "score": 8.9,
+  "company": "Firaxis Games",
+  "hours_duration": 0
+}
+
+### 30. RimWorld
+POST http://localhost:5050/api/v1/videogames
+Content-Type: application/json
+
+{
+  "name": "RimWorld",
+  "multiplayer": false,
+  "genres": ["Simulation", "Strategy", "Colony Management"],
+  "platforms": ["PC"],
+  "score": 9.0,
+  "company": "Ludeon Studios",
   "hours_duration": 0
 }

@@ -9,6 +9,8 @@ Content-Type: application/json
   "contraseña": "luis123",
   "juegos_favoritos": ["Halo Infinite", "FIFA 23"],
   "juegos_interesados": ["Minecraft", "Cyberpunk 2077"],
+  "juegos_no_gustados": ["Among Us"],
+  "juegos_jugados": ["FIFA 23", "Minecraft"],
   "amigos": ["ana@example.com", "pedro@example.com"]
 }
 
@@ -23,6 +25,8 @@ Content-Type: application/json
   "contraseña": "ana456",
   "juegos_favoritos": ["Minecraft", "Skyrim"],
   "juegos_interesados": ["Halo Infinite", "The Witcher 3"],
+  "juegos_no_gustados": ["CS:GO"],
+  "juegos_jugados": ["Minecraft", "The Witcher 3"],
   "amigos": ["luis@example.com", "camila@example.com"]
 }
 
@@ -35,9 +39,11 @@ Content-Type: application/json
   "apellido": "López",
   "correo": "pedro@example.com",
   "contraseña": "pedro789",
-  "juegos_favoritos": ["The Witcher 3", "Cyberpunk 2077"],
-  "juegos_interesados": ["FIFA 23", "Rocket League"],
-  "amigos": ["luis@example.com", "marco@example.com"]
+  "juegos_favoritos": ["Cyberpunk 2077", "Red Dead Redemption 2"],
+  "juegos_interesados": ["Elden Ring", "Skyrim"],
+  "juegos_no_gustados": ["FIFA 23"],
+  "juegos_jugados": ["Cyberpunk 2077"],
+  "amigos": ["luis@example.com"]
 }
 
 ### Usuario 4
@@ -46,12 +52,14 @@ Content-Type: application/json
 
 {
   "nombre": "Camila",
-  "apellido": "Torres",
+  "apellido": "Rojas",
   "correo": "camila@example.com",
-  "contraseña": "camila321",
-  "juegos_favoritos": ["Apex Legends", "Rocket League"],
-  "juegos_interesados": ["Gran Turismo 7", "Call of Duty: Modern Warfare II"],
-  "amigos": ["ana@example.com", "lucia@example.com"]
+  "contraseña": "cami456",
+  "juegos_favoritos": ["The Sims 4", "Cities: Skylines"],
+  "juegos_interesados": ["Stardew Valley"],
+  "juegos_no_gustados": ["FIFA 23"],
+  "juegos_jugados": ["The Sims 4"],
+  "amigos": ["ana@example.com"]
 }
 
 ### Usuario 5
@@ -59,13 +67,15 @@ POST http://localhost:5050/api/v1/users
 Content-Type: application/json
 
 {
-  "nombre": "Marco",
-  "apellido": "Méndez",
-  "correo": "marco@example.com",
-  "contraseña": "marco777",
-  "juegos_favoritos": ["FIFA 23", "Rocket League"],
-  "juegos_interesados": ["Apex Legends", "Skyrim"],
-  "amigos": ["pedro@example.com", "carlos@example.com"]
+  "nombre": "Diego",
+  "apellido": "Torres",
+  "correo": "diego@example.com",
+  "contraseña": "torres123",
+  "juegos_favoritos": ["Valorant", "Apex Legends"],
+  "juegos_interesados": ["Rainbow Six Siege"],
+  "juegos_no_gustados": ["Minecraft"],
+  "juegos_jugados": ["Valorant"],
+  "amigos": ["mateo@example.com"]
 }
 
 ### Usuario 6
@@ -73,13 +83,15 @@ POST http://localhost:5050/api/v1/users
 Content-Type: application/json
 
 {
-  "nombre": "Lucía",
-  "apellido": "Fernández",
-  "correo": "lucia@example.com",
-  "contraseña": "lucia987",
-  "juegos_favoritos": ["Cyberpunk 2077", "Call of Duty: Modern Warfare II"],
-  "juegos_interesados": ["The Witcher 3", "Minecraft"],
-  "amigos": ["camila@example.com", "daniela@example.com"]
+  "nombre": "Mateo",
+  "apellido": "Díaz",
+  "correo": "mateo@example.com",
+  "contraseña": "diazmateo",
+  "juegos_favoritos": ["CS:GO", "Dota 2"],
+  "juegos_interesados": ["League of Legends"],
+  "juegos_no_gustados": ["Minecraft"],
+  "juegos_jugados": ["CS:GO", "Dota 2"],
+  "amigos": ["diego@example.com"]
 }
 
 ### Usuario 7
@@ -87,13 +99,15 @@ POST http://localhost:5050/api/v1/users
 Content-Type: application/json
 
 {
-  "nombre": "Carlos",
-  "apellido": "Pérez",
-  "correo": "carlos@example.com",
-  "contraseña": "carlos159",
-  "juegos_favoritos": ["Gran Turismo 7", "Rocket League"],
-  "juegos_interesados": ["FIFA 23", "Halo Infinite"],
-  "amigos": ["marco@example.com", "ivan@example.com"]
+  "nombre": "Valentina",
+  "apellido": "Gómez",
+  "correo": "valentina@example.com",
+  "contraseña": "vale321",
+  "juegos_favoritos": ["Animal Crossing", "Stardew Valley"],
+  "juegos_interesados": ["Ori and the Will of the Wisps"],
+  "juegos_no_gustados": ["Call of Duty: Modern Warfare II"],
+  "juegos_jugados": ["Stardew Valley"],
+  "amigos": ["camila@example.com"]
 }
 
 ### Usuario 8
@@ -101,13 +115,15 @@ POST http://localhost:5050/api/v1/users
 Content-Type: application/json
 
 {
-  "nombre": "Daniela",
-  "apellido": "Morales",
-  "correo": "daniela@example.com",
-  "contraseña": "dani321",
-  "juegos_favoritos": ["Skyrim", "The Witcher 3"],
-  "juegos_interesados": ["Cyberpunk 2077", "Apex Legends"],
-  "amigos": ["lucia@example.com", "andrea@example.com"]
+  "nombre": "Carlos",
+  "apellido": "Martínez",
+  "correo": "carlos@example.com",
+  "contraseña": "zxcvb",
+  "juegos_favoritos": ["Red Dead Redemption 2", "The Legend of Zelda: Breath of the Wild"],
+  "juegos_interesados": ["Elden Ring"],
+  "juegos_no_gustados": ["League of Legends"],
+  "juegos_jugados": ["Red Dead Redemption 2"],
+  "amigos": []
 }
 
 ### Usuario 9
@@ -115,13 +131,15 @@ POST http://localhost:5050/api/v1/users
 Content-Type: application/json
 
 {
-  "nombre": "Iván",
-  "apellido": "Castillo",
-  "correo": "ivan@example.com",
-  "contraseña": "ivan654",
-  "juegos_favoritos": ["Apex Legends", "Call of Duty: Modern Warfare II"],
-  "juegos_interesados": ["Rocket League", "Gran Turismo 7"],
-  "amigos": ["carlos@example.com", "andrea@example.com"]
+  "nombre": "Sofía",
+  "apellido": "Ramírez",
+  "correo": "sofia@example.com",
+  "contraseña": "sofia123",
+  "juegos_favoritos": ["Overcooked 2", "It Takes Two"],
+  "juegos_interesados": ["It Takes Two"],
+  "juegos_no_gustados": ["CS:GO"],
+  "juegos_jugados": ["Overcooked 2"],
+  "amigos": ["valentina@example.com"]
 }
 
 ### Usuario 10
@@ -129,13 +147,13 @@ POST http://localhost:5050/api/v1/users
 Content-Type: application/json
 
 {
-  "nombre": "Andrea",
-  "apellido": "Cruz",
-  "correo": "andrea@example.com",
-  "contraseña": "andrea147",
-  "juegos_favoritos": ["Minecraft", "Halo Infinite"],
-  "juegos_interesados": ["Skyrim", "FIFA 23"],
-  "generos_favoritos": ["Acción", "Aventura"],
-  "amigos": ["daniela@example.com", "ivan@example.com"]
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "correo": "juan@example.com",
+  "contraseña": "juan321",
+  "juegos_favoritos": ["Halo Infinite", "Cyberpunk 2077"],
+  "juegos_interesados": ["The Witcher 3"],
+  "juegos_no_gustados": ["FIFA 23"],
+  "juegos_jugados": ["Halo Infinite", "Call of Duty: Modern Warfare II"],
+  "amigos": ["camila@example.com", "pedro@example.com"]
 }
-
