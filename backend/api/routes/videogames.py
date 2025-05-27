@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from neo4j_driver import get_driver
 
-videogames_bp = Blueprint('videogames', _name_)
+videogames_bp = Blueprint('videogames', __name__)
 
 @videogames_bp.route('/videogames', methods=['POST'])
 def create_videogame():
