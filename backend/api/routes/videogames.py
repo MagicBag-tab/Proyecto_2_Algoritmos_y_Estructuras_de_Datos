@@ -182,19 +182,19 @@ def create_user():
             ON CREATE SET r.weight = 2
             """, {"correo": data["correo"], "juego": juego})
 
-        for juego in data["juegos_no_gustados"]:
+        for juego in data.get("juegos_no_gustados", []):  # Usa get() con valor por defecto []
             session.run("""
             MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
             MERGE (u)-[r:NO_GUSTADOS]->(g)
             ON CREATE SET r.weight = -5
             """, {"correo": data["correo"], "juego": juego})
 
-        for juego in data["juegos_jugados"]:
+        for juego in data.get("juegos_jugados", []):  # Usa get() con valor por defecto []
             session.run("""
             MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
             MERGE (u)-[r:PLAYED]->(g)
             ON CREATE SET r.weight = 0
-            """, {"correo": data["correo"], "juego": juego})
+             """, {"correo": data["correo"], "juego": juego})
 
         for amigo in data["amigos"]:
             session.run("""
@@ -252,5 +252,48 @@ def update_user(correo):
         result = session.run(query, {"correo": correo, **data})
         if result.summary().counters.properties_set > 0:
             return jsonify({"message": "Usuario actualizado"}), 200
+        else:
+            return jsonify({"error": "Usuario no encontrado"}), 404
+
+@videogames_bp.route('/users/<correo>/preferences', methods=['POST'])
+def set_user_preferences(correo):
+    data = request.get_json()
+    query = """
+    MATCH (u:User {correo: $correo})
+    SET u.generos_favoritos = $generos_favoritos,
+        u.plataformas_favoritas = $plataformas_favoritas,
+        u.prefiere_multijugador = $prefiere_multijugador
+    """
+    with get_driver().session() as session:
+        result = session.run(query, {
+            "correo": correo,
+            "generos_favoritos": data.get("generos_favoritos", []),
+            "plataformas_favoritas": data.get("plataformas_favoritas", []),
+            "prefiere_multijugador": data.get("prefiere_multijugador", False)
+        })
+        if result.summary().counters.properties_set > 0:
+            # Crear relaciones RECOMMENDED basadas en preferencias
+            games_query = """
+            MATCH (g:Game)
+            WHERE ANY(x IN $generos_favoritos WHERE x IN g.genres)
+               OR ANY(x IN $plataformas_favoritas WHERE x IN g.platforms)
+               OR g.multiplayer = $prefiere_multijugador
+            MERGE (u:User {correo: $correo})-[r:RECOMMENDED]->(g)
+            ON CREATE SET r.weight = 
+                (SIZE([x IN $generos_favoritos WHERE x IN g.genres]) * 0.4 +
+                 SIZE([x IN $plataformas_favoritas WHERE x IN g.platforms]) * 0.3 +
+                 (CASE WHEN g.multiplayer = $prefiere_multijugador THEN 0.2 ELSE 0 END))
+            ON MATCH SET r.weight = 
+                (SIZE([x IN $generos_favoritos WHERE x IN g.genres]) * 0.4 +
+                 SIZE([x IN $plataformas_favoritas WHERE x IN g.platforms]) * 0.3 +
+                 (CASE WHEN g.multiplayer = $prefiere_multijugador THEN 0.2 ELSE 0 END))
+            """
+            session.run(games_query, {
+                "correo": correo,
+                "generos_favoritos": data.get("generos_favoritos", []),
+                "plataformas_favoritas": data.get("plataformas_favoritas", []),
+                "prefiere_multijugador": data.get("prefiere_multijugador", False)
+            })
+            return jsonify({"message": "Preferencias actualizadas y recomendaciones creadas"}), 200
         else:
             return jsonify({"error": "Usuario no encontrado"}), 404
