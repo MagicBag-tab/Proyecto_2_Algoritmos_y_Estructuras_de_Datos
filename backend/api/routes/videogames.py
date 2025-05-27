@@ -1,5 +1,6 @@
 from flask import Blueprint, request, jsonify
 from neo4j_driver import get_driver
+from urllib.parse import unquote
 
 videogames_bp = Blueprint('videogames', __name__)
 
@@ -415,4 +416,35 @@ def delete_user_game(correo, juego):
         if result.summary().counters.relationships_deleted > 0:
             return jsonify({"message": "Juego eliminado de las relaciones del usuario"}), 200
         else:
+            return jsonify({"error": "Juego no encontrado en las relaciones del usuario"}), 404
+
+
+#Extra para ver las preferencias del usuario
+
+@videogames_bp.route('/users/<correo>/preferences', methods=['POST'])
+def set_user_preferences(correo):
+    correo = unquote(correo)  # Decodifica la URL
+    data = request.get_json()
+    print(f"Received data: {data}, correo: {correo}")  # Depuración
+    query = """
+    MATCH (u:User {correo: $correo})
+    SET u.generos_favoritos = $generos_favoritos,
+        u.plataformas_favoritas = $plataformas_favoritas,
+        u.prefiere_multijugador = $prefiere_multijugador
+    RETURN u
+    """
+    with get_driver().session() as session:
+        result = session.run(query, {
+            "correo": correo,
+            "generos_favoritos": data.get("generos_favoritos", []),
+            "plataformas_favoritas": data.get("plataformas_favoritas", []),
+            "prefiere_multijugador": data.get("prefiere_multijugador", False)
+        })
+        record = result.single()
+        if record:
+            print(f"Updated user: {record['u']._properties}")  # Depuración
+            return jsonify({"message": "Preferencias actualizadas"}), 200
+        else:
+            print(f"User not found: {correo}")  # Depuración
+            return jsonify({"error": "Usuario no encontrado"}), 404
             return jsonify({"error": "Juego no encontrado en las relaciones del usuario"}), 404
