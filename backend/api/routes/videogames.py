@@ -417,8 +417,6 @@ def delete_user_game(correo, juego):
             return jsonify({"message": "Juego eliminado de las relaciones del usuario"}), 200
         else:
             return jsonify({"error": "Juego no encontrado en las relaciones del usuario"}), 404
-        
-from urllib.parse import unquote
 
 
 #Extra para ver las preferencias del usuario
@@ -449,3 +447,4 @@ def set_user_preferences(correo):
         else:
             print(f"User not found: {correo}")  # Depuración
             return jsonify({"error": "Usuario no encontrado"}), 404
+            return jsonify({"error": "Juego no encontrado en las relaciones del usuario"}), 404
