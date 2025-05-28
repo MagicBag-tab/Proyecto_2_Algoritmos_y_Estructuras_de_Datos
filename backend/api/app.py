@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_cors import CORS
+from flask_cors import CORS # type: ignore
 from routes.videogames import videogames_bp
 from routes.recommendations import recommendations_bp
 
