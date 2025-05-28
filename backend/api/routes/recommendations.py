@@ -45,16 +45,12 @@ def get_recommendations(correo):
                 })
 
         # 3. Calcular el peso máximo posible (usuario + amigos)
+
         num_user_games = len(user_games)
         max_user_game_weight = 5  # FAVORITE
         max_game_relation_weight = 5  # Por característica
-        num_characteristics = 6
-        max_total_user = (num_user_games * max_user_game_weight) + (num_user_games * num_characteristics * max_game_relation_weight)
-        max_total_friends = num_friends + sum([
-            5 * len([g for g in friends_games if g["friend"] == friend])
-            for friend in friends
-        ])
-        max_total = max_total_user + max_total_friends
+        num_characteristics = 6  # SIMILAR_GENRE, SIMILAR_PLATFORM, SAME_COMPANY, SAME_MULTIPLAYER, SAME_DURATION, SAME_SCORE
+        max_total = (num_user_games * max_user_game_weight) + (num_user_games * num_characteristics * max_game_relation_weight)
 
         # 4. Obtener juegos no relacionados con el usuario
         unrelated_games_query = """
@@ -84,7 +80,7 @@ def get_recommendations(correo):
                 RETURN COALESCE(sum(r.weight), 0) AS rel_weight
                 """
                 rel_result = session.run(rel_query, {"user_game": user_game["name"], "candidate": game["name"]})
-                rel_weight = rel_result.single()["rel_weight"] or 0
+                rel_weight = rel_result.single()["rel_weight"]
                 total_weight += rel_weight
 
                 # b) Sumar el peso de la relación usuario-juego si hay conexión

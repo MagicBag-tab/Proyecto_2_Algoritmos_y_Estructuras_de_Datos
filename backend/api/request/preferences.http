@@ -1,0 +1,8 @@
+POST http://localhost:5050/api/v1/users/luis@example.com/preferences
+Content-Type: application/json
+
+{
+  "generos_favoritos": ["Shooter", "Sports"],
+  "plataformas_favoritas": ["PC", "Xbox"],
+  "prefiere_multijugador": true
+}
