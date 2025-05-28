@@ -502,3 +502,21 @@ def set_user_preferences(correo):
         else:
             print(f"User not found: {correo}")  # Depuración
             return jsonify({"error": "Usuario no encontrado"}), 404
+        
+@videogames_bp.route('/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    correo = data.get("correo")
+    contraseña = data.get("contraseña")
+    if not correo or not contraseña:
+        return jsonify({"error": "Faltan datos"}), 400
+
+    query = "MATCH (u:User {correo: $correo, contraseña: $contraseña}) RETURN u"
+    with get_driver().session() as session:
+        result = session.run(query, {"correo": correo, "contraseña": contraseña})
+        record = result.single()
+        if record:
+            u = record["u"]
+            return jsonify({"message": "Login exitoso", "user": u._properties}), 200
+        else:
+            return jsonify({"error": "Credenciales incorrectas"}), 401
