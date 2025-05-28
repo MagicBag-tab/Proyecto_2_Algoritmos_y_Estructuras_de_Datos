@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Halo Infinite",
+        "multiplayer": true,
+        "genres": ["Shooter", "Action"],
+        "platforms": ["PC", "Xbox"],
+        "score": 8.7,
+        "company": "343 Industries",
+        "hours_duration": 20
+    },
+    {
+        "name": "FIFA 23",
+        "multiplayer": true,
+        "genres": ["Sports", "Simulation"],
+        "platforms": ["PC", "PS4", "PS5", "Xbox", "Switch"],
+        "score": 8.0,
+        "company": "EA Sports",
+        "hours_duration": 0
+    },
+    {
+        "name": "Minecraft",
+        "multiplayer": true,
+        "genres": ["Sandbox", "Adventure"],
+        "platforms": ["PC", "PS4", "Xbox", "Switch"],
+        "score": 9.5,
+        "company": "Mojang",
+        "hours_duration": 0
+    },
+    {
+        "name": "Cyberpunk 2077",
+        "multiplayer": false,
+        "genres": ["RPG", "Action"],
+        "platforms": ["PC", "PS4", "PS5", "Xbox"],
+        "score": 7.8,
+        "company": "CD Projekt",
+        "hours_duration": 60
+    },
+    {
+        "name": "Among Us",
+        "multiplayer": true,
+        "genres": ["Party", "Social Deduction"],
+        "platforms": ["PC", "Switch"],
+        "score": 8.5,
+        "company": "InnerSloth",
+        "hours_duration": 0
+    },
+    {
+        "name": "Skyrim",
+        "multiplayer": false,
+        "genres": ["RPG", "Adventure", "Fantasy"],
+        "platforms": ["PC", "Xbox", "PS4"],
+        "score": 9.2,
+        "company": "Bethesda",
+        "hours_duration": 100
+    },
+    {
+        "name": "The Sims 4",
+        "multiplayer": false,
+        "genres": ["Simulation", "Life Sim"],
+        "platforms": ["PC", "PS4", "Xbox"],
+        "score": 8.0,
+        "company": "EA",
+        "hours_duration": 0
+    },
+    {
+        "name": "CS:GO",
+        "multiplayer": true,
+        "genres": ["Shooter", "Action"],
+        "platforms": ["PC"],
+        "score": 8.8,
+        "company": "Valve",
+        "hours_duration": 0
+    },
+    {
+        "name": "Red Dead Redemption 2",
+        "multiplayer": true,
+        "genres": ["Action", "Adventure"],
+        "platforms": ["PC", "PS4", "Xbox"],
+        "score": 9.7,
+        "company": "Rockstar Games",
+        "hours_duration": 80
+    },
+    {
+        "name": "Animal Crossing: New Horizons",
+        "multiplayer": true,
+        "genres": ["Simulation", "Social"],
+        "platforms": ["Switch"],
+        "score": 9.0,
+        "company": "Nintendo",
+        "hours_duration": 0
+    }
+]
