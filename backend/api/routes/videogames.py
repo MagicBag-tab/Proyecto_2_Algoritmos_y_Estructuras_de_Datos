@@ -35,11 +35,11 @@ def create_videogame():
             MERGE (new)-[r:SIMILAR_GENRE]->(other)
             ON CREATE SET r.weight = 
                 CASE
-                    WHEN toFloat(shared_genres)/toFloat(new_genres_count) >= 1 THEN 5
-                    WHEN 1 > toFloat(shared_genres)/toFloat(new_genres_count) >= 0.75 THEN 4
-                    WHEN 0.75 > toFloat(shared_genres)/toFloat(new_genres_count) >= 0.5 THEN 3
-                    WHEN 0.5 > toFloat(shared_genres)/toFloat(new_genres_count) >= 0.25 THEN 2
-                    WHEN 0.25 > toFloat(shared_genres)/toFloat(new_genres_count) > 0 THEN 1
+                    WHEN toFloat(size(shared_genres))/toFloat(new_genres_count) >= 1 THEN 5
+                    WHEN 1 > toFloat(size(shared_genres))/toFloat(new_genres_count) >= 0.75 THEN 4
+                    WHEN 0.75 > toFloat(size(shared_genres))/toFloat(new_genres_count) >= 0.5 THEN 3
+                    WHEN 0.5 > toFloat(size(shared_genres))/toFloat(new_genres_count) >= 0.25 THEN 2
+                    WHEN 0.25 > toFloat(size(shared_genres))/toFloat(new_genres_count) > 0 THEN 1
                     ELSE 0
                 END
         )
@@ -49,11 +49,11 @@ def create_videogame():
             MERGE (other)-[r2:SIMILAR_GENRE]->(new)
             ON CREATE SET r2.weight = 
                 CASE
-                    WHEN toFloat(shared_genres)/toFloat(other_genres_count) >= 1 THEN 5
-                    WHEN 1 > toFloat(shared_genres)/toFloat(other_genres_count) >= 0.75 THEN 4
-                    WHEN 0.75 > toFloat(shared_genres)/toFloat(other_genres_count) >= 0.5 THEN 3
-                    WHEN 0.5 > toFloat(shared_genres)/toFloat(other_genres_count) >= 0.25 THEN 2
-                    WHEN 0.25 > toFloat(shared_genres)/toFloat(other_genres_count) > 0 THEN 1
+                    WHEN toFloat(size(shared_genres))/toFloat(other_genres_count) >= 1 THEN 5
+                    WHEN 1 > toFloat(size(shared_genres))/toFloat(other_genres_count) >= 0.75 THEN 4
+                    WHEN 0.75 > toFloat(size(shared_genres))/toFloat(other_genres_count) >= 0.5 THEN 3
+                    WHEN 0.5 > toFloat(size(shared_genres))/toFloat(other_genres_count) >= 0.25 THEN 2
+                    WHEN 0.25 > toFloat(size(shared_genres))/toFloat(other_genres_count) > 0 THEN 1
                     ELSE 0
                 END
         )
@@ -67,11 +67,11 @@ def create_videogame():
             MERGE (new)-[r:SIMILAR_PLATFORM]->(other)
             ON CREATE SET r.weight = 
                 CASE
-                    WHEN toFloat(shared_platforms)/toFloat(new_platforms_count) >= 1 THEN 5
-                    WHEN 1 > toFloat(shared_platforms)/toFloat(new_platforms_count) >= 0.75 THEN 4
-                    WHEN 0.75 > toFloat(shared_platforms)/toFloat(new_platforms_count) >= 0.5 THEN 3
-                    WHEN 0.5 > toFloat(shared_platforms)/toFloat(new_platforms_count) >= 0.25 THEN 2
-                    WHEN 0.25 > toFloat(shared_platforms)/toFloat(new_platforms_count) > 0 THEN 1
+                    WHEN toFloat(size(shared_platforms))/toFloat(new_platforms_count) >= 1 THEN 5
+                    WHEN 1 > toFloat(size(shared_platforms))/toFloat(new_platforms_count) >= 0.75 THEN 4
+                    WHEN 0.75 > toFloat(size(shared_platforms))/toFloat(new_platforms_count) >= 0.5 THEN 3
+                    WHEN 0.5 > toFloat(size(shared_platforms))/toFloat(new_platforms_count) >= 0.25 THEN 2
+                    WHEN 0.25 > toFloat(size(shared_platforms))/toFloat(new_platforms_count) > 0 THEN 1
                     ELSE 0
                 END
         )
@@ -81,11 +81,11 @@ def create_videogame():
             MERGE (other)-[r2:SIMILAR_PLATFORM]->(new)
             ON CREATE SET r2.weight = 
                 CASE
-                    WHEN toFloat(shared_platforms)/toFloat(other_platforms_count) >= 1 THEN 5
-                    WHEN 1 > toFloat(shared_platforms)/toFloat(other_platforms_count) >= 0.75 THEN 4
-                    WHEN 0.75 > toFloat(shared_platforms)/toFloat(other_platforms_count) >= 0.5 THEN 3
-                    WHEN 0.5 > toFloat(shared_platforms)/toFloat(other_platforms_count) >= 0.25 THEN 2
-                    WHEN 0.25 > toFloat(shared_platforms)/toFloat(other_platforms_count) > 0 THEN 1
+                    WHEN toFloat(size(shared_platforms))/toFloat(other_platforms_count) >= 1 THEN 5
+                    WHEN 1 > toFloat(size(shared_platforms))/toFloat(other_platforms_count) >= 0.75 THEN 4
+                    WHEN 0.75 > toFloat(size(shared_platforms))/toFloat(other_platforms_count) >= 0.5 THEN 3
+                    WHEN 0.5 > toFloat(size(shared_platforms))/toFloat(other_platforms_count) >= 0.25 THEN 2
+                    WHEN 0.25 > toFloat(size(shared_platforms))/toFloat(other_platforms_count) > 0 THEN 1
                     ELSE 0
                 END
         )
