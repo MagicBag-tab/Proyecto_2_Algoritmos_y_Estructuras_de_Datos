@@ -103,7 +103,7 @@ def create_videogame():
             MERGE (other)-[r2:SAME_MULTIPLAYER]->(new)
             ON CREATE SET r2.weight = 5
         )
-        FOREACH (_ IN CASE WHEN new.hours_duration = other.hours_duration THEN [1] ELSE [] END |
+        FOREACH (_ IN CASE WHEN abs(new.hours_duration - other.hours_duration) <= 25 THEN [1] ELSE [] END |
             MERGE (new)-[r:SAME_DURATION]->(other)
             ON CREATE SET r.weight =
                 CASE
@@ -125,7 +125,7 @@ def create_videogame():
                     ELSE 0
                 END
         )
-        FOREACH (_ IN CASE WHEN new.score = other.score THEN [1] ELSE [] END |
+        FOREACH (_ IN CASE WHEN abs(new.score - other.score) <= 0.5 THEN [1] ELSE [] END |
             MERGE (new)-[r:SAME_SCORE]->(other)
             ON CREATE SET r.weight =
                 CASE
