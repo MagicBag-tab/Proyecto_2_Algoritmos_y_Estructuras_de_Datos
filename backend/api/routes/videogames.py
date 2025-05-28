@@ -26,18 +26,55 @@ def create_videogame():
         MATCH (new:Game {name: $name}), (other:Game)
         WHERE new.name <> other.name
 
-        FOREACH (_ IN CASE WHEN any(x IN new.genres WHERE x IN other.genres) THEN [1] ELSE [] END |
+        // Relación de géneros (A->B)
+        WITH new, other,
+            [x IN new.genres WHERE x IN other.genres] AS shared_genres,
+            size(new.genres) AS new_genres_count,
+            size(other.genres) AS other_genres_count
+        FOREACH (_ IN CASE WHEN size(shared_genres) > 0 THEN [1] ELSE [] END |
             MERGE (new)-[r:SIMILAR_GENRE]->(other)
-            ON CREATE SET r.weight = 5
+            ON CREATE SET r.weight = 
+                CASE
+                    WHEN toFloat(other_genres_count)/toFloat(new_genres_count) >= 1 THEN 5
+                    ELSE round((toFloat(other_genres_count)/toFloat(new_genres_count))*4)/0.25 + 1
+                END
+        )
+
+        // Relación de géneros (B->A)
+        FOREACH (_ IN CASE WHEN size(shared_genres) > 0 THEN [1] ELSE [] END |
             MERGE (other)-[r2:SIMILAR_GENRE]->(new)
-            ON CREATE SET r2.weight = 5
+            ON CREATE SET r2.weight = 
+                CASE
+                    WHEN toFloat(new_genres_count)/toFloat(other_genres_count) >= 1 THEN 5
+                    ELSE round((toFloat(new_genres_count)/toFloat(other_genres_count))*4)/0.25 + 1
+                END
         )
-        FOREACH (_ IN CASE WHEN any(x IN new.platforms WHERE x IN other.platforms) THEN [1] ELSE [] END |
+
+        // Relación de plataformas (A->B)
+        WITH new, other,
+            [x IN new.platforms WHERE x IN other.platforms] AS shared_platforms,
+            size(new.platforms) AS new_platforms_count,
+            size(other.platforms) AS other_platforms_count
+        FOREACH (_ IN CASE WHEN size(shared_platforms) > 0 THEN [1] ELSE [] END |
             MERGE (new)-[r:SIMILAR_PLATFORM]->(other)
-            ON CREATE SET r.weight = 5
-            MERGE (other)-[r2:SIMILAR_PLATFORM]->(new)
-            ON CREATE SET r2.weight = 5
+            ON CREATE SET r.weight = 
+                CASE
+                    WHEN toFloat(other_platforms_count)/toFloat(new_platforms_count) >= 1 THEN 5
+                    ELSE round((toFloat(other_platforms_count)/toFloat(new_platforms_count))*4)/0.25 + 1
+                END
         )
+
+        // Relación de plataformas (B->A)
+        FOREACH (_ IN CASE WHEN size(shared_platforms) > 0 THEN [1] ELSE [] END |
+            MERGE (other)-[r2:SIMILAR_PLATFORM]->(new)
+            ON CREATE SET r2.weight = 
+                CASE
+                    WHEN toFloat(new_platforms_count)/toFloat(other_platforms_count) >= 1 THEN 5
+                    ELSE round((toFloat(new_platforms_count)/toFloat(other_platforms_count))*4)/0.25 + 1
+                END
+        )
+
+        // Las demás relaciones igual...
         FOREACH (_ IN CASE WHEN new.company = other.company THEN [1] ELSE [] END |
             MERGE (new)-[r:SAME_COMPANY]->(other)
             ON CREATE SET r.weight = 5
