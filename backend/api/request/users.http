@@ -122,7 +122,7 @@ Content-Type: application/json
   "juegos_favoritos": ["Red Dead Redemption 2", "The Legend of Zelda: Breath of the Wild"],
   "juegos_interesados": ["Elden Ring"],
   "juegos_no_gustados": ["League of Legends"],
-  "juegos_jugados": ["Red Dead Redemption 2"],
+  "juegos_jugados": [],
   "amigos": []
 }
 
