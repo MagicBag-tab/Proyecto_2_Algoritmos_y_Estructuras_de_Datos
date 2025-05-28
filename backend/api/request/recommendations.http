@@ -1,26 +1,29 @@
-GET http://localhost:5050/api/v1/recommendations?correo=carlos@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/luis@example.com
 Content-Type: application/json
 
-GET http://localhost:5050/api/v1/recommendations?correo=ana@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/ana@example.com
 Content-Type: application/json
 
-GET http://localhost:5050/api/v1/recommendations?correo=pedro@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/pedro@example.com
 Content-Type: application/json
 
-GET http://localhost:5050/api/v1/recommendations?correo=camila@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/camila@example.com
 Content-Type: application/json
 
-GET http://localhost:5050/api/v1/recommendations?correo=diego@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/diego@example.com
 Content-Type: application/json
 
-GET http://localhost:5050/api/v1/recommendations?correo=mateo@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/mateo@example.com
 Content-Type: application/json
 
-GET http://localhost:5050/api/v1/recommendations?correo=valentina@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/valentina@example.com
 Content-Type: application/json
 
-GET http://localhost:5050/api/v1/recommendations?correo=sofia@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/carlos@example.com
 Content-Type: application/json
 
-GET http://localhost:5050/api/v1/recommendations?correo=juan@example.com
+GET http://localhost:5050/api/v1/recommendations/top3/sofia@example.com
+Content-Type: application/json
+
+GET http://localhost:5050/api/v1/recommendations/top3/juan@example.com
 Content-Type: application/json

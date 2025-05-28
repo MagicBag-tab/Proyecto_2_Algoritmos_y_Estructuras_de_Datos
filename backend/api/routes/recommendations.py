@@ -22,14 +22,37 @@ def get_recommendations(correo):
         if not user_games:
             return jsonify({"error": "Usuario no tiene juegos relacionados"}), 404
 
-        # 2. Calcular el peso máximo posible
+        # 2. Obtener amigos y sus juegos
+        friends_query = """
+        MATCH (u:User {correo: $correo})-[:FRIEND]->(f:User)
+        RETURN f.correo AS correo
+        """
+        friends = [record["correo"] for record in session.run(friends_query, {"correo": correo})]
+        num_friends = len(friends)
+
+        friends_games = []
+        for friend in friends:
+            friend_games_query = """
+            MATCH (u:User {correo: $correo})-[rel:FAVORITE|INTERESTED|NO_GUSTADOS|PLAYED]->(g:Game)
+            RETURN g.name AS name, type(rel) AS rel_type, rel.weight AS weight
+            """
+            for record in session.run(friend_games_query, {"correo": friend}):
+                friends_games.append({
+                    "friend": friend,
+                    "name": record["name"],
+                    "rel_type": record["rel_type"],
+                    "weight": record["weight"]
+                })
+
+        # 3. Calcular el peso máximo posible (usuario + amigos)
+
         num_user_games = len(user_games)
         max_user_game_weight = 5  # FAVORITE
         max_game_relation_weight = 5  # Por característica
         num_characteristics = 6  # SIMILAR_GENRE, SIMILAR_PLATFORM, SAME_COMPANY, SAME_MULTIPLAYER, SAME_DURATION, SAME_SCORE
         max_total = (num_user_games * max_user_game_weight) + (num_user_games * num_characteristics * max_game_relation_weight)
 
-        # 3. Obtener juegos no relacionados con el usuario
+        # 4. Obtener juegos no relacionados con el usuario
         unrelated_games_query = """
         MATCH (g:Game)
         WHERE NOT EXISTS((:User {correo: $correo})-[:FAVORITE|INTERESTED|NO_GUSTADOS|PLAYED]->(g))
@@ -44,7 +67,7 @@ def get_recommendations(correo):
                 "platforms": record["platforms"]
             })
 
-        # 4. Calcular el puntaje para cada juego no relacionado
+        # 5. Calcular el score para cada juego no relacionado
         recommendations = []
         for game in unrelated_games:
             total_weight = 0
@@ -64,16 +87,19 @@ def get_recommendations(correo):
                 if rel_weight > 0:
                     total_weight += user_game["weight"]
 
-            normalized_score = total_weight / max_total if max_total > 0 else 0
+            # c) Sumar pesos de los amigos y sus juegos (solo relación directa)
+            for friend in friends:
+                friend_weight = 1
+                friend_game_query = """
+                MATCH (u:User {correo: $correo})-[rel:FAVORITE|INTERESTED|NO_GUSTADOS|PLAYED]->(g:Game {name: $game})
+                RETURN rel.weight AS weight
+                """
+                rel_result = session.run(friend_game_query, {"correo": friend, "game": game["name"]})
+                record = rel_result.single()
+                if record and record["weight"]:
+                    total_weight += record["weight"] + friend_weight
 
-            # Crear relación RECOMMENDED si el puntaje es mayor a un umbral (0.05)
-            if normalized_score > 0.05:
-                session.run("""
-                MATCH (u:User {correo: $correo}), (g:Game {name: $name})
-                MERGE (u)-[r:RECOMMENDED]->(g)
-                ON CREATE SET r.weight = $peso
-                ON MATCH SET r.weight = $peso
-                """, {"correo": correo, "name": game["name"], "peso": normalized_score})
+            normalized_score = total_weight / max_total if max_total > 0 else 0
 
             recommendations.append({
                 "name": game["name"],
@@ -83,6 +109,16 @@ def get_recommendations(correo):
                 "normalized_score": normalized_score
             })
 
-        # 5. Ordenar y devolver los 3 mejores
+        # 6. Ordenar y devolver los 3 mejores, y crear relación RECOMMENDED para esos 3
         recommendations.sort(key=lambda x: x["normalized_score"], reverse=True)
-        return jsonify(recommendations[:3]), 200
+        top3 = recommendations[:3]
+
+        for rec in top3:
+            session.run("""
+                MATCH (u:User {correo: $correo}), (g:Game {name: $name})
+                MERGE (u)-[r:RECOMMENDED]->(g)
+                ON CREATE SET r.weight = $peso
+                ON MATCH SET r.weight = $peso
+            """, {"correo": correo, "name": rec["name"], "peso": rec["normalized_score"]})
+
+        return jsonify(top3), 200
