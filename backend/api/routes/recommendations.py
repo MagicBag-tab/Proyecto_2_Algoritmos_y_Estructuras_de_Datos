@@ -152,5 +152,5 @@ def get_recommendations(correo):
                 ON MATCH SET r.weight = $peso
             """, {"correo": correo, "name": rec["name"], "peso": rec["normalized_score"]})
 
-        # Devuelve solo el top3 y su debug
-        return jsonify({"top3": top3}), 200
+        # Devuelve solo el top3
+        return jsonify(top3), 200
