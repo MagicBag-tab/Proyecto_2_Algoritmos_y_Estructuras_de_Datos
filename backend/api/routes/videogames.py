@@ -107,21 +107,21 @@ def create_videogame():
             MERGE (new)-[r:SAME_DURATION]->(other)
             ON CREATE SET r.weight =
                 CASE
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 5 THEN 5
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 10 THEN 4
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 15 THEN 3
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 20 THEN 2
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 25 THEN 1
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 5.1 THEN 5
+                    WHEN 5.1 < abs(new.hours_duration - other.hours_duration) <= 10.1 THEN 4
+                    WHEN 10.1 < abs(new.hours_duration - other.hours_duration) <= 15.1 THEN 3
+                    WHEN 15.1 < abs(new.hours_duration - other.hours_duration) <= 20.1 THEN 2
+                    WHEN 20.1 < abs(new.hours_duration - other.hours_duration) <= 25.1 THEN 1
                     ELSE 0
                 END
             MERGE (other)-[r2:SAME_DURATION]->(new)
             ON CREATE SET r2.weight =
                 CASE
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 5 THEN 5
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 10 THEN 4
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 15 THEN 3
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 20 THEN 2
-                    WHEN abs(new.hours_duration - other.hours_duration) <= 25 THEN 1
+                    WHEN abs(new.hours_duration - other.hours_duration) <= 5.1 THEN 5
+                    WHEN 5.1 < abs(new.hours_duration - other.hours_duration) <= 10.1 THEN 4
+                    WHEN 10.1 < abs(new.hours_duration - other.hours_duration) <= 15.1 THEN 3
+                    WHEN 15.1 < abs(new.hours_duration - other.hours_duration) <= 20.1 THEN 2
+                    WHEN 20.1 < abs(new.hours_duration - other.hours_duration) <= 25.1 THEN 1
                     ELSE 0
                 END
         )
@@ -129,21 +129,21 @@ def create_videogame():
             MERGE (new)-[r:SAME_SCORE]->(other)
             ON CREATE SET r.weight =
                 CASE
-                    WHEN abs(new.score - other.score) <= 0.1 THEN 5
-                    WHEN abs(new.score - other.score) <= 0.2 THEN 4
-                    WHEN abs(new.score - other.score) <= 0.3 THEN 3
-                    WHEN abs(new.score - other.score) <= 0.4 THEN 2
-                    WHEN abs(new.score - other.score) <= 0.5 THEN 1
+                    WHEN abs(new.score - other.score) <= 0.11 THEN 5
+                    WHEN 0.11 < abs(new.score - other.score) <= 0.21 THEN 4
+                    WHEN 0.21 < abs(new.score - other.score) <= 0.31 THEN 3
+                    WHEN 0.31 < abs(new.score - other.score) <= 0.41 THEN 2
+                    WHEN 0.41 < abs(new.score - other.score) <= 0.51 THEN 1
                     ELSE 0
                 END
             MERGE (other)-[r2:SAME_SCORE]->(new)
             ON CREATE SET r2.weight =
                 CASE
-                    WHEN abs(new.score - other.score) <= 0.1 THEN 5
-                    WHEN abs(new.score - other.score) <= 0.2 THEN 4
-                    WHEN abs(new.score - other.score) <= 0.3 THEN 3
-                    WHEN abs(new.score - other.score) <= 0.4 THEN 2
-                    WHEN abs(new.score - other.score) <= 0.5 THEN 1
+                    WHEN abs(new.score - other.score) <= 0.11 THEN 5
+                    WHEN 0.11 < abs(new.score - other.score) <= 0.21 THEN 4
+                    WHEN 0.21 < abs(new.score - other.score) <= 0.31 THEN 3
+                    WHEN 0.31 < abs(new.score - other.score) <= 0.41 THEN 2
+                    WHEN 0.41 < abs(new.score - other.score) <= 0.51 THEN 1
                     ELSE 0
                 END
         )
