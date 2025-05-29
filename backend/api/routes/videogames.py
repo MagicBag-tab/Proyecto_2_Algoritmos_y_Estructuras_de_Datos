@@ -1,8 +1,13 @@
 from flask import Blueprint, request, jsonify
 from neo4j_driver import get_driver
 from urllib.parse import unquote
+# ...existing iports...
+from flask_bcrypt import Bcrypt
 
-videogames_bp = Blueprint('videogames', __name__)
+bcrypt = Bcrypt()
+videogames_bp = Blueprint('videogames', _name_)
+
+
 
 @videogames_bp.route('/videogames', methods=['POST'])
 def create_videogame():
@@ -206,6 +211,7 @@ def update_videogame(name):
 @videogames_bp.route('/users', methods=['POST'])
 def create_user():
     data = request.get_json()
+    hashed_password = bcrypt.generate_password_hash(data["contraseña"]).decode('utf-8')
     query = """
     CREATE (u:User {
         nombre: $nombre,
@@ -219,7 +225,7 @@ def create_user():
             "nombre": data["nombre"],
             "apellido": data["apellido"],
             "correo": data["correo"],
-            "contraseña": data["contraseña"]
+            "contraseña": hashed_password
         })
 
         for juego in data["juegos_favoritos"]:
@@ -296,15 +302,26 @@ def delete_user(correo):
 @videogames_bp.route('/users/<correo>', methods=['PUT'])
 def update_user(correo):
     data = request.get_json()
-    query = """
-    MATCH (u:User {correo: $correo})
-    SET u.nombre = $nombre,
-        u.apellido = $apellido,
-        u.contraseña = $contraseña
+    params = {
+        "correo": correo,
+        "nombre": data["nombre"],
+        "apellido": data["apellido"]
+    }
+    set_query = "u.nombre = $nombre, u.apellido = $apellido"
+    if "contraseña" in data and data["contraseña"]:
+        hashed_password = bcrypt.generate_password_hash(data["contraseña"]).decode('utf-8')
+        params["contraseña"] = hashed_password
+        set_query += ", u.contraseña = $contraseña"
+
+    query = f"""
+    MATCH (u:User {{correo: $correo}})
+    SET {set_query}
     """
+
     with get_driver().session() as session:
-        result = session.run(query, {"correo": correo, **data})
-        if result.summary().counters.properties_set > 0:
+        result = session.run(query, params)
+        summary = result.consume()
+        if summary.counters.properties_set > 0:
             return jsonify({"message": "Usuario actualizado"}), 200
         else:
             return jsonify({"error": "Usuario no encontrado"}), 404
@@ -381,20 +398,22 @@ def update_user_games(correo):
 
     return jsonify({"mensajes": mensajes}), 200
 
-@videogames_bp.route('users/<correo>/actualizar_contraseña', methods=['PUT'])
+@videogames_bp.route('/users/<correo>/actualizar_contraseña', methods=['PUT'])
 def update_user_password(correo):
     data = request.get_json()
     new_password = data.get("contraseña")
     if not new_password:
         return jsonify({"error": "Nueva contraseña requerida"}), 400
 
+    hashed_password = bcrypt.generate_password_hash(new_password).decode('utf-8')
     query = """
     MATCH (u:User {correo: $correo})
     SET u.contraseña = $contraseña
     """
     with get_driver().session() as session:
-        result = session.run(query, {"correo": correo, "contraseña": new_password})
-        if result.summary().counters.properties_set > 0:
+        result = session.run(query, {"correo": correo, "contraseña": hashed_password})
+        summary = result.consume()
+        if summary.counters.properties_set > 0:
             return jsonify({"message": "Contraseña actualizada"}), 200
         else:
             return jsonify({"error": "Usuario no encontrado"}), 404
@@ -511,12 +530,16 @@ def login():
     if not correo or not contraseña:
         return jsonify({"error": "Faltan datos"}), 400
 
-    query = "MATCH (u:User {correo: $correo, contraseña: $contraseña}) RETURN u"
+    query = "MATCH (u:User {correo: $correo}) RETURN u"
     with get_driver().session() as session:
-        result = session.run(query, {"correo": correo, "contraseña": contraseña})
+        result = session.run(query, {"correo": correo})
         record = result.single()
         if record:
             u = record["u"]
-            return jsonify({"message": "Login exitoso", "user": u._properties}), 200
+            hashed_password = u["contraseña"]
+            if bcrypt.check_password_hash(hashed_password, contraseña):
+                return jsonify({"message": "Login exitoso", "user": u._properties}), 200
+            else:
+                return jsonify({"error": "Credenciales incorrectas"}), 401
         else:
             return jsonify({"error": "Credenciales incorrectas"}), 401
