@@ -45,12 +45,11 @@ def get_recommendations(correo):
                 })
 
         # 3. Calcular el peso máximo posible (usuario + amigos)
-
         num_user_games = len(user_games)
-        max_user_game_weight = 5  # FAVORITE
-        max_game_relation_weight = 5  # Por característica
+        max_user_game_weight = 10  # FAVORITE
+        max_game_relation_weight = 10  # Por característica
         num_characteristics = 6  # SIMILAR_GENRE, SIMILAR_PLATFORM, SAME_COMPANY, SAME_MULTIPLAYER, SAME_DURATION, SAME_SCORE
-        max_total = (num_user_games * max_user_game_weight) + (num_user_games * num_characteristics * max_game_relation_weight)
+        max_total = (num_user_games * max_user_game_weight * num_characteristics * max_game_relation_weight)
 
         # 4. Obtener juegos no relacionados con el usuario
         unrelated_games_query = """
@@ -69,25 +68,52 @@ def get_recommendations(correo):
 
         # 5. Calcular el score para cada juego no relacionado
         recommendations = []
+
         for game in unrelated_games:
             total_weight = 0
+            debug_info = {"game": game["name"], "rel_weights": [], "friend_weights": []}
 
-            # a) Sumar pesos de relaciones entre juegos del usuario y el juego candidato
+            # a) Sumar pesos de relaciones entre juegos del usuario y el juego candidato, multiplicados por el peso usuario-juego
             for user_game in user_games:
                 rel_query = """
                 MATCH (g1:Game {name: $user_game}), (g2:Game {name: $candidate})
-                OPTIONAL MATCH (g1)-[r:SIMILAR_GENRE|SIMILAR_PLATFORM|SAME_COMPANY|SAME_MULTIPLAYER|SAME_DURATION|SAME_SCORE]-(g2)
-                RETURN COALESCE(sum(r.weight), 0) AS rel_weight
+                OPTIONAL MATCH (g1)-[r1:SIMILAR_GENRE]->(g2)
+                WITH g1, g2, COALESCE(max(r1.weight), 0) AS genre_weight
+                OPTIONAL MATCH (g1)-[r2:SIMILAR_PLATFORM]->(g2)
+                WITH g1, g2, genre_weight, COALESCE(max(r2.weight), 0) AS platform_weight
+                OPTIONAL MATCH (g1)-[r3:SAME_COMPANY]->(g2)
+                WITH g1, g2, genre_weight, platform_weight, COALESCE(max(r3.weight), 0) AS company_weight
+                OPTIONAL MATCH (g1)-[r4:SAME_MULTIPLAYER]->(g2)
+                WITH g1, g2, genre_weight, platform_weight, company_weight, COALESCE(max(r4.weight), 0) AS multiplayer_weight
+                OPTIONAL MATCH (g1)-[r5:SAME_DURATION]->(g2)
+                WITH g1, g2, genre_weight, platform_weight, company_weight, multiplayer_weight, COALESCE(max(r5.weight), 0) AS duration_weight
+                OPTIONAL MATCH (g1)-[r6:SAME_SCORE]->(g2)
+                RETURN genre_weight, platform_weight, company_weight, multiplayer_weight, duration_weight, COALESCE(max(r6.weight), 0) AS score_weight
                 """
                 rel_result = session.run(rel_query, {"user_game": user_game["name"], "candidate": game["name"]})
-                rel_weight = rel_result.single()["rel_weight"]
-                total_weight += rel_weight
+                rel_record = rel_result.single()
+                rel_weights = [
+                    ("SIMILAR_GENRE", rel_record["genre_weight"]),
+                    ("SIMILAR_PLATFORM", rel_record["platform_weight"]),
+                    ("SAME_COMPANY", rel_record["company_weight"]),
+                    ("SAME_MULTIPLAYER", rel_record["multiplayer_weight"]),
+                    ("SAME_DURATION", rel_record["duration_weight"]),
+                    ("SAME_SCORE", rel_record["score_weight"])
+                ]
+                rel_sum = sum(w for _, w in rel_weights)
+                rel_weight_total = rel_sum * user_game["weight"]  # Multiplicación aquí
+                total_weight += rel_weight_total
+                debug_info["rel_weights"].append({
+                    "user_game": user_game["name"],
+                    "user_game_weight": user_game["weight"],
+                    "relations": [
+                        {"type": rel_type, "weight": float(weight)} for rel_type, weight in rel_weights
+                    ],
+                    "sum_relations": float(rel_sum),
+                    "total_for_this_game": float(rel_weight_total)
+                })
 
-                # b) Sumar el peso de la relación usuario-juego si hay conexión
-                if rel_weight > 0:
-                    total_weight += user_game["weight"]
-
-            # c) Sumar pesos de los amigos y sus juegos (solo relación directa)
+            # b) Sumar pesos de los amigos y sus juegos (solo relación directa)
             for friend in friends:
                 friend_weight = 1
                 friend_game_query = """
@@ -98,15 +124,21 @@ def get_recommendations(correo):
                 record = rel_result.single()
                 if record and record["weight"]:
                     total_weight += record["weight"] + friend_weight
+                    debug_info["friend_weights"].append((friend, record["weight"], friend_weight))
 
             normalized_score = total_weight / max_total if max_total > 0 else 0
+
+            debug_info["total_weight"] = total_weight
+            debug_info["max_total"] = max_total
+            debug_info["normalized_score"] = normalized_score
 
             recommendations.append({
                 "name": game["name"],
                 "score": game["score"],
                 "genres": game["genres"],
                 "platforms": game["platforms"],
-                "normalized_score": normalized_score
+                "normalized_score": normalized_score,
+                "debug_info": debug_info
             })
 
         # 6. Ordenar y devolver los 3 mejores, y crear relación RECOMMENDED para esos 3
@@ -121,4 +153,5 @@ def get_recommendations(correo):
                 ON MATCH SET r.weight = $peso
             """, {"correo": correo, "name": rec["name"], "peso": rec["normalized_score"]})
 
-        return jsonify(top3), 200
+        # Devuelve solo el top3 y su debug
+        return jsonify({"top3": top3, "debug_all": top3}), 200

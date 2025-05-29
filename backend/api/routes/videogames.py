@@ -35,10 +35,10 @@ def create_videogame():
             MERGE (new)-[r:SIMILAR_GENRE]->(other)
             ON CREATE SET r.weight = 
                 CASE
-                    WHEN toFloat(size(shared_genres))/toFloat(new_genres_count) >= 1 THEN 5
-                    WHEN 1 > toFloat(size(shared_genres))/toFloat(new_genres_count) >= 0.75 THEN 4
-                    WHEN 0.75 > toFloat(size(shared_genres))/toFloat(new_genres_count) >= 0.5 THEN 3
-                    WHEN 0.5 > toFloat(size(shared_genres))/toFloat(new_genres_count) >= 0.25 THEN 2
+                    WHEN toFloat(size(shared_genres))/toFloat(new_genres_count) >= 1 THEN 10
+                    WHEN 1 > toFloat(size(shared_genres))/toFloat(new_genres_count) >= 0.75 THEN 7
+                    WHEN 0.75 > toFloat(size(shared_genres))/toFloat(new_genres_count) >= 0.5 THEN 5
+                    WHEN 0.5 > toFloat(size(shared_genres))/toFloat(new_genres_count) >= 0.25 THEN 3
                     WHEN 0.25 > toFloat(size(shared_genres))/toFloat(new_genres_count) > 0 THEN 1
                     ELSE 0
                 END
@@ -49,10 +49,10 @@ def create_videogame():
             MERGE (other)-[r2:SIMILAR_GENRE]->(new)
             ON CREATE SET r2.weight = 
                 CASE
-                    WHEN toFloat(size(shared_genres))/toFloat(other_genres_count) >= 1 THEN 5
-                    WHEN 1 > toFloat(size(shared_genres))/toFloat(other_genres_count) >= 0.75 THEN 4
-                    WHEN 0.75 > toFloat(size(shared_genres))/toFloat(other_genres_count) >= 0.5 THEN 3
-                    WHEN 0.5 > toFloat(size(shared_genres))/toFloat(other_genres_count) >= 0.25 THEN 2
+                    WHEN toFloat(size(shared_genres))/toFloat(other_genres_count) >= 1 THEN 10
+                    WHEN 1 > toFloat(size(shared_genres))/toFloat(other_genres_count) >= 0.75 THEN 7
+                    WHEN 0.75 > toFloat(size(shared_genres))/toFloat(other_genres_count) >= 0.5 THEN 5
+                    WHEN 0.5 > toFloat(size(shared_genres))/toFloat(other_genres_count) >= 0.25 THEN 3
                     WHEN 0.25 > toFloat(size(shared_genres))/toFloat(other_genres_count) > 0 THEN 1
                     ELSE 0
                 END
@@ -67,10 +67,10 @@ def create_videogame():
             MERGE (new)-[r:SIMILAR_PLATFORM]->(other)
             ON CREATE SET r.weight = 
                 CASE
-                    WHEN toFloat(size(shared_platforms))/toFloat(new_platforms_count) >= 1 THEN 5
-                    WHEN 1 > toFloat(size(shared_platforms))/toFloat(new_platforms_count) >= 0.75 THEN 4
-                    WHEN 0.75 > toFloat(size(shared_platforms))/toFloat(new_platforms_count) >= 0.5 THEN 3
-                    WHEN 0.5 > toFloat(size(shared_platforms))/toFloat(new_platforms_count) >= 0.25 THEN 2
+                    WHEN toFloat(size(shared_platforms))/toFloat(new_platforms_count) >= 1 THEN 10
+                    WHEN 1 > toFloat(size(shared_platforms))/toFloat(new_platforms_count) >= 0.75 THEN 7
+                    WHEN 0.75 > toFloat(size(shared_platforms))/toFloat(new_platforms_count) >= 0.5 THEN 5
+                    WHEN 0.5 > toFloat(size(shared_platforms))/toFloat(new_platforms_count) >= 0.25 THEN 3
                     WHEN 0.25 > toFloat(size(shared_platforms))/toFloat(new_platforms_count) > 0 THEN 1
                     ELSE 0
                 END
@@ -81,10 +81,10 @@ def create_videogame():
             MERGE (other)-[r2:SIMILAR_PLATFORM]->(new)
             ON CREATE SET r2.weight = 
                 CASE
-                    WHEN toFloat(size(shared_platforms))/toFloat(other_platforms_count) >= 1 THEN 5
-                    WHEN 1 > toFloat(size(shared_platforms))/toFloat(other_platforms_count) >= 0.75 THEN 4
-                    WHEN 0.75 > toFloat(size(shared_platforms))/toFloat(other_platforms_count) >= 0.5 THEN 3
-                    WHEN 0.5 > toFloat(size(shared_platforms))/toFloat(other_platforms_count) >= 0.25 THEN 2
+                    WHEN toFloat(size(shared_platforms))/toFloat(other_platforms_count) >= 1 THEN 10
+                    WHEN 1 > toFloat(size(shared_platforms))/toFloat(other_platforms_count) >= 0.75 THEN 7
+                    WHEN 0.75 > toFloat(size(shared_platforms))/toFloat(other_platforms_count) >= 0.5 THEN 5
+                    WHEN 0.5 > toFloat(size(shared_platforms))/toFloat(other_platforms_count) >= 0.25 THEN 3
                     WHEN 0.25 > toFloat(size(shared_platforms))/toFloat(other_platforms_count) > 0 THEN 1
                     ELSE 0
                 END
@@ -226,21 +226,21 @@ def create_user():
             session.run("""
             MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
             MERGE (u)-[r:FAVORITE]->(g)
-            ON CREATE SET r.weight = 5
+            ON CREATE SET r.weight = 10
             """, {"correo": data["correo"], "juego": juego})
 
         for juego in data["juegos_interesados"]:
             session.run("""
             MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
             MERGE (u)-[r:INTERESTED]->(g)
-            ON CREATE SET r.weight = 2
+            ON CREATE SET r.weight = 5
             """, {"correo": data["correo"], "juego": juego})
 
         for juego in data["juegos_no_gustados"]:
             session.run("""
             MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
             MERGE (u)-[r:NO_GUSTADOS]->(g)
-            ON CREATE SET r.weight = -5
+            ON CREATE SET r.weight = -10
             """, {"correo": data["correo"], "juego": juego})
 
         for juego in data["juegos_jugados"]:
@@ -254,9 +254,9 @@ def create_user():
             session.run("""
             MATCH (u1:User {correo: $correo}), (u2:User {correo: $amigo})
             MERGE (u1)-[r:FRIEND]->(u2)
-            ON CREATE SET r.weight = 5
+            ON CREATE SET r.weight = 1
             MERGE (u2)-[r2:FRIEND]->(u1)
-            ON CREATE SET r2.weight = 5
+            ON CREATE SET r2.weight = 1
             """, {"correo": data["correo"], "amigo": amigo})
 
     return jsonify({"message": "Usuario creado"}), 201
@@ -327,7 +327,7 @@ def update_user_games(correo):
                 session.run("""
                     MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
                     MERGE (u)-[r:FAVORITE]->(g)
-                    ON CREATE SET r.weight = 5
+                    ON CREATE SET r.weight = 10
                 """, {"correo": correo, "juego": juego})
                 mensajes.append(f"{juego} agregado como favorito.")
 
@@ -343,7 +343,7 @@ def update_user_games(correo):
                 session.run("""
                     MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
                     MERGE (u)-[r:INTERESTED]->(g)
-                    ON CREATE SET r.weight = 2
+                    ON CREATE SET r.weight = 5
                 """, {"correo": correo, "juego": juego})
                 mensajes.append(f"{juego} agregado como interesado.")
 
