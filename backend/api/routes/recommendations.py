@@ -137,8 +137,7 @@ def get_recommendations(correo):
                 "score": game["score"],
                 "genres": game["genres"],
                 "platforms": game["platforms"],
-                "normalized_score": normalized_score,
-                "debug_info": debug_info
+                "normalized_score": normalized_score
             })
 
         # 6. Ordenar y devolver los 3 mejores, y crear relación RECOMMENDED para esos 3
@@ -154,4 +153,4 @@ def get_recommendations(correo):
             """, {"correo": correo, "name": rec["name"], "peso": rec["normalized_score"]})
 
         # Devuelve solo el top3 y su debug
-        return jsonify({"top3": top3, "debug_all": top3}), 200
+        return jsonify({"top3": top3}), 200
