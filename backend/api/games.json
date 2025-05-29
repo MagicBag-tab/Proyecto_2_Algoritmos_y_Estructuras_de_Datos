@@ -145,7 +145,7 @@
         "hours_duration": 80
     },
     {
-        "name": "Animal Crossing: New Horizons",
+        "name": "Animal Crossing",
         "multiplayer": true,
         "genres": [
             "Simulation",
@@ -156,7 +156,7 @@
         ],
         "score": 9.0,
         "company": "Nintendo",
-        "hours_duration": 0
+        "hours_duration": 60
     },
     {
         "name": "The Legend of Zelda: Breath of the Wild",
@@ -908,5 +908,55 @@
         "score": 8.9,
         "company": "Capcom",
         "hours_duration": 50
+    },
+    {
+        "name": "Cities: Skylines",
+        "multiplayer": false,
+        "genres": [
+            "Simulation",
+            "City Building"
+        ],
+        "platforms": [
+            "PC",
+            "PS4",
+            "Xbox"
+        ],
+        "score": 8.7,
+        "company": "Paradox Interactive",
+        "hours_duration": 40
+    },
+    {
+        "name": "Rainbow Six Siege",
+        "multiplayer": true,
+        "genres": [
+            "Shooter",
+            "Tactical"
+        ],
+        "platforms": [
+            "PC",
+            "PS4",
+            "PS5",
+            "Xbox"
+        ],
+        "score": 8.3,
+        "company": "Ubisoft",
+        "hours_duration": 0
+    },
+    {
+        "name": "Overcooked 2",
+        "multiplayer": true,
+        "genres": [
+            "Party",
+            "Co-op"
+        ],
+        "platforms": [
+            "PC",
+            "PS4",
+            "Xbox",
+            "Switch"
+        ],
+        "score": 8.2,
+        "company": "Team17",
+        "hours_duration": 15
     }
 ]
