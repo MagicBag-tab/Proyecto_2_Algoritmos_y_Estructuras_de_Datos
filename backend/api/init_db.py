@@ -3,20 +3,19 @@ from neo4j_driver import get_driver
 
 def initialize_database():
     with get_driver().session() as session:
-        # Verificar si la base de datos ya tiene juegos
+        # Check if games already exist
         result = session.run("MATCH (g:Game) RETURN count(g) AS count")
         if result.single()["count"] > 0:
-            print("Base de datos ya contiene juegos, omitiendo carga de juegos.")
+            print("Database already contains games, skipping game loading.")
         else:
-            # Cargar juegos desde JSON
             try:
                 with open('games.json', 'r', encoding='utf-8') as file:
                     games = json.load(file)
             except FileNotFoundError:
-                print("Error: games.json no encontrado.")
+                print("Error: games.json not found.")
                 return
             except json.JSONDecodeError:
-                print("Error: games.json tiene un formato inválido.")
+                print("Error: games.json has invalid format.")
                 return
 
             for game in games:
@@ -30,7 +29,7 @@ def initialize_database():
                         g.hours_duration = $hours_duration
                 """, game)
 
-            # Crear relaciones entre juegos
+            # Create relationships between games
             session.run("""
                 MATCH (g1:Game), (g2:Game)
                 WHERE g1 <> g2 AND ANY(genre IN g1.genres WHERE genre IN g2.genres)
@@ -40,30 +39,29 @@ def initialize_database():
             session.run("""
                 MATCH (g1:Game), (g2:Game)
                 WHERE g1 <> g2 AND ANY(platform IN g1.platforms WHERE platform IN g2.platforms)
-                MERGE (g1)-[:SIMILAR_PLATFORM {weight: 5}]->(g2)
+                MERGE (g1)-[:SIMILAR_PLATFORM]->(g2)
             """)
 
-            print("Juegos y relaciones cargados exitosamente.")
+            print("Games and relationships loaded successfully.")
 
-        # Verificar si la base de datos ya tiene usuarios
+        # Check if users already exist
         result = session.run("MATCH (u:User) RETURN count(u) AS count")
         if result.single()["count"] > 0:
-            print("Base de datos ya contiene usuarios, omitiendo carga de usuarios.")
+            print("Database already contains users, skipping users loading.")
             return
 
-        # Cargar usuarios desde JSON
         try:
             with open('users.json', 'r', encoding='utf-8') as file:
                 users = json.load(file)
         except FileNotFoundError:
-            print("Error: users.json no encontrado.")
+            print("Error: users.json not found.")
             return
         except json.JSONDecodeError:
-            print("Error: users.json tiene un formato inválido.")
+            print("Error: users.json has invalid format.")
             return
 
         for user in users:
-            # Crear el nodo User
+            # Create user node
             session.run("""
                 MERGE (u:User {correo: $correo})
                 SET u.nombre = $nombre,
@@ -76,47 +74,67 @@ def initialize_database():
                 "contraseña": user["contraseña"]
             })
 
-            # Crear relaciones FAVORITE
-            for juego in user.get("juegos_favoritos", []):
-                session.run("""
-                    MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
-                    MERGE (u)-[r:FAVORITE]->(g)
-                    ON CREATE SET r.weight = 5
-                """, {"correo": user["correo"], "juego": juego})
+            # Create FAVORITE relationships
+            for game in user.get("juegos_favoritos", []):
+                result = session.run("MATCH (g:Game {name: $game}) RETURN g", {"game": game})
+                if result.single():
+                    session.run("""
+                        MATCH (u:User {correo: $correo}), (g:Game {name: $game})
+                        MERGE (u)-[r:FAVORITE]->(g)
+                        ON CREATE SET r.weight = 5
+                    """, {"correo": user["correo"], "game": game})
+                else:
+                    print(f"Game {game} not found for user {user['correo']}")
 
-            # Crear relaciones INTERESTED
-            for juego in user.get("juegos_interesados", []):
-                session.run("""
-                    MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
-                    MERGE (u)-[r:INTERESTED]->(g)
-                    ON CREATE SET r.weight = 2
-                """, {"correo": user["correo"], "juego": juego})
+            # Create INTERESTED relationships
+            for game in user.get("juegos_interesados", []):
+                result = session.run("MATCH (g:Game {name: $game}) RETURN g", {"game": game})
+                if result.single():
+                    session.run("""
+                        MATCH (u:User {correo: $correo}), (g:Game {name: $game})
+                        MERGE (u)-[r:INTERESTED]->(g)
+                        ON CREATE SET r.weight = 2
+                    """, {"correo": user["correo"], "game": game})
+                else:
+                    print(f"Game {game} not found for user {user['correo']}")
 
-            # Crear relaciones NO_GUSTADOS
-            for juego in user.get("juegos_no_gustados", []):
-                session.run("""
-                    MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
-                    MERGE (u)-[r:NO_GUSTADOS]->(g)
-                    ON CREATE SET r.weight = -5
-                """, {"correo": user["correo"], "juego": juego})
+            # Create NO_GUSTADOS relationships
+            for game in user.get("juegos_no_gustados", []):
+                result = session.run("MATCH (g:Game {name: $game}) RETURN g", {"game": game})
+                if result.single():
+                    session.run("""
+                        MATCH (u:User {correo: $correo}), (g:Game {name: $game})
+                        MERGE (u)-[r:NO_GUSTADOS]->(g)
+                        ON CREATE SET r.weight = -5
+                    """, {"correo": user["correo"], "game": game})
+                else:
+                    print(f"Game {game} not found for user {user['correo']}")
 
-            # Crear relaciones PLAYED
-            for juego in user.get("juegos_jugados", []):
-                session.run("""
-                    MATCH (u:User {correo: $correo}), (g:Game {name: $juego})
-                    MERGE (u)-[r:PLAYED]->(g)
-                    ON CREATE SET r.weight = 0
-                """, {"correo": user["correo"], "juego": juego})
+            # Create PLAYED relationships
+            for game in user.get("juegos_jugados", []):
+                result = session.run("MATCH (g:Game {name: $game}) RETURN g", {"game": game})
+                if result.single():
+                    session.run("""
+                        MATCH (u:User {correo: $correo}), (g:Game {name: $game})
+                        MERGE (u)-[r:PLAYED]->(g)
+                        ON CREATE SET r.weight = 0
+                    """, {"correo": user["correo"], "game": game})
+                else:
+                    print(f"Game {game} not found for user {user['correo']}")
 
-            # Crear relaciones FRIEND
+            # Create FRIEND relationships
             for amigo in user.get("amigos", []):
-                session.run("""
-                    MATCH (u1:User {correo: $correo}), (u2:User {correo: $amigo})
-                    MERGE (u1)-[r:FRIEND]->(u2)
-                    ON CREATE SET r.weight = 5
-                """, {"correo": user["correo"], "amigo": amigo})
+                result = session.run("MATCH (u2:User {correo: $amigo}) RETURN u2", {"amigo": amigo})
+                if result.single():
+                    session.run("""
+                        MATCH (u1:User {correo: $correo}), (u2:User {correo: $amigo})
+                        MERGE (u1)-[r:FRIEND]->(u2)
+                        ON CREATE SET r.weight = 5
+                    """, {"correo": user["correo"], "amigo": amigo})
+                else:
+                    print(f"Friend {amigo} not found for user {user['correo']}")
 
-        print("Usuarios y relaciones cargados exitosamente.")
+        print("Users and relationships loaded successfully.")
 
 if __name__ == "__main__":
     initialize_database()
