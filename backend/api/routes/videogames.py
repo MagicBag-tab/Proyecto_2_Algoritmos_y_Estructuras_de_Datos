@@ -20,7 +20,8 @@ def create_videogame():
         platforms: $platforms,
         score: $score,
         company: $company,
-        hours_duration: $hours_duration
+        hours_duration: $hours_duration,
+        image_url: COALESCE($image_url, null)
     })
     """
     with get_driver().session() as session:
@@ -199,7 +200,7 @@ def update_videogame(name):
         g.platforms = $platforms,
         g.score = $score,
         g.company = $company,
-        g.hours_duration = $hours_duration
+        g.hours_duration = $hours_duration,
     """
     with get_driver().session() as session:
         result = session.run(query, {"name": name, **data})

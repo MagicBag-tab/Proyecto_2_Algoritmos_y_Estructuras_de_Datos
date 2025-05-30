@@ -1,15 +1,16 @@
 ### 1. Halo Infinite
-POST http://localhost:5050/api/v1/videogames
+POST http://localhost:5050/api/v1/videogames HTTP/1.1
 Content-Type: application/json
 
 {
   "name": "Halo Infinite",
   "multiplayer": true,
-  "genres": ["Shooter", "Sci-Fi"],
-  "platforms": ["Xbox", "PC"],
+  "genres": ["Shooter", "Action"],
+  "platforms": ["PC", "Xbox"],
   "score": 8.7,
   "company": "343 Industries",
-  "hours_duration": 0
+  "hours_duration": 20,
+  "image_url": "https://media.rawg.io/media/games/733/..."
 }
 
 ### 2. Call of Duty: Modern Warfare II
@@ -417,3 +418,5 @@ Content-Type: application/json
   "company": "Ludeon Studios",
   "hours_duration": 0
 }
+
+GET http://localhost:5050/api/v1/videogames/Halo%20Infinite
