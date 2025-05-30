@@ -1,23 +1,31 @@
 import json
+import os
 from neo4j_driver import get_driver
 
 def initialize_database():
     with get_driver().session() as session:
+        # Clear the database
+        session.run("MATCH (n) DETACH DELETE n")
+        
         # Check if games already exist
         result = session.run("MATCH (g:Game) RETURN count(g) AS count")
         if result.single()["count"] > 0:
             print("Database already contains games, skipping game loading.")
         else:
+            # Resolve absolute path for games.json
+            SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+            GAMES_JSON_PATH = os.path.join(SCRIPT_DIR, 'games.json')
             try:
-                with open('games.json', 'r', encoding='utf-8') as file:
+                with open(GAMES_JSON_PATH, 'r', encoding='utf-8') as file:
                     games = json.load(file)
             except FileNotFoundError:
-                print("Error: games.json not found.")
+                print(f"Error: games.json not found at {GAMES_JSON_PATH}.")
                 return
             except json.JSONDecodeError:
                 print("Error: games.json has invalid format.")
                 return
 
+            # Load games into Neo4j
             for game in games:
                 session.run("""
                     MERGE (g:Game {name: $name})
@@ -26,7 +34,8 @@ def initialize_database():
                         g.platforms = $platforms,
                         g.score = $score,
                         g.company = $company,
-                        g.hours_duration = $hours_duration
+                        g.hours_duration = $hours_duration,
+                        g.image_url = $image_url
                 """, game)
 
             # Create relationships between games
@@ -50,16 +59,20 @@ def initialize_database():
             print("Database already contains users, skipping users loading.")
             return
 
+        # Resolve absolute path for users.json
+        SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+        USERS_JSON_PATH = os.path.join(SCRIPT_DIR, 'users.json')
         try:
-            with open('users.json', 'r', encoding='utf-8') as file:
+            with open(USERS_JSON_PATH, 'r', encoding='utf-8') as file:
                 users = json.load(file)
         except FileNotFoundError:
-            print("Error: users.json not found.")
+            print(f"Error: users.json not found at {USERS_JSON_PATH}.")
             return
         except json.JSONDecodeError:
             print("Error: users.json has invalid format.")
             return
 
+        # Load users and relationships
         for user in users:
             # Create user node
             session.run("""
