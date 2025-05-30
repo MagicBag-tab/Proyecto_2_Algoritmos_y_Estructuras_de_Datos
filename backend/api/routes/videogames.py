@@ -5,7 +5,7 @@ from urllib.parse import unquote
 from flask_bcrypt import Bcrypt
 
 bcrypt = Bcrypt()
-videogames_bp = Blueprint('videogames', _name_)
+videogames_bp = Blueprint('videogames', __name__)
 
 
 
