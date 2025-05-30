@@ -143,3 +143,19 @@ El sistema de recomendación utiliza la información de los juegos y usuarios al
 Esto permite recomendar juegos personalizados considerando tanto las preferencias directas del usuario como la influencia de sus amigos y las similitudes entre juegos.
 
 Puedes consultar la implementación en el archivo `api/routes/recommendations.py`.
+
+# ¿Cómo integrar este sistema como motor de recomendaciones en otras aplicaciones?
+
+Este sistema puede ser utilizado como un motor de recomendaciones independiente para cualquier otra aplicación (web, móvil, escritorio) que requiera sugerencias personalizadas de videojuegos. Para integrarlo:
+
+1. **Despliega la API** siguiendo los pasos de instalación y ejecución descritos arriba.
+2. **Consume los endpoints REST** desde tu aplicación externa usando HTTP (por ejemplo, con `fetch` en JavaScript, `requests` en Python, o librerías similares en otros lenguajes).
+3. **Endpoint principal para recomendaciones:**
+   ```
+   GET /api/v1/recommendations/top3/<correo>
+   ```
+   Donde `<correo>` es el correo del usuario para el que deseas obtener recomendaciones.
+
+4. **Puedes crear, actualizar y consultar usuarios, juegos y relaciones** usando los demás endpoints documentados en este README.
+
+De esta forma, puedes conectar tu frontend, app móvil o cualquier otro sistema a este backend y aprovechar su lógica de recomendación sin necesidad de modificar el código interno.
