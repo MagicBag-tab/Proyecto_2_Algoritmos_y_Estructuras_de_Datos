@@ -474,7 +474,7 @@ def delete_user_friend(correo, amigo):
     """
     with get_driver().session() as session:
         result = session.run(query, {"correo": correo, "amigo": amigo})
-        if result.summary().counters.relationships_deleted > 0:
+        if result.consume().counters.relationships_deleted > 0:
             return jsonify({"message": "Amigo eliminado"}), 200
         else:
             return jsonify({"error": "Amigo no encontrado"}), 404
