@@ -471,6 +471,8 @@ def delete_user_friend(correo, amigo):
     query = """
     MATCH (u1:User {correo: $correo})-[r:FRIEND]->(u2:User {correo: $amigo})
     DELETE r
+    MATCH (u2:User {correo: $amigo})-[r2:FRIEND]->(u1)
+    DELETE r2
     """
     with get_driver().session() as session:
         result = session.run(query, {"correo": correo, "amigo": amigo})
