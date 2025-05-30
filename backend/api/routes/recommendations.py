@@ -55,7 +55,7 @@ def get_recommendations(correo):
         unrelated_games_query = """
         MATCH (g:Game)
         WHERE NOT EXISTS((:User {correo: $correo})-[:FAVORITE|INTERESTED|NO_GUSTADOS|PLAYED]->(g))
-        RETURN g.name AS name, g.score AS score, g.genres AS genres, g.platforms AS platforms
+        RETURN g.name AS name, g.score AS score, g.genres AS genres, g.platforms AS platforms, g.image_url AS image_url
         """
         unrelated_games = []
         for record in session.run(unrelated_games_query, {"correo": correo}):
@@ -63,7 +63,8 @@ def get_recommendations(correo):
                 "name": record["name"],
                 "score": record["score"],
                 "genres": record["genres"],
-                "platforms": record["platforms"]
+                "platforms": record["platforms"],
+                "image_url": record["image_url"]
             })
 
         # 5. Calcular el score para cada juego no relacionado
@@ -137,7 +138,8 @@ def get_recommendations(correo):
                 "score": game["score"],
                 "genres": game["genres"],
                 "platforms": game["platforms"],
-                "normalized_score": normalized_score
+                "normalized_score": normalized_score,
+                "image_url": game["image_url"]
             })
 
         # 6. Ordenar y devolver los 3 mejores, y crear relación RECOMMENDED para esos 3

@@ -13,7 +13,7 @@
         "score": 8.7,
         "company": "343 Industries",
         "hours_duration": 20,
-        "image_url": "https://media.rawg.io/media/games/e1f/e1ffbeb1bac25b19749ad285ca29e158.jpg"
+        "image_url": "https://wallpapercave.com/wp/wp4813418.png"
     },
     {
         "name": "FIFA 23",
@@ -32,7 +32,7 @@
         "score": 8.0,
         "company": "EA Sports",
         "hours_duration": 0,
-        "image_url": "https://media.rawg.io/media/screenshots/52a/52ad785b9d1514f100ec89c6d5f22e8c.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLJ0n49C1a2Pk3Mg3iW9v5YnqI_azAMCZLSQ&s"
     },
     {
         "name": "Minecraft",
@@ -50,7 +50,7 @@
         "score": 9.5,
         "company": "Mojang",
         "hours_duration": 0,
-        "image_url": "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg"
+        "image_url": "https://noticias.upc.edu.pe/wp-content/uploads/2019/05/minecraft.jpg"
     },
     {
         "name": "Cyberpunk 2077",
@@ -68,7 +68,7 @@
         "score": 7.8,
         "company": "CD Projekt",
         "hours_duration": 60,
-        "image_url": "https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg"
+        "image_url": "https://www.viaxesports.com/wp-content/uploads/2020/06/V-V2-en.jpg"
     },
     {
         "name": "Among Us",
@@ -84,7 +84,7 @@
         "score": 8.5,
         "company": "InnerSloth",
         "hours_duration": 0,
-        "image_url": "https://media.rawg.io/media/games/e74/e74458058b35e01c1ae3feeb39a3f724.jpg"
+        "image_url": "https://res.cloudinary.com/webuvg/images/v1604530441/Among-US-portada/Among-US-portada.jpg?_i=AA"
     },
     {
         "name": "Skyrim",
@@ -102,7 +102,7 @@
         "score": 9.2,
         "company": "Bethesda",
         "hours_duration": 100,
-        "image_url": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoleWj03HDH_nr--sWLb4SWueeibtpz5N3ag&s"
     },
     {
         "name": "The Sims 4",
@@ -119,7 +119,7 @@
         "score": 8.0,
         "company": "EA",
         "hours_duration": 0,
-        "image_url": "https://media.rawg.io/media/games/e44/e445335e611b4ccf03af71fffcbd30a4.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzMVlprVj50Dq8wA_R6uc8xNT2EuY3Shtoog&s"
     },
     {
         "name": "CS:GO",
@@ -134,7 +134,7 @@
         "score": 8.8,
         "company": "Valve",
         "hours_duration": 0,
-        "image_url": "https://media.rawg.io/media/games/736/73619bd336c894d6941d926bfd563946.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcooanR2yM5r6AqqwhY9mp6U7t54E_phKCDA&s"
     },
     {
         "name": "Red Dead Redemption 2",
@@ -151,7 +151,7 @@
         "score": 9.7,
         "company": "Rockstar Games",
         "hours_duration": 80,
-        "image_url": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg"
+        "image_url": "https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/10137177/49c7d29293f89dfef95969fde62f5c27e7cc780c.jpg?quality=90&strip=all&crop=7.8125,0,84.375,100"
     },
     {
         "name": "Animal Crossing",
@@ -166,7 +166,7 @@
         "score": 9.0,
         "company": "Nintendo",
         "hours_duration": 60,
-        "image_url": "https://media.rawg.io/media/games/9dc/9dc9fbd2c2054a3a9b7c33a906546bea.jpg"
+        "image_url": "https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/19777383/Animal_Crossing_Switch_Package_header.jpg?quality=90&strip=all&crop=4.4385416666667,0,91.122916666667,100"
     },
     {
         "name": "The Legend of Zelda: Breath of the Wild",
@@ -182,7 +182,7 @@
         "score": 9.8,
         "company": "Nintendo",
         "hours_duration": 90,
-        "image_url": "https://media.rawg.io/media/games/cc1/cc196a5ad763955d6532cdba236f730c.jpg"
+        "image_url": "https://media.es.wired.com/photos/638fd68c7db986e0c2d6b19a/master/pass/Breath-of-the-Wild-Casual-Gamer-Culture.jpg"
     },
     {
         "name": "Fortnite",
@@ -201,7 +201,7 @@
         "score": 8.6,
         "company": "Epic Games",
         "hours_duration": 0,
-        "image_url": "https://media.rawg.io/media/games/dcb/dcbb67f371a9a28ea38ffd73ee0f53f3.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTncSn8th45ddZWx76yfmW4y1CzfcyUEdfPRA&s"
     },
     {
         "name": "God of War Ragnarök",
@@ -217,7 +217,7 @@
         "score": 9.6,
         "company": "Santa Monica Studio",
         "hours_duration": 50,
-        "image_url": "https://media.rawg.io/media/screenshots/3c4/3c4c51b66741363d83b56ce66b1240ec.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsTGW44uBgAfcS-VUXYJNH2Rx4Fdn2vahMfQ&s"
     },
     {
         "name": "Overwatch 2",
@@ -236,7 +236,7 @@
         "score": 7.9,
         "company": "Blizzard Entertainment",
         "hours_duration": 0,
-        "image_url": "https://media.rawg.io/media/games/95a/95a10817d1fc648cff1153f3fa8ef6c5.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZVIciItLv0_dDmg-uIKpf3KPS9e8-DdOxkw&s"
     },
     {
         "name": "Elden Ring",
@@ -255,7 +255,7 @@
         "score": 9.7,
         "company": "FromSoftware",
         "hours_duration": 100,
-        "image_url": "https://media.rawg.io/media/games/b29/b294fdd866dcdb643e7bab370a552855.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5Nou4oHurJxom1LW1QZvXbvtsRRzpNTD28g&s"
     },
     {
         "name": "Hades",
@@ -274,7 +274,7 @@
         "score": 9.1,
         "company": "Supergiant Games",
         "hours_duration": 30,
-        "image_url": "https://media.rawg.io/media/games/1f4/1f47a270b8f241e4676b14d39ec620f7.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSNZHJFuqtvUv2h6D8O2arIwT2IAuHAbXTSg&s"
     },
     {
         "name": "Stardew Valley",
@@ -293,7 +293,7 @@
         "score": 9.3,
         "company": "ConcernedApe",
         "hours_duration": 60,
-        "image_url": "https://media.rawg.io/media/games/713/713269608dc8f2f40f5a670a14b2de94.jpg"
+        "image_url": "https://gaming-cdn.com/images/news/articles/5980/cover/stardew-valley-includes-new-mining-and-fishing-features-with-patch-1-6-4-cover662233115665e.jpg"
     },
     {
         "name": "Ghost of Tsushima",
@@ -309,7 +309,7 @@
         "score": 9.4,
         "company": "Sucker Punch Productions",
         "hours_duration": 50,
-        "image_url": "https://media.rawg.io/media/games/f24/f2493ea338fe7bd3c7d73750a85a0959.jpeg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZarQ56NbMEfllCLp6w5wB5S0QPtY-e2DZ8Q&s"
     },
     {
         "name": "Doom Eternal",
@@ -328,7 +328,7 @@
         "score": 8.9,
         "company": "id Software",
         "hours_duration": 20,
-        "image_url": "https://media.rawg.io/media/games/3ea/3ea3c9bbd940b6cb7f2139e42d3d443f.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8H3d3Zkl9CyOzXoWGa_zIYwn0I8HAE_aLsA&s"
     },
     {
         "name": "Hollow Knight",
@@ -346,7 +346,7 @@
         "score": 9.0,
         "company": "Team Cherry",
         "hours_duration": 40,
-        "image_url": "https://media.rawg.io/media/games/4cf/4cfc6b7f1850590a4634b08bfab308ab.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtdcVzU6WJ98bkU8prM5LOusS3QSk0cjYUvQ&s"
     },
     {
         "name": "Resident Evil Village",
@@ -364,7 +364,7 @@
         "score": 8.5,
         "company": "Capcom",
         "hours_duration": 10,
-        "image_url": "https://media.rawg.io/media/games/6cc/6cc23249972a427f697a3d10eb57a820.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPCyeDnU48SvLuTsfb6BrBPQTaK5wuc1UU9g&s"
     },
     {
         "name": "It Takes Two",
@@ -383,7 +383,7 @@
         "score": 9.2,
         "company": "Hazelight Studios",
         "hours_duration": 12,
-        "image_url": "https://media.rawg.io/media/games/d47/d479582ed0a46496ad34f65c7099d7e5.jpg"
+        "image_url": "https://static1.srcdn.com/wordpress/wp-content/uploads/2022/01/It-Takes-Two-Screenshot.jpg"
     },
     {
         "name": "Sekiro: Shadows Die Twice",
@@ -400,7 +400,7 @@
         "score": 9.5,
         "company": "FromSoftware",
         "hours_duration": 35,
-        "image_url": "https://media.rawg.io/media/games/67f/67f62d1f062a6164f57575e0604ee9f6.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNN6xLJ8dKSG_8JNq0YpC1CEfkDGD5uJZhwg&s"
     },
     {
         "name": "Genshin Impact",
@@ -419,7 +419,7 @@
         "score": 8.4,
         "company": "HoYoverse",
         "hours_duration": 0,
-        "image_url": "https://media.rawg.io/media/games/c38/c38bdb5da139005777176d33c463d70f.jpg"
+        "image_url": "https://i.ytimg.com/vi/4MenGdXU89g/maxresdefault.jpg"
     },
     {
         "name": "Cuphead",
@@ -437,7 +437,7 @@
         "score": 8.6,
         "company": "Studio MDHR",
         "hours_duration": 10,
-        "image_url": "https://media.rawg.io/media/games/226/2262cea0b385db6cf399f4be831603b0.jpg"
+        "image_url": "https://i0.wp.com/nerfeados.com/wp-content/uploads/2017/10/CupheadRev_Portada.jpg?fit=1024%2C576&ssl=1"
     },
     {
         "name": "The Witcher 3: Wild Hunt",
@@ -457,7 +457,7 @@
         "score": 9.8,
         "company": "CD Projekt Red",
         "hours_duration": 100,
-        "image_url": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+        "image_url": "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2016/05/589324-witcher-3-blood-and-wine-avance-expansion.jpg?tf=3840x"
     },
     {
         "name": "Portal 2",
@@ -474,7 +474,7 @@
         "score": 9.5,
         "company": "Valve",
         "hours_duration": 10,
-        "image_url": "https://media.rawg.io/media/games/2ba/2bac0e87cf45e5b508f227d281c9252a.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPF6R3l6R7PJP0bn_jmF7Y7JDR9ZBCcwMYWQ&s"
     },
     {
         "name": "Death Stranding",
@@ -491,7 +491,7 @@
         "score": 8.6,
         "company": "Kojima Productions",
         "hours_duration": 40,
-        "image_url": "https://media.rawg.io/media/games/2ad/2ad87a4a69b1104f02435c14c5196095.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGBM2LSDSKCzZSTFiHsRsJixWTCP9Wi2h7GQ&s"
     },
     {
         "name": "Call of Duty: Modern Warfare II (2022)",
@@ -509,7 +509,7 @@
         "score": 8.3,
         "company": "Infinity Ward",
         "hours_duration": 6,
-        "image_url": "https://media.rawg.io/media/games/9af/9af24c1886e2c7b52a4a2c65aa874638.jpg"
+        "image_url": "https://gamersrd.com/wp-content/uploads/2022/10/Call-of-Duty-Modern-Warfare-II-Review-GamersRD2222.jpg"
     },
     {
         "name": "Fire Emblem: Three Houses",
@@ -524,7 +524,7 @@
         "score": 9.0,
         "company": "Intelligent Systems",
         "hours_duration": 80,
-        "image_url": "https://media.rawg.io/media/games/530/53081dbd5003f990fa5312404ac3d71a.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcZ2Y0IwxV8mg79NZZWbJekMBYgeVGfhfeVQ&s"
     },
     {
         "name": "Splatoon 3",
@@ -539,7 +539,7 @@
         "score": 8.7,
         "company": "Nintendo",
         "hours_duration": 10,
-        "image_url": "https://media.rawg.io/media/games/360/360ac0a839ab0f0d9a70b35d38264cb0.jpg"
+        "image_url": "https://i.ytimg.com/vi/cJQRBlnoKHE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCb-XjLF0PwNIFDkUfQ3sNrVTXsIw"
     },
     {
         "name": "Dark Souls III",
@@ -557,7 +557,7 @@
         "score": 9.1,
         "company": "FromSoftware",
         "hours_duration": 60,
-        "image_url": "https://media.rawg.io/media/games/da1/da1b267764d77221f07a4386b6548e5a.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYokR7Am6yvJd-J8ESOpEDECbYV0kNpaH68w&s"
     },
     {
         "name": "Assassin's Creed Valhalla",
@@ -575,7 +575,7 @@
         "score": 8.2,
         "company": "Ubisoft",
         "hours_duration": 70,
-        "image_url": "https://media.rawg.io/media/games/934/9346092ae11bf7582c883869468171cc.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEM3YDo4V9W05nElRAvQZyPsGxy73vABYe3A&s"
     },
     {
         "name": "Terraria",
@@ -594,7 +594,7 @@
         "score": 9.3,
         "company": "Re-Logic",
         "hours_duration": 0,
-        "image_url": "https://media.rawg.io/media/games/f46/f466571d536f2e3ea9e815ad17177501.jpg"
+        "image_url": "https://static.wikia.nocookie.net/terrariaguia/images/6/6f/Terraria.jpg/revision/latest?cb=20211105144421&path-prefix=es"
     },
     {
         "name": "Metroid Dread",
@@ -610,7 +610,7 @@
         "score": 9.1,
         "company": "MercurySteam",
         "hours_duration": 12,
-        "image_url": "https://media.rawg.io/media/games/c26/c262f8b54b46edc72594c4a9bb8ee13e.jpg"
+        "image_url": "https://i.ytimg.com/vi/bbSdDDp9CNQ/maxresdefault.jpg"
     },
     {
         "name": "Horizon Forbidden West",
@@ -627,7 +627,7 @@
         "score": 9.2,
         "company": "Guerrilla Games",
         "hours_duration": 60,
-        "image_url": "https://media.rawg.io/media/games/bf7/bf73b105ccbba42107986bbcd96fcada.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRofM4LOyhB0ZjWXDVmUZh-wIMraWFoUxfnSQ&s"
     },
     {
         "name": "Starfield",
@@ -644,7 +644,7 @@
         "score": 8.5,
         "company": "Bethesda",
         "hours_duration": 70,
-        "image_url": "https://media.rawg.io/media/games/ba8/ba82c971336adfd290e4c0eab6504fcf.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxLihsPT6R5lcm8WdOiuPLpfd46mOTscb2rQ&s"
     },
     {
         "name": "Diablo IV",
@@ -663,7 +663,7 @@
         "score": 8.8,
         "company": "Blizzard Entertainment",
         "hours_duration": 50,
-        "image_url": "https://media.rawg.io/media/games/77d/77d51f8f4a07c3eecb0f8504027b1bf0.jpg"
+        "image_url": "https://blz-contentstack-images.akamaized.net/v3/assets/blt77f4425de611b362/blt5f22bd97b0297d21/66e886ca44c6f91d945ef50e/d4-npe_developer-showcase-trailer_agnostic_1920.webp"
     },
     {
         "name": "Final Fantasy XVI",
@@ -679,7 +679,7 @@
         "score": 9.3,
         "company": "Square Enix",
         "hours_duration": 55,
-        "image_url": "https://media.rawg.io/media/games/22e/22e68bb62b3013283972cecf98ed51dc.jpg"
+        "image_url": "https://www.virtuosgames.com/wp-content/uploads/2024/10/ffxvi-long.jpg"
     },
     {
         "name": "Street Fighter 6",
@@ -697,7 +697,7 @@
         "score": 9.0,
         "company": "Capcom",
         "hours_duration": 0,
-        "image_url": "https://media.rawg.io/media/games/ce2/ce2463db40cec363f360c29ddcc56884.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJGcBmj-CLKKF029azUDqmI_lxRLIpPjEVWg&s"
     },
     {
         "name": "Baldur's Gate 3",
@@ -714,7 +714,7 @@
         "score": 9.9,
         "company": "Larian Studios",
         "hours_duration": 120,
-        "image_url": "https://media.rawg.io/media/games/699/69907ecf13f172e9e144069769c3be73.jpg"
+        "image_url": "https://media.es.wired.com/photos/649f5ec3721d1170b8ceb25c/16:9/w_2560%2Cc_limit/BaldursGateIII.jpg"
     },
     {
         "name": "Spider-Man 2",
@@ -730,7 +730,7 @@
         "score": 9.5,
         "company": "Insomniac Games",
         "hours_duration": 30,
-        "image_url": "https://media.rawg.io/media/games/1cc/1cc86be85294d9d3cf2fc95d696ce819.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV8XhQujvHervDCA-XE2nvZA4XPFfSrirSQg&sg"
     },
     {
         "name": "Super Mario Bros. Wonder",
@@ -745,7 +745,7 @@
         "score": 9.4,
         "company": "Nintendo",
         "hours_duration": 15,
-        "image_url": "https://media.rawg.io/media/games/1fd/1fd3f030bee73452d46a0678084a7ed9.jpg"
+        "image_url": "https://i.kinja-img.com/image/upload/c_fill,h_675,pg_1,q_80,w_1200/6b8c685a638df123744595fb8a74d458.jpg"
     },
     {
         "name": "Alan Wake 2",
@@ -763,7 +763,7 @@
         "score": 9.0,
         "company": "Remedy Entertainment",
         "hours_duration": 25,
-        "image_url": "https://media.rawg.io/media/games/5b9/5b963d7633cd640fa2dbc4069d1c6377.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv8MqId-Ww9F8C_CWSb-3FkhIqxMM0RmhUIg&s"
     },
     {
         "name": "Persona 5 Royal",
@@ -783,7 +783,7 @@
         "score": 9.6,
         "company": "Atlus",
         "hours_duration": 110,
-        "image_url": "https://media.rawg.io/media/games/a9c/a9c789951de65da545d51f664b4f2ce0.jpg"
+        "image_url": "https://store-images.s-microsoft.com/image/apps.64063.14482474285447263.0a4055ed-9044-4c0c-abf5-292bb1bcb735.ba2d56c4-a5d7-48b3-9ecb-586e9379581d?q=90&w=480&h=270"
     },
     {
         "name": "Dead Space Remake",
@@ -801,7 +801,7 @@
         "score": 8.9,
         "company": "Motive Studio",
         "hours_duration": 18,
-        "image_url": "https://media.rawg.io/media/games/ebd/ebdbb7eb52bd58b0e7fa4538d9757b60.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhq30WIRNzaC7Tgz6iLRfItUR9wQnoK-ebEw&s"
     },
     {
         "name": "Hi-Fi Rush",
@@ -818,7 +818,7 @@
         "score": 9.1,
         "company": "Tango Gameworks",
         "hours_duration": 12,
-        "image_url": "https://media.rawg.io/media/games/62f/62f71917e64e913f2a893e7373319c60.jpg"
+        "image_url": "https://images.ctfassets.net/tehqz6o3okv8/4LmAdp690es8G7RyxI6GzO/bf0d249827a52a953644e8d638d632da/Pulse_Key_Art_02_Final02.jpg"
     },
     {
         "name": "Octopath Traveler II",
@@ -837,7 +837,7 @@
         "score": 8.7,
         "company": "Square Enix",
         "hours_duration": 60,
-        "image_url": "https://media.rawg.io/media/games/2d1/2d1439e74ece0eae3f571211410646dc.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSlBJxnQVqK9S9b1EaMzdUzX-pY8_FHGHd4w&s"
     },
     {
         "name": "Wild Hearts",
@@ -855,7 +855,7 @@
         "score": 7.8,
         "company": "Omega Force",
         "hours_duration": 40,
-        "image_url": "https://media.rawg.io/media/games/f2c/f2cb7350b37378e9e622d85bd175c294.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrVrh4F40wFd4C219VLwdRik8-2X144LpR6A&s"
     },
     {
         "name": "Wo Long: Fallen Dynasty",
@@ -874,7 +874,7 @@
         "score": 8.2,
         "company": "Team Ninja",
         "hours_duration": 35,
-        "image_url": "https://media.rawg.io/media/games/1e1/1e1b965459d5cf69cf51e5d6fe7da959.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8X-uW0jSmXtwgv2uyQ13nkXg4SamvPL9tZg&s"
     },
     {
         "name": "Atomic Heart",
@@ -893,7 +893,7 @@
         "score": 7.5,
         "company": "Mundfish",
         "hours_duration": 25,
-        "image_url": "https://media.rawg.io/media/games/6ee/6ee5cbe30c6b6c299a3288337d40a0f3.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7feln1bUd-eIKdoq5XjoSyMM9q8kldmwE_A&s"
     },
     {
         "name": "Returnal",
@@ -910,7 +910,7 @@
         "score": 8.6,
         "company": "Housemarque",
         "hours_duration": 30,
-        "image_url": "https://media.rawg.io/media/games/673/673f27be4c5dbf37ce3ed0ed5ddf9d8d.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWBVwpSHU7dgNnYOBjSRj82CACoDhEpRxt2w&s"
     },
     {
         "name": "Kena: Bridge of Spirits",
@@ -928,7 +928,7 @@
         "score": 8.3,
         "company": "Ember Lab",
         "hours_duration": 15,
-        "image_url": "https://media.rawg.io/media/games/91d/91ddeef8d5ebee7f21faa89efa0f2201.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx4l3BeyIyw88LrRIS_ArWjb3fECMjsap4pA&s"
     },
     {
         "name": "Ratchet & Clank: Rift Apart",
@@ -945,7 +945,7 @@
         "score": 9.0,
         "company": "Insomniac Games",
         "hours_duration": 18,
-        "image_url": "https://media.rawg.io/media/games/e6b/e6bb8cf72996aa239d6e76668a48120e.jpg"
+        "image_url": "https://parallax.com.pe/wp-content/uploads/2021/06/ratchet-clank-rift-apart-01.jpg"
     },
     {
         "name": "Monster Hunter Rise: Sunbreak",
@@ -962,7 +962,7 @@
         "score": 8.9,
         "company": "Capcom",
         "hours_duration": 50,
-        "image_url": "https://media.rawg.io/media/games/b09/b09dca67cbd73300040728da3e30dc88.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROmi_2IVPYAXLb3WNdi4k61sOiTAEkVx5Avg&s"
     },
     {
         "name": "Cities: Skylines",
@@ -979,7 +979,7 @@
         "score": 8.7,
         "company": "Paradox Interactive",
         "hours_duration": 40,
-        "image_url": "https://media.rawg.io/media/games/25c/25c4776ab5723d5d735d8bf617ca12d9.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDoKL6dAhnpVnig9YeW7BlI_gZv7Vtq6Y1rQ&s"
     },
     {
         "name": "Rainbow Six Siege",
@@ -997,7 +997,7 @@
         "score": 8.3,
         "company": "Ubisoft",
         "hours_duration": 0,
-        "image_url": "https://media.rawg.io/media/games/b34/b3419c2706f8f8dbe40d08e23642ad06.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf4v_cB0G0obMt-Sl7A5sc4H-gRNGZV1zQcQ&s"
     },
     {
         "name": "Overcooked 2",
@@ -1015,6 +1015,6 @@
         "score": 8.2,
         "company": "Team17",
         "hours_duration": 15,
-        "image_url": "https://media.rawg.io/media/games/270/270b412b66688081497b3d70c100b208.jpg"
+        "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxz54fhdchlPsEoaKd5vX8T69n6ZgNkybpg&s"
     }
 ]
