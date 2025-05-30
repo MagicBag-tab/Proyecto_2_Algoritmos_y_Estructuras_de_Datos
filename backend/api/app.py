@@ -2,7 +2,7 @@
 from flask import Flask, send_from_directory
 from init_db import initialize_database
 from flask import Flask
-from flask_cors import CORS
+from flask_cors import CORS # type: ignore
 from routes.videogames import videogames_bp
 from routes.recommendations import recommendations_bp
 from routes.preferences import preferences_bp
