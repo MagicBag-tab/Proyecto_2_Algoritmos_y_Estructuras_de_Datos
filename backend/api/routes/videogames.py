@@ -200,11 +200,12 @@ def update_videogame(name):
         g.platforms = $platforms,
         g.score = $score,
         g.company = $company,
-        g.hours_duration = $hours_duration,
+        g.hours_duration = $hours_duration
     """
     with get_driver().session() as session:
         result = session.run(query, {"name": name, **data})
-        if result.summary().counters.properties_set > 0:
+        summary = result.consume()  # <-- Cambia summary() por consume()
+        if summary.counters.properties_set > 0:
             return jsonify({"message": "Videojuego actualizado"}), 200
         else:
             return jsonify({"error": "Videojuego no encontrado"}), 404
