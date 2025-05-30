@@ -1,962 +1,1023 @@
-[
-    {
-        "name": "Halo Infinite",
-        "multiplayer": true,
-        "genres": [
-            "Shooter",
-            "Action"
-        ],
-        "platforms": [
-            "PC",
-            "Xbox"
-        ],
-        "score": 8.7,
-        "company": "343 Industries",
-        "hours_duration": 20
-    },
-    {
-        "name": "FIFA 23",
-        "multiplayer": true,
-        "genres": [
-            "Sports",
-            "Simulation"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Xbox",
-            "Switch"
-        ],
-        "score": 8.0,
-        "company": "EA Sports",
-        "hours_duration": 0
-    },
-    {
-        "name": "Minecraft",
-        "multiplayer": true,
-        "genres": [
-            "Sandbox",
-            "Adventure"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "Xbox",
-            "Switch"
-        ],
-        "score": 9.5,
-        "company": "Mojang",
-        "hours_duration": 0
-    },
-    {
-        "name": "Cyberpunk 2077",
-        "multiplayer": false,
-        "genres": [
-            "RPG",
-            "Action"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Xbox"
-        ],
-        "score": 7.8,
-        "company": "CD Projekt",
-        "hours_duration": 60
-    },
-    {
-        "name": "Among Us",
-        "multiplayer": true,
-        "genres": [
-            "Party",
-            "Social Deduction"
-        ],
-        "platforms": [
-            "PC",
-            "Switch"
-        ],
-        "score": 8.5,
-        "company": "InnerSloth",
-        "hours_duration": 0
-    },
-    {
-        "name": "Skyrim",
-        "multiplayer": false,
-        "genres": [
-            "RPG",
-            "Adventure",
-            "Fantasy"
-        ],
-        "platforms": [
-            "PC",
-            "Xbox",
-            "PS4"
-        ],
-        "score": 9.2,
-        "company": "Bethesda",
-        "hours_duration": 100
-    },
-    {
-        "name": "The Sims 4",
-        "multiplayer": false,
-        "genres": [
-            "Simulation",
-            "Life Sim"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "Xbox"
-        ],
-        "score": 8.0,
-        "company": "EA",
-        "hours_duration": 0
-    },
-    {
-        "name": "CS:GO",
-        "multiplayer": true,
-        "genres": [
-            "Shooter",
-            "Action"
-        ],
-        "platforms": [
-            "PC"
-        ],
-        "score": 8.8,
-        "company": "Valve",
-        "hours_duration": 0
-    },
-    {
-        "name": "Red Dead Redemption 2",
-        "multiplayer": true,
-        "genres": [
-            "Action",
-            "Adventure"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "Xbox"
-        ],
-        "score": 9.7,
-        "company": "Rockstar Games",
-        "hours_duration": 80
-    },
-    {
-        "name": "Animal Crossing",
-        "multiplayer": true,
-        "genres": [
-            "Simulation",
-            "Social"
-        ],
-        "platforms": [
-            "Switch"
-        ],
-        "score": 9.0,
-        "company": "Nintendo",
-        "hours_duration": 60
-    },
-    {
-        "name": "The Legend of Zelda: Breath of the Wild",
-        "multiplayer": false,
-        "genres": [
-            "Adventure",
-            "Action",
-            "Fantasy"
-        ],
-        "platforms": [
-            "Switch"
-        ],
-        "score": 9.8,
-        "company": "Nintendo",
-        "hours_duration": 90
-    },
-    {
-        "name": "Fortnite",
-        "multiplayer": true,
-        "genres": [
-            "Shooter",
-            "Battle Royale"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Xbox",
-            "Switch"
-        ],
-        "score": 8.6,
-        "company": "Epic Games",
-        "hours_duration": 0
-    },
-    {
-        "name": "God of War Ragnar\u00f6k",
-        "multiplayer": false,
-        "genres": [
-            "Action",
-            "Adventure"
-        ],
-        "platforms": [
-            "PS4",
-            "PS5"
-        ],
-        "score": 9.6,
-        "company": "Santa Monica Studio",
-        "hours_duration": 50
-    },
-    {
-        "name": "Overwatch 2",
-        "multiplayer": true,
-        "genres": [
-            "Shooter",
-            "Team-based"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Xbox",
-            "Switch"
-        ],
-        "score": 7.9,
-        "company": "Blizzard Entertainment",
-        "hours_duration": 0
-    },
-    {
-        "name": "Elden Ring",
-        "multiplayer": true,
-        "genres": [
-            "RPG",
-            "Action",
-            "Fantasy"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Xbox"
-        ],
-        "score": 9.7,
-        "company": "FromSoftware",
-        "hours_duration": 100
-    },
-    {
-        "name": "Hades",
-        "multiplayer": false,
-        "genres": [
-            "Roguelike",
-            "Action"
-        ],
-        "platforms": [
-            "PC",
-            "Switch",
-            "PS4",
-            "PS5",
-            "Xbox"
-        ],
-        "score": 9.1,
-        "company": "Supergiant Games",
-        "hours_duration": 30
-    },
-    {
-        "name": "Stardew Valley",
-        "multiplayer": true,
-        "genres": [
-            "Simulation",
-            "RPG"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "Xbox",
-            "Switch",
-            "Mobile"
-        ],
-        "score": 9.3,
-        "company": "ConcernedApe",
-        "hours_duration": 60
-    },
-    {
-        "name": "Ghost of Tsushima",
-        "multiplayer": true,
-        "genres": [
-            "Action",
-            "Adventure"
-        ],
-        "platforms": [
-            "PS4",
-            "PS5"
-        ],
-        "score": 9.4,
-        "company": "Sucker Punch Productions",
-        "hours_duration": 50
-    },
-    {
-        "name": "Doom Eternal",
-        "multiplayer": true,
-        "genres": [
-            "Shooter",
-            "Action"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Xbox",
-            "Switch"
-        ],
-        "score": 8.9,
-        "company": "id Software",
-        "hours_duration": 20
-    },
-    {
-        "name": "Hollow Knight",
-        "multiplayer": false,
-        "genres": [
-            "Metroidvania",
-            "Adventure"
-        ],
-        "platforms": [
-            "PC",
-            "Switch",
-            "PS4",
-            "Xbox"
-        ],
-        "score": 9.0,
-        "company": "Team Cherry",
-        "hours_duration": 40
-    },
-    {
-        "name": "Resident Evil Village",
-        "multiplayer": false,
-        "genres": [
-            "Horror",
-            "Action"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Xbox"
-        ],
-        "score": 8.5,
-        "company": "Capcom",
-        "hours_duration": 10
-    },
-    {
-        "name": "It Takes Two",
-        "multiplayer": true,
-        "genres": [
-            "Adventure",
-            "Puzzle",
-            "Co-op"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Xbox"
-        ],
-        "score": 9.2,
-        "company": "Hazelight Studios",
-        "hours_duration": 12
-    },
-    {
-        "name": "Sekiro: Shadows Die Twice",
-        "multiplayer": false,
-        "genres": [
-            "Action",
-            "Adventure"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "Xbox"
-        ],
-        "score": 9.5,
-        "company": "FromSoftware",
-        "hours_duration": 35
-    },
-    {
-        "name": "Genshin Impact",
-        "multiplayer": true,
-        "genres": [
-            "Action",
-            "RPG",
-            "Adventure"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Mobile"
-        ],
-        "score": 8.4,
-        "company": "HoYoverse",
-        "hours_duration": 0
-    },
-    {
-        "name": "Cuphead",
-        "multiplayer": true,
-        "genres": [
-            "Platformer",
-            "Action"
-        ],
-        "platforms": [
-            "PC",
-            "Xbox",
-            "Switch",
-            "PS4"
-        ],
-        "score": 8.6,
-        "company": "Studio MDHR",
-        "hours_duration": 10
-    },
-    {
-        "name": "The Witcher 3: Wild Hunt",
-        "multiplayer": false,
-        "genres": [
-            "RPG",
-            "Adventure",
-            "Fantasy"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Xbox",
-            "Switch"
-        ],
-        "score": 9.8,
-        "company": "CD Projekt Red",
-        "hours_duration": 100
-    },
-    {
-        "name": "Portal 2",
-        "multiplayer": true,
-        "genres": [
-            "Puzzle",
-            "Platformer"
-        ],
-        "platforms": [
-            "PC",
-            "PS3",
-            "Xbox"
-        ],
-        "score": 9.5,
-        "company": "Valve",
-        "hours_duration": 10
-    },
-    {
-        "name": "Death Stranding",
-        "multiplayer": false,
-        "genres": [
-            "Adventure",
-            "Action"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5"
-        ],
-        "score": 8.6,
-        "company": "Kojima Productions",
-        "hours_duration": 40
-    },
-    {
-        "name": "Call of Duty: Modern Warfare II (2022)",
-        "multiplayer": true,
-        "genres": [
-            "Shooter",
-            "Action"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Xbox"
-        ],
-        "score": 8.3,
-        "company": "Infinity Ward",
-        "hours_duration": 6
-    },
-    {
-        "name": "Fire Emblem: Three Houses",
-        "multiplayer": false,
-        "genres": [
-            "Strategy",
-            "RPG"
-        ],
-        "platforms": [
-            "Switch"
-        ],
-        "score": 9.0,
-        "company": "Intelligent Systems",
-        "hours_duration": 80
-    },
-    {
-        "name": "Splatoon 3",
-        "multiplayer": true,
-        "genres": [
-            "Shooter",
-            "Multiplayer"
-        ],
-        "platforms": [
-            "Switch"
-        ],
-        "score": 8.7,
-        "company": "Nintendo",
-        "hours_duration": 10
-    },
-    {
-        "name": "Dark Souls III",
-        "multiplayer": true,
-        "genres": [
-            "RPG",
-            "Action",
-            "Fantasy"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "Xbox"
-        ],
-        "score": 9.1,
-        "company": "FromSoftware",
-        "hours_duration": 60
-    },
-    {
-        "name": "Assassin's Creed Valhalla",
-        "multiplayer": false,
-        "genres": [
-            "Action",
-            "RPG"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Xbox"
-        ],
-        "score": 8.2,
-        "company": "Ubisoft",
-        "hours_duration": 70
-    },
-    {
-        "name": "Terraria",
-        "multiplayer": true,
-        "genres": [
-            "Sandbox",
-            "Adventure"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "Xbox",
-            "Switch",
-            "Mobile"
-        ],
-        "score": 9.3,
-        "company": "Re-Logic",
-        "hours_duration": 0
-    },
-    {
-        "name": "Metroid Dread",
-        "multiplayer": false,
-        "genres": [
-            "Action",
-            "Adventure",
-            "Metroidvania"
-        ],
-        "platforms": [
-            "Switch"
-        ],
-        "score": 9.1,
-        "company": "MercurySteam",
-        "hours_duration": 12
-    },
-    {
-        "name": "Horizon Forbidden West",
-        "multiplayer": false,
-        "genres": [
-            "Action",
-            "Adventure",
-            "RPG"
-        ],
-        "platforms": [
-            "PS4",
-            "PS5"
-        ],
-        "score": 9.2,
-        "company": "Guerrilla Games",
-        "hours_duration": 60
-    },
-    {
-        "name": "Starfield",
-        "multiplayer": false,
-        "genres": [
-            "RPG",
-            "Sci-Fi",
-            "Open World"
-        ],
-        "platforms": [
-            "PC",
-            "Xbox"
-        ],
-        "score": 8.5,
-        "company": "Bethesda",
-        "hours_duration": 70
-    },
-    {
-        "name": "Diablo IV",
-        "multiplayer": true,
-        "genres": [
-            "RPG",
-            "Action",
-            "Dungeon Crawler"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Xbox"
-        ],
-        "score": 8.8,
-        "company": "Blizzard Entertainment",
-        "hours_duration": 50
-    },
-    {
-        "name": "Final Fantasy XVI",
-        "multiplayer": false,
-        "genres": [
-            "RPG",
-            "Action",
-            "Fantasy"
-        ],
-        "platforms": [
-            "PS5"
-        ],
-        "score": 9.3,
-        "company": "Square Enix",
-        "hours_duration": 55
-    },
-    {
-        "name": "Street Fighter 6",
-        "multiplayer": true,
-        "genres": [
-            "Fighting",
-            "Competitive"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Xbox"
-        ],
-        "score": 9.0,
-        "company": "Capcom",
-        "hours_duration": 0
-    },
-    {
-        "name": "Baldur's Gate 3",
-        "multiplayer": true,
-        "genres": [
-            "RPG",
-            "Adventure",
-            "Turn-based"
-        ],
-        "platforms": [
-            "PC",
-            "PS5"
-        ],
-        "score": 9.9,
-        "company": "Larian Studios",
-        "hours_duration": 120
-    },
-    {
-        "name": "Spider-Man 2",
-        "multiplayer": false,
-        "genres": [
-            "Action",
-            "Adventure",
-            "Open World"
-        ],
-        "platforms": [
-            "PS5"
-        ],
-        "score": 9.5,
-        "company": "Insomniac Games",
-        "hours_duration": 30
-    },
-    {
-        "name": "Super Mario Bros. Wonder",
-        "multiplayer": true,
-        "genres": [
-            "Platformer",
-            "Family"
-        ],
-        "platforms": [
-            "Switch"
-        ],
-        "score": 9.4,
-        "company": "Nintendo",
-        "hours_duration": 15
-    },
-    {
-        "name": "Alan Wake 2",
-        "multiplayer": false,
-        "genres": [
-            "Horror",
-            "Survival",
-            "Psychological"
-        ],
-        "platforms": [
-            "PC",
-            "PS5",
-            "Xbox"
-        ],
-        "score": 9.0,
-        "company": "Remedy Entertainment",
-        "hours_duration": 25
-    },
-    {
-        "name": "Persona 5 Royal",
-        "multiplayer": false,
-        "genres": [
-            "RPG",
-            "Social Sim",
-            "Turn-based"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Xbox",
-            "Switch"
-        ],
-        "score": 9.6,
-        "company": "Atlus",
-        "hours_duration": 110
-    },
-    {
-        "name": "Dead Space Remake",
-        "multiplayer": false,
-        "genres": [
-            "Horror",
-            "Survival",
-            "Sci-Fi"
-        ],
-        "platforms": [
-            "PC",
-            "PS5",
-            "Xbox"
-        ],
-        "score": 8.9,
-        "company": "Motive Studio",
-        "hours_duration": 18
-    },
-    {
-        "name": "Hi-Fi Rush",
-        "multiplayer": false,
-        "genres": [
-            "Action",
-            "Rhythm",
-            "Adventure"
-        ],
-        "platforms": [
-            "PC",
-            "Xbox"
-        ],
-        "score": 9.1,
-        "company": "Tango Gameworks",
-        "hours_duration": 12
-    },
-    {
-        "name": "Octopath Traveler II",
-        "multiplayer": false,
-        "genres": [
-            "RPG",
-            "Turn-based",
-            "Pixel Art"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Switch"
-        ],
-        "score": 8.7,
-        "company": "Square Enix",
-        "hours_duration": 60
-    },
-    {
-        "name": "Wild Hearts",
-        "multiplayer": true,
-        "genres": [
-            "Action",
-            "Hunting",
-            "Co-op"
-        ],
-        "platforms": [
-            "PC",
-            "PS5",
-            "Xbox"
-        ],
-        "score": 7.8,
-        "company": "Omega Force",
-        "hours_duration": 40
-    },
-    {
-        "name": "Wo Long: Fallen Dynasty",
-        "multiplayer": true,
-        "genres": [
-            "Action",
-            "Souls-like",
-            "Historical"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Xbox"
-        ],
-        "score": 8.2,
-        "company": "Team Ninja",
-        "hours_duration": 35
-    },
-    {
-        "name": "Atomic Heart",
-        "multiplayer": false,
-        "genres": [
-            "FPS",
-            "Action",
-            "Sci-Fi"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Xbox"
-        ],
-        "score": 7.5,
-        "company": "Mundfish",
-        "hours_duration": 25
-    },
-    {
-        "name": "Returnal",
-        "multiplayer": false,
-        "genres": [
-            "Roguelike",
-            "Shooter",
-            "Sci-Fi"
-        ],
-        "platforms": [
-            "PC",
-            "PS5"
-        ],
-        "score": 8.6,
-        "company": "Housemarque",
-        "hours_duration": 30
-    },
-    {
-        "name": "Kena: Bridge of Spirits",
-        "multiplayer": false,
-        "genres": [
-            "Adventure",
-            "Action",
-            "Puzzle"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5"
-        ],
-        "score": 8.3,
-        "company": "Ember Lab",
-        "hours_duration": 15
-    },
-    {
-        "name": "Ratchet & Clank: Rift Apart",
-        "multiplayer": false,
-        "genres": [
-            "Action",
-            "Platformer",
-            "Adventure"
-        ],
-        "platforms": [
-            "PC",
-            "PS5"
-        ],
-        "score": 9.0,
-        "company": "Insomniac Games",
-        "hours_duration": 18
-    },
-    {
-        "name": "Monster Hunter Rise: Sunbreak",
-        "multiplayer": true,
-        "genres": [
-            "Action",
-            "Hunting",
-            "Co-op"
-        ],
-        "platforms": [
-            "PC",
-            "Switch"
-        ],
-        "score": 8.9,
-        "company": "Capcom",
-        "hours_duration": 50
-    },
-    {
-        "name": "Cities: Skylines",
-        "multiplayer": false,
-        "genres": [
-            "Simulation",
-            "City Building"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "Xbox"
-        ],
-        "score": 8.7,
-        "company": "Paradox Interactive",
-        "hours_duration": 40
-    },
-    {
-        "name": "Rainbow Six Siege",
-        "multiplayer": true,
-        "genres": [
-            "Shooter",
-            "Tactical"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "PS5",
-            "Xbox"
-        ],
-        "score": 8.3,
-        "company": "Ubisoft",
-        "hours_duration": 0
-    },
-    {
-        "name": "Overcooked 2",
-        "multiplayer": true,
-        "genres": [
-            "Party",
-            "Co-op"
-        ],
-        "platforms": [
-            "PC",
-            "PS4",
-            "Xbox",
-            "Switch"
-        ],
-        "score": 8.2,
-        "company": "Team17",
-        "hours_duration": 15
-    }
-]
+{
+    "attribution": "Data and images provided by RAWG (https://rawg.io)",
+    "games": [
+        {
+            "name": "Halo Infinite",
+            "multiplayer": true,
+            "genres": [
+                "Shooter",
+                "Action"
+            ],
+            "platforms": [
+                "PC",
+                "Xbox"
+            ],
+            "score": 8.7,
+            "company": "343 Industries",
+            "hours_duration": 20,
+            "image_url": "https://media.rawg.io/media/games/e1f/e1ffbeb1bac25b19749ad285ca29e158.jpg"
+        },
+        {
+            "name": "FIFA 23",
+            "multiplayer": true,
+            "genres": [
+                "Sports",
+                "Simulation"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Xbox",
+                "Switch"
+            ],
+            "score": 8.0,
+            "company": "EA Sports",
+            "hours_duration": 0,
+            "image_url": "https://media.rawg.io/media/screenshots/52a/52ad785b9d1514f100ec89c6d5f22e8c.jpg"
+        },
+        {
+            "name": "Minecraft",
+            "multiplayer": true,
+            "genres": [
+                "Sandbox",
+                "Adventure"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "Xbox",
+                "Switch"
+            ],
+            "score": 9.5,
+            "company": "Mojang",
+            "hours_duration": 0,
+            "image_url": "https://media.rawg.io/media/games/b4e/b4e4c73d5aa4ec66bbf75375c4847a2b.jpg"
+        },
+        {
+            "name": "Cyberpunk 2077",
+            "multiplayer": false,
+            "genres": [
+                "RPG",
+                "Action"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Xbox"
+            ],
+            "score": 7.8,
+            "company": "CD Projekt",
+            "hours_duration": 60,
+            "image_url": "https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg"
+        },
+        {
+            "name": "Among Us",
+            "multiplayer": true,
+            "genres": [
+                "Party",
+                "Social Deduction"
+            ],
+            "platforms": [
+                "PC",
+                "Switch"
+            ],
+            "score": 8.5,
+            "company": "InnerSloth",
+            "hours_duration": 0,
+            "image_url": "https://media.rawg.io/media/games/e74/e74458058b35e01c1ae3feeb39a3f724.jpg"
+        },
+        {
+            "name": "Skyrim",
+            "multiplayer": false,
+            "genres": [
+                "RPG",
+                "Adventure",
+                "Fantasy"
+            ],
+            "platforms": [
+                "PC",
+                "Xbox",
+                "PS4"
+            ],
+            "score": 9.2,
+            "company": "Bethesda",
+            "hours_duration": 100,
+            "image_url": "https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"
+        },
+        {
+            "name": "The Sims 4",
+            "multiplayer": false,
+            "genres": [
+                "Simulation",
+                "Life Sim"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "Xbox"
+            ],
+            "score": 8.0,
+            "company": "EA",
+            "hours_duration": 0,
+            "image_url": "https://media.rawg.io/media/games/e44/e445335e611b4ccf03af71fffcbd30a4.jpg"
+        },
+        {
+            "name": "CS:GO",
+            "multiplayer": true,
+            "genres": [
+                "Shooter",
+                "Action"
+            ],
+            "platforms": [
+                "PC"
+            ],
+            "score": 8.8,
+            "company": "Valve",
+            "hours_duration": 0,
+            "image_url": "https://media.rawg.io/media/games/736/73619bd336c894d6941d926bfd563946.jpg"
+        },
+        {
+            "name": "Red Dead Redemption 2",
+            "multiplayer": true,
+            "genres": [
+                "Action",
+                "Adventure"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "Xbox"
+            ],
+            "score": 9.7,
+            "company": "Rockstar Games",
+            "hours_duration": 80,
+            "image_url": "https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg"
+        },
+        {
+            "name": "Animal Crossing",
+            "multiplayer": true,
+            "genres": [
+                "Simulation",
+                "Social"
+            ],
+            "platforms": [
+                "Switch"
+            ],
+            "score": 9.0,
+            "company": "Nintendo",
+            "hours_duration": 60,
+            "image_url": "https://media.rawg.io/media/games/9dc/9dc9fbd2c2054a3a9b7c33a906546bea.jpg"
+        },
+        {
+            "name": "The Legend of Zelda: Breath of the Wild",
+            "multiplayer": false,
+            "genres": [
+                "Adventure",
+                "Action",
+                "Fantasy"
+            ],
+            "platforms": [
+                "Switch"
+            ],
+            "score": 9.8,
+            "company": "Nintendo",
+            "hours_duration": 90,
+            "image_url": "https://media.rawg.io/media/games/cc1/cc196a5ad763955d6532cdba236f730c.jpg"
+        },
+        {
+            "name": "Fortnite",
+            "multiplayer": true,
+            "genres": [
+                "Shooter",
+                "Battle Royale"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Xbox",
+                "Switch"
+            ],
+            "score": 8.6,
+            "company": "Epic Games",
+            "hours_duration": 0,
+            "image_url": "https://media.rawg.io/media/games/dcb/dcbb67f371a9a28ea38ffd73ee0f53f3.jpg"
+        },
+        {
+            "name": "God of War Ragnarök",
+            "multiplayer": false,
+            "genres": [
+                "Action",
+                "Adventure"
+            ],
+            "platforms": [
+                "PS4",
+                "PS5"
+            ],
+            "score": 9.6,
+            "company": "Santa Monica Studio",
+            "hours_duration": 50,
+            "image_url": "https://media.rawg.io/media/screenshots/3c4/3c4c51b66741363d83b56ce66b1240ec.jpg"
+        },
+        {
+            "name": "Overwatch 2",
+            "multiplayer": true,
+            "genres": [
+                "Shooter",
+                "Team-based"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Xbox",
+                "Switch"
+            ],
+            "score": 7.9,
+            "company": "Blizzard Entertainment",
+            "hours_duration": 0,
+            "image_url": "https://media.rawg.io/media/games/95a/95a10817d1fc648cff1153f3fa8ef6c5.jpg"
+        },
+        {
+            "name": "Elden Ring",
+            "multiplayer": true,
+            "genres": [
+                "RPG",
+                "Action",
+                "Fantasy"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Xbox"
+            ],
+            "score": 9.7,
+            "company": "FromSoftware",
+            "hours_duration": 100,
+            "image_url": "https://media.rawg.io/media/games/b29/b294fdd866dcdb643e7bab370a552855.jpg"
+        },
+        {
+            "name": "Hades",
+            "multiplayer": false,
+            "genres": [
+                "Roguelike",
+                "Action"
+            ],
+            "platforms": [
+                "PC",
+                "Switch",
+                "PS4",
+                "PS5",
+                "Xbox"
+            ],
+            "score": 9.1,
+            "company": "Supergiant Games",
+            "hours_duration": 30,
+            "image_url": "https://media.rawg.io/media/games/1f4/1f47a270b8f241e4676b14d39ec620f7.jpg"
+        },
+        {
+            "name": "Stardew Valley",
+            "multiplayer": true,
+            "genres": [
+                "Simulation",
+                "RPG"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "Xbox",
+                "Switch",
+                "Mobile"
+            ],
+            "score": 9.3,
+            "company": "ConcernedApe",
+            "hours_duration": 60,
+            "image_url": "https://media.rawg.io/media/games/713/713269608dc8f2f40f5a670a14b2de94.jpg"
+        },
+        {
+            "name": "Ghost of Tsushima",
+            "multiplayer": true,
+            "genres": [
+                "Action",
+                "Adventure"
+            ],
+            "platforms": [
+                "PS4",
+                "PS5"
+            ],
+            "score": 9.4,
+            "company": "Sucker Punch Productions",
+            "hours_duration": 50,
+            "image_url": "https://media.rawg.io/media/games/f24/f2493ea338fe7bd3c7d73750a85a0959.jpeg"
+        },
+        {
+            "name": "Doom Eternal",
+            "multiplayer": true,
+            "genres": [
+                "Shooter",
+                "Action"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Xbox",
+                "Switch"
+            ],
+            "score": 8.9,
+            "company": "id Software",
+            "hours_duration": 20,
+            "image_url": "https://media.rawg.io/media/games/3ea/3ea3c9bbd940b6cb7f2139e42d3d443f.jpg"
+        },
+        {
+            "name": "Hollow Knight",
+            "multiplayer": false,
+            "genres": [
+                "Metroidvania",
+                "Adventure"
+            ],
+            "platforms": [
+                "PC",
+                "Switch",
+                "PS4",
+                "Xbox"
+            ],
+            "score": 9.0,
+            "company": "Team Cherry",
+            "hours_duration": 40,
+            "image_url": "https://media.rawg.io/media/games/4cf/4cfc6b7f1850590a4634b08bfab308ab.jpg"
+        },
+        {
+            "name": "Resident Evil Village",
+            "multiplayer": false,
+            "genres": [
+                "Horror",
+                "Action"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Xbox"
+            ],
+            "score": 8.5,
+            "company": "Capcom",
+            "hours_duration": 10,
+            "image_url": "https://media.rawg.io/media/games/6cc/6cc23249972a427f697a3d10eb57a820.jpg"
+        },
+        {
+            "name": "It Takes Two",
+            "multiplayer": true,
+            "genres": [
+                "Adventure",
+                "Puzzle",
+                "Co-op"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Xbox"
+            ],
+            "score": 9.2,
+            "company": "Hazelight Studios",
+            "hours_duration": 12,
+            "image_url": "https://media.rawg.io/media/games/d47/d479582ed0a46496ad34f65c7099d7e5.jpg"
+        },
+        {
+            "name": "Sekiro: Shadows Die Twice",
+            "multiplayer": false,
+            "genres": [
+                "Action",
+                "Adventure"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "Xbox"
+            ],
+            "score": 9.5,
+            "company": "FromSoftware",
+            "hours_duration": 35,
+            "image_url": "https://media.rawg.io/media/games/67f/67f62d1f062a6164f57575e0604ee9f6.jpg"
+        },
+        {
+            "name": "Genshin Impact",
+            "multiplayer": true,
+            "genres": [
+                "Action",
+                "RPG",
+                "Adventure"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Mobile"
+            ],
+            "score": 8.4,
+            "company": "HoYoverse",
+            "hours_duration": 0,
+            "image_url": "https://media.rawg.io/media/games/c38/c38bdb5da139005777176d33c463d70f.jpg"
+        },
+        {
+            "name": "Cuphead",
+            "multiplayer": true,
+            "genres": [
+                "Platformer",
+                "Action"
+            ],
+            "platforms": [
+                "PC",
+                "Xbox",
+                "Switch",
+                "PS4"
+            ],
+            "score": 8.6,
+            "company": "Studio MDHR",
+            "hours_duration": 10,
+            "image_url": "https://media.rawg.io/media/games/226/2262cea0b385db6cf399f4be831603b0.jpg"
+        },
+        {
+            "name": "The Witcher 3: Wild Hunt",
+            "multiplayer": false,
+            "genres": [
+                "RPG",
+                "Adventure",
+                "Fantasy"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Xbox",
+                "Switch"
+            ],
+            "score": 9.8,
+            "company": "CD Projekt Red",
+            "hours_duration": 100,
+            "image_url": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
+        },
+        {
+            "name": "Portal 2",
+            "multiplayer": true,
+            "genres": [
+                "Puzzle",
+                "Platformer"
+            ],
+            "platforms": [
+                "PC",
+                "PS3",
+                "Xbox"
+            ],
+            "score": 9.5,
+            "company": "Valve",
+            "hours_duration": 10,
+            "image_url": "https://media.rawg.io/media/games/2ba/2bac0e87cf45e5b508f227d281c9252a.jpg"
+        },
+        {
+            "name": "Death Stranding",
+            "multiplayer": false,
+            "genres": [
+                "Adventure",
+                "Action"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5"
+            ],
+            "score": 8.6,
+            "company": "Kojima Productions",
+            "hours_duration": 40,
+            "image_url": "https://media.rawg.io/media/games/2ad/2ad87a4a69b1104f02435c14c5196095.jpg"
+        },
+        {
+            "name": "Call of Duty: Modern Warfare II (2022)",
+            "multiplayer": true,
+            "genres": [
+                "Shooter",
+                "Action"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Xbox"
+            ],
+            "score": 8.3,
+            "company": "Infinity Ward",
+            "hours_duration": 6,
+            "image_url": "https://media.rawg.io/media/games/9af/9af24c1886e2c7b52a4a2c65aa874638.jpg"
+        },
+        {
+            "name": "Fire Emblem: Three Houses",
+            "multiplayer": false,
+            "genres": [
+                "Strategy",
+                "RPG"
+            ],
+            "platforms": [
+                "Switch"
+            ],
+            "score": 9.0,
+            "company": "Intelligent Systems",
+            "hours_duration": 80,
+            "image_url": "https://media.rawg.io/media/games/530/53081dbd5003f990fa5312404ac3d71a.jpg"
+        },
+        {
+            "name": "Splatoon 3",
+            "multiplayer": true,
+            "genres": [
+                "Shooter",
+                "Multiplayer"
+            ],
+            "platforms": [
+                "Switch"
+            ],
+            "score": 8.7,
+            "company": "Nintendo",
+            "hours_duration": 10,
+            "image_url": "https://media.rawg.io/media/games/360/360ac0a839ab0f0d9a70b35d38264cb0.jpg"
+        },
+        {
+            "name": "Dark Souls III",
+            "multiplayer": true,
+            "genres": [
+                "RPG",
+                "Action",
+                "Fantasy"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "Xbox"
+            ],
+            "score": 9.1,
+            "company": "FromSoftware",
+            "hours_duration": 60,
+            "image_url": "https://media.rawg.io/media/games/da1/da1b267764d77221f07a4386b6548e5a.jpg"
+        },
+        {
+            "name": "Assassin's Creed Valhalla",
+            "multiplayer": false,
+            "genres": [
+                "Action",
+                "RPG"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Xbox"
+            ],
+            "score": 8.2,
+            "company": "Ubisoft",
+            "hours_duration": 70,
+            "image_url": "https://media.rawg.io/media/games/934/9346092ae11bf7582c883869468171cc.jpg"
+        },
+        {
+            "name": "Terraria",
+            "multiplayer": true,
+            "genres": [
+                "Sandbox",
+                "Adventure"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "Xbox",
+                "Switch",
+                "Mobile"
+            ],
+            "score": 9.3,
+            "company": "Re-Logic",
+            "hours_duration": 0,
+            "image_url": "https://media.rawg.io/media/games/f46/f466571d536f2e3ea9e815ad17177501.jpg"
+        },
+        {
+            "name": "Metroid Dread",
+            "multiplayer": false,
+            "genres": [
+                "Action",
+                "Adventure",
+                "Metroidvania"
+            ],
+            "platforms": [
+                "Switch"
+            ],
+            "score": 9.1,
+            "company": "MercurySteam",
+            "hours_duration": 12,
+            "image_url": "https://media.rawg.io/media/games/c26/c262f8b54b46edc72594c4a9bb8ee13e.jpg"
+        },
+        {
+            "name": "Horizon Forbidden West",
+            "multiplayer": false,
+            "genres": [
+                "Action",
+                "Adventure",
+                "RPG"
+            ],
+            "platforms": [
+                "PS4",
+                "PS5"
+            ],
+            "score": 9.2,
+            "company": "Guerrilla Games",
+            "hours_duration": 60,
+            "image_url": "https://media.rawg.io/media/games/bf7/bf73b105ccbba42107986bbcd96fcada.jpg"
+        },
+        {
+            "name": "Starfield",
+            "multiplayer": false,
+            "genres": [
+                "RPG",
+                "Sci-Fi",
+                "Open World"
+            ],
+            "platforms": [
+                "PC",
+                "Xbox"
+            ],
+            "score": 8.5,
+            "company": "Bethesda",
+            "hours_duration": 70,
+            "image_url": "https://media.rawg.io/media/games/ba8/ba82c971336adfd290e4c0eab6504fcf.jpg"
+        },
+        {
+            "name": "Diablo IV",
+            "multiplayer": true,
+            "genres": [
+                "RPG",
+                "Action",
+                "Dungeon Crawler"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Xbox"
+            ],
+            "score": 8.8,
+            "company": "Blizzard Entertainment",
+            "hours_duration": 50,
+            "image_url": "https://media.rawg.io/media/games/77d/77d51f8f4a07c3eecb0f8504027b1bf0.jpg"
+        },
+        {
+            "name": "Final Fantasy XVI",
+            "multiplayer": false,
+            "genres": [
+                "RPG",
+                "Action",
+                "Fantasy"
+            ],
+            "platforms": [
+                "PS5"
+            ],
+            "score": 9.3,
+            "company": "Square Enix",
+            "hours_duration": 55,
+            "image_url": "https://media.rawg.io/media/games/22e/22e68bb62b3013283972cecf98ed51dc.jpg"
+        },
+        {
+            "name": "Street Fighter 6",
+            "multiplayer": true,
+            "genres": [
+                "Fighting",
+                "Competitive"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Xbox"
+            ],
+            "score": 9.0,
+            "company": "Capcom",
+            "hours_duration": 0,
+            "image_url": "https://media.rawg.io/media/games/ce2/ce2463db40cec363f360c29ddcc56884.jpg"
+        },
+        {
+            "name": "Baldur's Gate 3",
+            "multiplayer": true,
+            "genres": [
+                "RPG",
+                "Adventure",
+                "Turn-based"
+            ],
+            "platforms": [
+                "PC",
+                "PS5"
+            ],
+            "score": 9.9,
+            "company": "Larian Studios",
+            "hours_duration": 120,
+            "image_url": "https://media.rawg.io/media/games/699/69907ecf13f172e9e144069769c3be73.jpg"
+        },
+        {
+            "name": "Spider-Man 2",
+            "multiplayer": false,
+            "genres": [
+                "Action",
+                "Adventure",
+                "Open World"
+            ],
+            "platforms": [
+                "PS5"
+            ],
+            "score": 9.5,
+            "company": "Insomniac Games",
+            "hours_duration": 30,
+            "image_url": "https://media.rawg.io/media/games/1cc/1cc86be85294d9d3cf2fc95d696ce819.jpg"
+        },
+        {
+            "name": "Super Mario Bros. Wonder",
+            "multiplayer": true,
+            "genres": [
+                "Platformer",
+                "Family"
+            ],
+            "platforms": [
+                "Switch"
+            ],
+            "score": 9.4,
+            "company": "Nintendo",
+            "hours_duration": 15,
+            "image_url": "https://media.rawg.io/media/games/1fd/1fd3f030bee73452d46a0678084a7ed9.jpg"
+        },
+        {
+            "name": "Alan Wake 2",
+            "multiplayer": false,
+            "genres": [
+                "Horror",
+                "Survival",
+                "Psychological"
+            ],
+            "platforms": [
+                "PC",
+                "PS5",
+                "Xbox"
+            ],
+            "score": 9.0,
+            "company": "Remedy Entertainment",
+            "hours_duration": 25,
+            "image_url": "https://media.rawg.io/media/games/5b9/5b963d7633cd640fa2dbc4069d1c6377.jpg"
+        },
+        {
+            "name": "Persona 5 Royal",
+            "multiplayer": false,
+            "genres": [
+                "RPG",
+                "Social Sim",
+                "Turn-based"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Xbox",
+                "Switch"
+            ],
+            "score": 9.6,
+            "company": "Atlus",
+            "hours_duration": 110,
+            "image_url": "https://media.rawg.io/media/games/a9c/a9c789951de65da545d51f664b4f2ce0.jpg"
+        },
+        {
+            "name": "Dead Space Remake",
+            "multiplayer": false,
+            "genres": [
+                "Horror",
+                "Survival",
+                "Sci-Fi"
+            ],
+            "platforms": [
+                "PC",
+                "PS5",
+                "Xbox"
+            ],
+            "score": 8.9,
+            "company": "Motive Studio",
+            "hours_duration": 18,
+            "image_url": "https://media.rawg.io/media/games/ebd/ebdbb7eb52bd58b0e7fa4538d9757b60.jpg"
+        },
+        {
+            "name": "Hi-Fi Rush",
+            "multiplayer": false,
+            "genres": [
+                "Action",
+                "Rhythm",
+                "Adventure"
+            ],
+            "platforms": [
+                "PC",
+                "Xbox"
+            ],
+            "score": 9.1,
+            "company": "Tango Gameworks",
+            "hours_duration": 12,
+            "image_url": "https://media.rawg.io/media/games/62f/62f71917e64e913f2a893e7373319c60.jpg"
+        },
+        {
+            "name": "Octopath Traveler II",
+            "multiplayer": false,
+            "genres": [
+                "RPG",
+                "Turn-based",
+                "Pixel Art"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Switch"
+            ],
+            "score": 8.7,
+            "company": "Square Enix",
+            "hours_duration": 60,
+            "image_url": "https://media.rawg.io/media/games/2d1/2d1439e74ece0eae3f571211410646dc.jpg"
+        },
+        {
+            "name": "Wild Hearts",
+            "multiplayer": true,
+            "genres": [
+                "Action",
+                "Hunting",
+                "Co-op"
+            ],
+            "platforms": [
+                "PC",
+                "PS5",
+                "Xbox"
+            ],
+            "score": 7.8,
+            "company": "Omega Force",
+            "hours_duration": 40,
+            "image_url": "https://media.rawg.io/media/games/f2c/f2cb7350b37378e9e622d85bd175c294.jpg"
+        },
+        {
+            "name": "Wo Long: Fallen Dynasty",
+            "multiplayer": true,
+            "genres": [
+                "Action",
+                "Souls-like",
+                "Historical"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Xbox"
+            ],
+            "score": 8.2,
+            "company": "Team Ninja",
+            "hours_duration": 35,
+            "image_url": "https://media.rawg.io/media/games/1e1/1e1b965459d5cf69cf51e5d6fe7da959.jpg"
+        },
+        {
+            "name": "Atomic Heart",
+            "multiplayer": false,
+            "genres": [
+                "FPS",
+                "Action",
+                "Sci-Fi"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Xbox"
+            ],
+            "score": 7.5,
+            "company": "Mundfish",
+            "hours_duration": 25,
+            "image_url": "https://media.rawg.io/media/games/6ee/6ee5cbe30c6b6c299a3288337d40a0f3.jpg"
+        },
+        {
+            "name": "Returnal",
+            "multiplayer": false,
+            "genres": [
+                "Roguelike",
+                "Shooter",
+                "Sci-Fi"
+            ],
+            "platforms": [
+                "PC",
+                "PS5"
+            ],
+            "score": 8.6,
+            "company": "Housemarque",
+            "hours_duration": 30,
+            "image_url": "https://media.rawg.io/media/games/673/673f27be4c5dbf37ce3ed0ed5ddf9d8d.jpg"
+        },
+        {
+            "name": "Kena: Bridge of Spirits",
+            "multiplayer": false,
+            "genres": [
+                "Adventure",
+                "Action",
+                "Puzzle"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5"
+            ],
+            "score": 8.3,
+            "company": "Ember Lab",
+            "hours_duration": 15,
+            "image_url": "https://media.rawg.io/media/games/91d/91ddeef8d5ebee7f21faa89efa0f2201.jpg"
+        },
+        {
+            "name": "Ratchet & Clank: Rift Apart",
+            "multiplayer": false,
+            "genres": [
+                "Action",
+                "Platformer",
+                "Adventure"
+            ],
+            "platforms": [
+                "PC",
+                "PS5"
+            ],
+            "score": 9.0,
+            "company": "Insomniac Games",
+            "hours_duration": 18,
+            "image_url": "https://media.rawg.io/media/games/e6b/e6bb8cf72996aa239d6e76668a48120e.jpg"
+        },
+        {
+            "name": "Monster Hunter Rise: Sunbreak",
+            "multiplayer": true,
+            "genres": [
+                "Action",
+                "Hunting",
+                "Co-op"
+            ],
+            "platforms": [
+                "PC",
+                "Switch"
+            ],
+            "score": 8.9,
+            "company": "Capcom",
+            "hours_duration": 50,
+            "image_url": "https://media.rawg.io/media/games/b09/b09dca67cbd73300040728da3e30dc88.jpg"
+        },
+        {
+            "name": "Cities: Skylines",
+            "multiplayer": false,
+            "genres": [
+                "Simulation",
+                "City Building"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "Xbox"
+            ],
+            "score": 8.7,
+            "company": "Paradox Interactive",
+            "hours_duration": 40,
+            "image_url": "https://media.rawg.io/media/games/25c/25c4776ab5723d5d735d8bf617ca12d9.jpg"
+        },
+        {
+            "name": "Rainbow Six Siege",
+            "multiplayer": true,
+            "genres": [
+                "Shooter",
+                "Tactical"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "PS5",
+                "Xbox"
+            ],
+            "score": 8.3,
+            "company": "Ubisoft",
+            "hours_duration": 0,
+            "image_url": "https://media.rawg.io/media/games/b34/b3419c2706f8f8dbe40d08e23642ad06.jpg"
+        },
+        {
+            "name": "Overcooked 2",
+            "multiplayer": true,
+            "genres": [
+                "Party",
+                "Co-op"
+            ],
+            "platforms": [
+                "PC",
+                "PS4",
+                "Xbox",
+                "Switch"
+            ],
+            "score": 8.2,
+            "company": "Team17",
+            "hours_duration": 15,
+            "image_url": "https://media.rawg.io/media/games/270/270b412b66688081497b3d70c100b208.jpg"
+        }
+    ]
+}
