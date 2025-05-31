@@ -547,3 +547,18 @@ def login():
                 return jsonify({"error": "Credenciales incorrectas"}), 401
         else:
             return jsonify({"error": "Credenciales incorrectas"}), 401
+
+@videogames_bp.route('/users/<correo>/friends', methods=['GET'])
+def get_user_friends(correo):
+    query = """
+    MATCH (u:User {correo: $correo})-[:FRIEND]->(a:User)
+    RETURN collect(a.correo) AS amigos
+    """
+    with get_driver().session() as session:
+        result = session.run(query, {"correo": correo})
+        record = result.single()
+        if record:
+            amigos = [c for c in record["amigos"] if c is not None]
+            return jsonify({"amigos": amigos}), 200
+        else:
+            return jsonify({"amigos": []}), 200
